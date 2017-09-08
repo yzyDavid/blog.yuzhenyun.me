@@ -1,7 +1,9 @@
 ---
 title: Git archive命令
 date: 2017-09-05 14:13:31
-tags: git 编程
+tags:
+- git
+- 编程
 ---
 
 优雅地使用 git 提取特定版本的压缩包。
