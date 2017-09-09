@@ -6,9 +6,11 @@ tags:
 - 图像增强
 ---
 
-原文为  Color Harmonization，MSRA的一篇文章
+原文为  Color Harmonization，MSRA 的一篇文章，自己写的笔记格式比较复杂，以图片形式附在后面了。
 
-http://dl.acm.org/citation.cfm?doid=1179352.1141933
+原文链接： http://dl.acm.org/citation.cfm?doid=1179352.1141933
+
+<!-- more -->
 
 {% asset_img 0001.jpg %}
 
