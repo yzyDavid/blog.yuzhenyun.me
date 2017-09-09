@@ -105,11 +105,12 @@ social_icons:
   GitHub: github
 
 # Blog rolls
-#links_title: Links
+links_title: Links
 #links_layout: block
 #links_layout: inline
-#links:
+links:
   #Title: http://example.com/
+  ZM-BAD: https://zmbad.me
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
