@@ -14,6 +14,8 @@ Python 模块相关的细节：
 - 包/模块
 - `__name__ == '__main__'`
 
+参考文档：http://www.pythondoc.com/pythontutorial3/modules.html
+
 <!-- more -->
 
 ---------------------------------
@@ -36,5 +38,20 @@ Python 2 - 默认相对导入
 Python 3 - 默认绝对导入
 
 -----------------------------------
+
+包 - 含有`__init__.py`的目录
+
+模块 - `.py`文件
+
+-------------------------
+
+同一级之中的导入：
+
+```python
+from foo import bar  # PyCharm Python3 报错，命令行单文件启动可以，没弄明白
+from .foo import bar  # PyCharm 不报错，需要模块启动
+```
+
+-------------------------
 
 有什么坑踩到了再来总结。
