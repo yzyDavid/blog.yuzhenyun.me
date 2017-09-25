@@ -39,7 +39,7 @@ pad(
 
 中文文档不能看，毕竟更新不及时啊，还是来看原文吧 https://www.tensorflow.org/api_docs/python/tf/pad
 
-`mode`参数现在有了 3 种取值，分别为`CONSTANT``REFLECT``SYMMETRIC`，其中REFLECT就是回环补齐。
+`mode`参数现在有了 3 种取值，分别为`CONSTANT` `REFLECT` `SYMMETRIC`，其中REFLECT就是回环补齐。
 
 还是放一下官方文档那个例子吧，挺清楚的。
 
