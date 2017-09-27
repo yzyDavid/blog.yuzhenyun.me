@@ -10,6 +10,7 @@ tags:
 
 - e-mail: trf at zju
 - ftp://csyq2017:csyq2017@give.zju.edu.cn
+- http://give.zju.edu.cn/cgcourse
 - TA-email: 
 - Evaluation
   - Assignment 30%
