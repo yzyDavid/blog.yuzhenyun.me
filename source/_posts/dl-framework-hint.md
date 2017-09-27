@@ -27,5 +27,12 @@ tags:
 
 `Keras` 中文文档：http://keras-cn.readthedocs.io/en/latest/
 
-cv2.imwrite 写入灰度图像再读出时候会自动转换为三通道的…… http://docs.opencv.org/master/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56
+cv2.imwrite 写入灰度图像再读出时候会自动转换为三通道的……问题应该是imread读入时候转换的。Keras 的 image.load_img 函数同样有这个问题，需自行转换。
+
+```python
+img_a = np.zeros((x, y), dtype=img.dtype)
+img_a[:, :] = img[:, :, 0]
+```
+
+
 
