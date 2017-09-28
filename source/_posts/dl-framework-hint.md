@@ -34,5 +34,5 @@ img_a = np.zeros((x, y), dtype=img.dtype)
 img_a[:, :] = img[:, :, 0]
 ```
 
-
+`PyTorch` 英文文档：http://pytorch.org/docs/master/
 
