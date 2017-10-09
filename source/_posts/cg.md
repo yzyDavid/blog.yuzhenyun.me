@@ -90,7 +90,7 @@ tags:
 
 空间是像素点的。将抽象的数学直线画进去。要越快，越均匀，越接近越好。给出线段两个端点的坐标。
 
-判断更接近于哪个坐标轴，然后以一个像素为步长增加，计算另一侧坐标(浮点加法！)然后四舍五入到整数像素点。这个方法为 DDA(Digital Differential Analyzer) 算法。
+判断更接近于哪个坐标轴，然后以一个像素为步长增加，计算另一侧坐标(浮点加法！)然后四舍五入到整数像素点。这个方法为 DDA (Digital Differential Analyzer) 算法。
 
 这个思路并非最优，cutting-edge 的做法是 Bresenham 算法。
 
@@ -99,4 +99,45 @@ tags:
 进行优化的思路：浮点运算 -> 整型运算    乘法运算 -> 加法运算
 
 参考文章： https://zhuanlan.zhihu.com/p/20213658
+
+## 第三课
+
+### 扫描转换 - 画圆
+
+圆周上取点，再用线段连起来？
+
+如何取点，直角坐标系等距取点不均匀 => 使用极坐标系
+
+利用对称性，计算八分之一个圆弧即可。
+
+$$x_i=x_c+r\cdot\cos(i\cdot\Delta\theta)$$
+
+$$y_i=y_c+r\cdot\sin(i\cdot\Delta\theta)$$
+
+三角函数开销极大，如何加速运算？
+
+同样的思想：增量算法
+
+$$x_{i+1}=r\cdot\cos(\theta_i+\Delta\theta)$$
+
+和角公式展开：
+
+$$x_{i+1}=x_i\cos\Delta\theta-y_i\sin\Delta\theta$$
+
+实际使用画圆的 Bresenham 算法
+
+其实也可以 look up table
+
+### 不同表示曲线的方式
+
+- explicit curve               $y=f(x)$
+- parametric curve        $x=x(t),y=y(t)$
+- implicit curve               $g(x,y)=0$
+
+
+参数曲线可以表达函数之外的任意曲线，而且遍历参数$t$即可描出整条曲线。故在计算机图形学之中应用最多。
+
+隐式曲线不一定能转换为显式表达式，例如：$x^y\sin x+y^x\cos\ln x=0$
+
+解决思路：找出一个解，假设它连续，delta 法描出。
 
