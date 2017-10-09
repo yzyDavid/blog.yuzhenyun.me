@@ -110,8 +110,10 @@ links_title: Links
 #links_layout: inline
 links:
   #Title: http://example.com/
-  ZM-BAD: https://zmbad.me
+  ZM-BAD: https://zmbad.me/
   Colliot: https://colliot.me/zh/
+  tigertang: http://tigertang.cn/
+  wyd: http://zjuwyd.com/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
