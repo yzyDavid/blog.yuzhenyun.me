@@ -36,3 +36,4 @@ img_a[:, :] = img[:, :, 0]
 
 `PyTorch` 英文文档：http://pytorch.org/docs/master/
 
+`PyTorch` 中貌似不存在 argmax 函数，我们可以使用 `numpy` 实现这种功能。np.argmax 返回 Python 整数。`PyTorch` Tensor 可以调用 .numpy() 方法将其转换为 `numpy` 数组。

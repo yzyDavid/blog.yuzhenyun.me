@@ -5,6 +5,10 @@ tags:
 - 课程
 ---
 
+仅包含部分提纲。
+
+<!-- more -->
+
 ### Flynn 分类法
 
 按照指令流与数据流进行分类。
@@ -13,3 +17,9 @@ tags:
 - SIMD
 - MISD
 - MIMD
+
+## Pipeline Hazard
+
+- Structural hazards
+- Data hazards
+- Control hazards
