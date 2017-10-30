@@ -229,6 +229,8 @@ $$x_{i+1}=x_i\cos\Delta\theta-y_i\sin\Delta\theta$$
 
 版本不详，固定管线时代的 API
 
+{% asset_img gl-wiki.svg %}
+
 共有三个矩阵堆栈，使用 `glMatrixMode` 指定。
 
 - GL_MODELVIEW
