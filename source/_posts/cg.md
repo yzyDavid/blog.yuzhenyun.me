@@ -256,3 +256,15 @@ glRotate{fd}(angle, x, y, z);
 
 注意，OpenGL 当中调用变换 API 的顺序和乘法进行的顺序是反的。
 
+### Viewing
+
+世界坐标系与观察坐标系
+
+2D 视口变换
+
+3D 变换
+
+Projection
+
+- 平行投影
+- 透视投影
