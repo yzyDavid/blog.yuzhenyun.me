@@ -223,5 +223,34 @@ $$x_{i+1}=x_i\cos\Delta\theta-y_i\sin\Delta\theta$$
 
 矩阵表示变换方便连乘
 
+## 第六课
+
+### OpenGL API
+
+版本不详，固定管线时代的 API
+
+共有三个矩阵堆栈，使用 `glMatrixMode` 指定。
+
+- GL_MODELVIEW
+- GL_PROJECTION
+- GL_TEXTURE
+
+相关的 API，关于 CTM (当前变换矩阵)
+
+m 为16维向量，表示 4*4 矩阵。
+
+```c
+glMatrixMode();
+
+glLoadIdentity();
+glLoadMatrix{fd}(*m);
+
+glMultMatrix{fd}(*m);
+
+glTranslate{fd}(x, y, z);
+glScale{fd}(x, y, z);
+glRotate{fd}(angle, x, y, z);
+```
+
 
 
