@@ -252,5 +252,5 @@ glScale{fd}(x, y, z);
 glRotate{fd}(angle, x, y, z);
 ```
 
-
+注意，OpenGL 当中调用变换 API 的顺序和乘法进行的顺序是反的。
 
