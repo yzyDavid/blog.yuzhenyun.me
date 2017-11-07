@@ -11,3 +11,18 @@ tags:
 
 <!-- more -->
 
+## 安装 Docker
+
+系统相关，源里都有，不说废话。
+
+cheat sheet :
+
+```bash
+sudo yum remove docker{,-engine,-common,-selinux}
+sudo yum install yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce
+docker run hello-world
+docker --version
+```
+
