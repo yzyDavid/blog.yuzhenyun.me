@@ -55,3 +55,19 @@ docker service ls
 docker service rm [service ID]
 ```
 
+## Dockerfile
+
+本部分中我们自己创建一个 docker 镜像。
+
+docker 镜像基于已有的上游镜像，在基础上自己添加内容。
+
+创建 Dockerfile app.py requirements.txt 三个文件，内容按照教程原样复制：
+
+https://docs.docker.com/get-started/part2/#apppy
+
+建立镜像的命令：
+
+```bash
+sudo docker build -t friendlyhello .
+```
+
