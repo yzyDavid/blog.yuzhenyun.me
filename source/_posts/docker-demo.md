@@ -71,3 +71,11 @@ https://docs.docker.com/get-started/part2/#apppy
 sudo docker build -t friendlyhello .
 ```
 
+## Docker Hub
+
+```bash
+docker login
+docker tag [imagename] [username]/[repo]:[tag]
+docker push [username]/[repo]:[tag]
+```
+
