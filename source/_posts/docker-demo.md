@@ -79,3 +79,37 @@ docker tag [imagename] [username]/[repo]:[tag]
 docker push [username]/[repo]:[tag]
 ```
 
+## Docker Service
+
+yml stack 等概念，要在 swarm 上面部署的服务。Docker 认为服务是同类型容器的组合。一个 stack 当中可以包括多个网络与服务。
+
+```bash
+docker swarm init
+docker stack deploy -c [config-yml] [service-name]
+docker stack rm [service-name]
+docker service ls
+docker service ps [NAME]
+docker node ls
+docker container ls -q  # 只看单独的容器
+```
+
+注意要在其他物理机上确保镜像存在。哦没主意它会不会自动拉取镜像。
+
+stack deploy 可以重复执行，会热更新。
+
+吐槽一句，docker.io 的 registry 基本上处于墙着的状态……
+
+```bash
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://3917a16c.m.daocloud.io
+```
+
+## 导入导出镜像与容器
+
+```bash
+save / load # 镜像
+export / import # 容器
+
+docker save [image-name] > foo.tar
+docker load -i foo.tar
+```
+
