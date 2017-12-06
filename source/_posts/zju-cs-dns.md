@@ -16,3 +16,6 @@ ZJU 部分课程网站链接收录
 - 计算机体系结构 陈文智 http://10.214.208.4/CompArch/
 - 计算机图形学 童若锋 ftp://csyq2017:csyq2017@give.zju.edu.cn http://give.zju.edu.cn/cgcourse
 - 计算理论 金小刚 http://blog.sciencenet.cn/blog-562030-724538.html
+- 计算机视觉 宋明黎
+  - 课件：ftp://10.214.29.113:8021 cv2017 2017cv
+  - 作业：ftp://10/214.211.211 cv2017song cv123456
