@@ -124,6 +124,14 @@ $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
 
 ### 对于正则语言的泵引理
 
+Let $L$ be a regular language, then there exists an integer $n\ge1$ that any string $w\in L$ with $|w|\ge n$ can be written as $w=xyz$ such that:
+
+- $y\ne e$
+- $|xy|\le n$
+- $\forall i>0,xy^iz\in L$
+
+想不明白了，先睡觉。
+
 ### 对于上下文无关语言的泵引理
 
 ### NFA to DFA
@@ -166,7 +174,9 @@ $move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换�
 
 ### 判断语言是否为正则语言
 
-正则语言的交并补差，连接，克林闭包均为正则语言。
+正则语言对于交、并、补、差，连接，克林闭包封闭。
 
 ### 判断语言是否为上下文无关
+
+上下文无关语言对于并，连接与克林闭包封闭，对交、补、差**不**封闭。
 
