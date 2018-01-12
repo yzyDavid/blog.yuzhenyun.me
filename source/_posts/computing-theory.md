@@ -8,7 +8,7 @@ tags:
 
 天塌了（
 
-<!-- more -->
+
 
 | 章节列表     |
 | -------- |
@@ -17,8 +17,6 @@ tags:
 | 上下文无关语言  |
 | 图灵机      |
 | 不确定性     |
-
-
 
 | 语言      | 自动机           |
 | ------- | ------------- |
@@ -32,6 +30,9 @@ tags:
 - [ ] DFA <=> NFA
 - [ ] 泵定理 * 2
 - [ ] primitive recursive function
+- [ ] automata encoding
+
+<!-- more -->
 
 ## 14 - 15年考卷
 
@@ -52,6 +53,32 @@ $\{a^ib^jc^k|i,j,k\in\mathbb{N}~\mathrm{and}~i+j\not\equiv k~(\mod3)\}$
 True
 
 regular与non-regular并运算
+
+#### (d)
+
+False
+
+正则的子集不一定正则
+
+#### (e)
+
+$\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
+
+
+
+#### (f)
+
+#### (g)
+
+#### (h)
+
+#### (i)
+
+#### (j)
+
+#### (k)
+
+#### (l)
 
 ## 复习PPT考点
 
@@ -76,3 +103,70 @@ regular与non-regular并运算
   - 判断语言属于P问题还是NP问题
 - NP完全
   - show a given lang be NP-complete by reduction
+
+## 知识点
+
+### 下推自动机
+
+六元组 $M=(K,\Sigma,\Gamma,\Delta,s,F)$
+
+- $K$ 状态集合
+- $\Sigma$ 输入字母表
+- $\Gamma$ 栈字母表
+- $s\in K$ 初始状态
+- $F\subseteq K$ 终结状态集
+- $\Delta$ 转移
+
+接受条件：
+
+- 处理完输入，栈为空
+- PDA 到达终结状态（之一）
+
+### 对于正则语言的泵引理
+
+### 对于上下文无关语言的泵引理
+
+### NFA to DFA
+
+子集构造法
+
+DFA 的每个状态对应 NFA 的一个状态集合。
+
+输入：NFA $N$
+
+输出：DFA $D$
+
+构造转换表 $Dtran$
+
+$D$ 的状态集合 $Dstates$
+
+$N$ 的单个状态记为 $s$，$N$ 的一个状态集记为 $T$。
+
+$\epsilon-closure(s)$
+
+$\epsilon-closure(T)=U_{s\in T}\epsilon-closure(s)$
+
+$move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换能到达的 NFA 的状态集合。
+
+> 开始时，$\epsilon-closure(s_0)$ 是 $Dstates$ 中的唯一状态且未加标记。
+>
+> while $Dstates$ 中有一个未标记状态 $T$
+>
+> ​	标记 $T$
+>
+> ​	foreach 输入符号 $a$
+>
+> ​		$U=\epsilon-closure(move(T,a))$
+>
+> ​		if $U\not\in Dstates$
+>
+> ​			将 $U$ 加入 $Dstates$ 且不加标记
+>
+> ​		$Dtran[T,a]=U$
+
+### 判断语言是否为正则语言
+
+正则语言的交并补差，连接，克林闭包均为正则语言。
+
+### 判断语言是否为上下文无关
+
