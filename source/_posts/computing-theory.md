@@ -31,6 +31,7 @@ tags:
 - [ ] 泵定理 * 2
 - [ ] primitive recursive function
 - [ ] automata encoding
+- [ ] simple TMs
 
 <!-- more -->
 
@@ -115,7 +116,7 @@ $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
 - $\Gamma$ 栈字母表
 - $s\in K$ 初始状态
 - $F\subseteq K$ 终结状态集
-- $\Delta$ 转移
+- $\Delta$ 转移函数
 
 $\Delta=\{((p,\alpha,\beta),(q,\gamma))\}$
 
@@ -129,6 +130,22 @@ $\Delta=\{((p,\alpha,\beta),(q,\gamma))\}$
 
 - 处理完输入，栈为空
 - PDA 到达终结状态（之一）
+
+### 图灵机
+
+五元组 $M=(K,\Sigma,\delta,s,H)$
+
+- $K$ 状态集合
+- $\Sigma$ 输入字母表
+  - $\sqcup$ 为空符号
+  - $\rhd$ 为纸带最左端
+- $s\in K$ 初始状态
+- $H\subseteq K$ 停机状态集
+- $\delta$ 转移函数
+
+$K=\{(q,w\underline au)\}$
+
+这里与张海的复习笔记有出入，后者记这个集合是 $\delta$。
 
 ### Context Free Grammar 上下文无关语法
 
@@ -241,4 +258,6 @@ $move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换�
 ### 判断语言是否为上下文无关
 
 上下文无关语言对于并，连接与克林闭包封闭，对交、补、差**不**封闭。
+
+正则语言与上下文无关语言的交集还是上下文无关语言。
 
