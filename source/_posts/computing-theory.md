@@ -132,7 +132,7 @@ $G=(V,\Sigma,R,S),R=\{A\to u\}$
 
 #### CFG to PDA
 
-### 对于正则语言的泵引理
+### 对于正则语言的泵定理
 
 Let $L$ be a regular language, then there exists an integer $n\ge1$ that any string $w\in L$ with $|w|\ge n$ can be written as $w=xyz$ such that:
 
@@ -144,9 +144,15 @@ Let $L$ be a regular language, then there exists an integer $n\ge1$ that any str
 
 先背下来再说。
 
-### 对于上下文无关语言的泵引理
+### 对于上下文无关语言的泵定理
 
-Let $G=(V,\Sigma,R,S)$ be a CFG, then any string $w\in L(G)$ of length greater than $n\ge \phi(G)^{|V-\Sigma}$ can be written as $w=uvxyz$ such that:
+#### 引理
+
+高度为 $h$ 的任何 $G$ 的parse tree 长度不超过 $\phi(G)^h$
+
+#### 定理
+
+Let $G=(V,\Sigma,R,S)$ be a CFG, then any string $w\in L(G)$ of length greater than $n\ge \phi(G)^{|V-\Sigma|}$ can be written as $w=uvxyz$ such that:
 
 - $vy\ne e$
 - $|vxy|\le n$
