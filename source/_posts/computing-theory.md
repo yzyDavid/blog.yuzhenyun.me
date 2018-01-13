@@ -122,6 +122,16 @@ $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
 - 处理完输入，栈为空
 - PDA 到达终结状态（之一）
 
+### Context Free Grammar
+
+$G=(V,\Sigma,R,S),R=\{A\to u\}$
+
+#### CFL to CFG
+
+#### CFL to PDA
+
+#### CFG to PDA
+
 ### 对于正则语言的泵引理
 
 Let $L$ be a regular language, then there exists an integer $n\ge1$ that any string $w\in L$ with $|w|\ge n$ can be written as $w=xyz$ such that:
@@ -130,9 +140,17 @@ Let $L$ be a regular language, then there exists an integer $n\ge1$ that any str
 - $|xy|\le n$
 - $\forall i>0,xy^iz\in L$
 
-想不明白了，先睡觉。
+~~想不明白了，先睡觉。~~
+
+先背下来再说。
 
 ### 对于上下文无关语言的泵引理
+
+Let $G=(V,\Sigma,R,S)$ be a CFG, then any string $w\in L(G)$ of length greater than $n\ge \phi(G)^{|V-\Sigma}$ can be written as $w=uvxyz$ such that:
+
+- $vy\ne e$
+- $|vxy|\le n$
+- $\forall i \ge 0,uv^ixy^iz\in L(G)$
 
 ### NFA to DFA
 
