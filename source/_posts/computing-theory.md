@@ -117,6 +117,14 @@ $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
 - $F\subseteq K$ 终结状态集
 - $\Delta$ 转移
 
+$\Delta=\{((p,\alpha,\beta),(q,\gamma))\}$
+
+- $p$ PDA 当前的状态
+- $\alpha$ 读入的字母
+- $beta$ 栈顶的元素
+- $q$ 要转移到的状态
+- $\gamma$ 将栈顶的元素修改到的元素
+
 接受条件：
 
 - 处理完输入，栈为空
@@ -128,9 +136,30 @@ $G=(V,\Sigma,R,S),R=\{A\to u\}$
 
 #### CFL to CFG
 
+手动构造。
+
+常见例子就是回文，两种字母个数相等，字母个数有等式或者不等式限制等等。
+
 #### CFL to PDA
 
+也只能手动构造么？
+
 #### CFG to PDA
+
+$G=(V,\Sigma,R,S)$
+
+$M=(K,\Sigma,\Gamma,\Delta,s,F)$
+
+给出文法 $G$，则 PDA 的参数可定义为：
+
+- $K=\{p,q\}$
+- $\Gamma=V$
+- $s=p$
+- $F=\{q\}$
+- $\Delta$ 包括以下三种变换：
+  - $((p,e,e),(q,S))$
+  - $(q,e,A),(q,x)$ generate, for each rule $A\to x\in R$
+  - $((q,a,a),(q,e)), \forall a\in\Sigma$ match
 
 ### 对于正则语言的泵定理
 
