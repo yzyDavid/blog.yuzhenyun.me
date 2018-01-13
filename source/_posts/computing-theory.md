@@ -64,7 +64,7 @@ False
 
 $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
 
-
+泵定理
 
 #### (f)
 
@@ -130,9 +130,18 @@ $\Delta=\{((p,\alpha,\beta),(q,\gamma))\}$
 - 处理完输入，栈为空
 - PDA 到达终结状态（之一）
 
-### Context Free Grammar
+### Context Free Grammar 上下文无关语法
 
 $G=(V,\Sigma,R,S),R=\{A\to u\}$
+
+其中：
+
+- $V$ 为字母表
+- $\Sigma\subseteq V$ 为终结符号的集合
+- $S\in V-\Sigma$ 为起始符号
+- $R$ 为规则，是$(V-\Sigma)\times V^*$ 的子集
+
+#### Chomsky Normal Form
 
 #### CFL to CFG
 
@@ -142,7 +151,7 @@ $G=(V,\Sigma,R,S),R=\{A\to u\}$
 
 #### CFL to PDA
 
-也只能手动构造么？
+也只能手动构造，同上。
 
 #### CFG to PDA
 
@@ -157,9 +166,9 @@ $M=(K,\Sigma,\Gamma,\Delta,s,F)$
 - $s=p$
 - $F=\{q\}$
 - $\Delta$ 包括以下三种变换：
-  - $((p,e,e),(q,S))$
-  - $(q,e,A),(q,x)$ generate, for each rule $A\to x\in R$
-  - $((q,a,a),(q,e)), \forall a\in\Sigma$ match
+  - $((p,e,e),(q,S))$ 接受
+  - $(q,e,A),(q,x)$ 生成, for each rule $A\to x\in R$
+  - $((q,a,a),(q,e)), \forall a\in\Sigma$ 匹配
 
 ### 对于正则语言的泵定理
 
