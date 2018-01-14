@@ -98,7 +98,7 @@ $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
   - 设计图灵机计算一个函数 / 判定 半判定语言
   - TM => function
   - 判断函数是否为 primitive recursive function
-- 不确定性
+- 不可判定性
   - 判断语言递归可枚举 / 不递归
 - P与NP
   - 判断语言属于P问题还是NP问题
