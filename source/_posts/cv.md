@@ -91,12 +91,12 @@ $$
 G_x=
 \begin{pmatrix}
 1 &  0 \\
-0 & -1
+0 & -1 \\
 \end{pmatrix}
 G_y=
 \begin{pmatrix}
 0 & -1 \\
-1 &  0
+1 &  0 \\
 \end{pmatrix}
 $$
 
@@ -107,7 +107,7 @@ G_x=
 \begin{pmatrix}
 -1 &  0 &  1 \\
 -2 &  0 &  2 \\
--1 &  0 &  1
+-1 &  0 &  1 \\
 \end{pmatrix}
 $$
 
@@ -117,7 +117,13 @@ y 方向的同理，转置即可。
 
 速度较快
 
-待补充
+Sobel 的2全部换成1即可。
+
+### 基于二阶导数的边缘检测
+
+#### Laplacian 算子
+
+#### LoG 算子
 
 ## harris角点检测
 知道原理
