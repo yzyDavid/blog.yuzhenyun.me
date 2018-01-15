@@ -16,11 +16,11 @@ tags:
 
 ## TODO List
 
-- [ ] NMS 非极大值抑制
-- [ ] LoG的G
-- [x] 双阈值算法
-- [ ] 一阶偏导有限差分
-- [ ] Harris 推导
+- NMS 非极大值抑制
+- LoG的G
+- 双阈值算法
+- 一阶偏导有限差分
+- Harris 推导
 
 <!-- more -->
 
@@ -247,9 +247,23 @@ $\text{trace}~M=\lambda_1+\lambda_2$
 
 ### 计算步骤
 
-
+- Scale-space extrema detection
+  - uses Difference-of-Gaussian function
+- Keypoint localization
+  - subpixel location and scale fit into the model
+- Orientation assignment
+  - 1 or more for each point
+- Keypoint descriptor
+  - from local image gradients
 
 ## Hough 变换 直线检测
+
+基于投票，流程如下：
+
+- 适当地参数化向量空间
+- 假定参数空间每个单元都是累加器
+- 对图像空间上每一点，累加器++
+- 选取最大值
 
 ## 图像的傅立叶变换
 > 变换本身和性质不用记
@@ -257,6 +271,12 @@ $\text{trace}~M=\lambda_1+\lambda_2$
 > 理解拉普拉斯金字塔的每一层是带通滤波，是怎么来的
 > 语言解释，不需要公式
 > 从高斯金字塔来的
+
+拉普拉斯金字塔：高通减低通
+
+低通：变化慢的信息
+
+高通：变化快的信息
 
 ## 相机模型
 > 理解 光圈 景深 焦距 视场
@@ -300,9 +320,15 @@ $\text{trace}~M=\lambda_1+\lambda_2$
 > 优点，基本步骤
 
 ## 人脸识别 主成分分析
-> pca的基本思想 作用
+> PCA 的基本思想 作用
 > 优化目标函数的推导
 > a1TSa1
+
+### PCA 主成分分析
+
+
+
+$a_1^TSa_1$
 
 ## eigenface
 > 是什么，基本步骤
