@@ -24,6 +24,8 @@ tags:
 
 <!-- more -->
 
+---------------------------------
+
 ## 格式塔法则 Gestalt Theory
 
 - Law of Proximity
