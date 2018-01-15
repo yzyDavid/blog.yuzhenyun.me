@@ -185,20 +185,28 @@ $$
 
 窗口平移产生的变化：$E(u,v)\approx [u,v]M[u,v]^T$
 
+$E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2$
+
+$u,v ~\text{are small in values}$
+
+$I(x+u,y+v)\approx I(x,y)+uI_x(x,y)+vI_y(x,y)$
+
+$E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2$
+
+$=\sum_{x,y}w(x,y)[I(x,y)+uI_x(x,y)+vI_y(x,y)-I(x,y)]^2$
+
+$=\sum_{x,y}w(x,y)[uI_x(x,y)+vI_y(x,y)]^2$
+
 $$
-E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2 \\
-u,v ~\text{are small in values} \\
-I(x+u,y+v)\approx I(x,y)+uI_x(x,y)+vI_y(x,y) \\
-E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2 \\
-=\sum_{x,y}w(x,y)[I(x,y)+uI_x(x,y)+vI_y(x,y)-I(x,y)]^2 \\
-=\sum_{x,y}w(x,y)[uI_x(x,y)+vI_y(x,y)]^2 \\
 =[u,v]\sum_{x,y}w(x,y)
 \begin{pmatrix}
 I_x^2 & I_xI_y \\
 I_xI_y & I_y^2 \\
 \end{pmatrix}
-[u,v]^T \\
+[u,v]^T
+$$
 
+$$
 M=
 \sum_{x,y}w(x,y)
 \begin{pmatrix}
