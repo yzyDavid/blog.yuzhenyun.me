@@ -326,7 +326,12 @@ $\text{trace}~M=\lambda_1+\lambda_2$
 
 ### PCA 主成分分析
 
+投影方向 $\vec a_1$
 
+$d$ 维空间中 $\vec x$
+最大化 $\text{var}(z_1)=\text{var}(\vec a_1\cdot \vec x)$
+
+求投影方向，即 $\arg\max  a_1$
 
 $a_1^TSa_1$
 
