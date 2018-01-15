@@ -16,10 +16,26 @@ tags:
 
 <!-- more -->
 
-## 格式塔法则
-primal sketch
-2.5Dsketch
-3d model
+## 格式塔法则 Gestalt Theory
+
+- Law of Proximity
+- Law of Similarity
+- Law of Good Continuation
+- Law of Closure
+- Law of Goodform
+- Law of Figure / Ground
+
+### primal sketch
+
+角点 边缘 纹理 线条 边界
+
+### 2.5D sketch
+
+深度 法线 轮廓
+
+### 3D model
+
+恢复，重建和表示三维模型
 
 ## 二值图像
 几何 面积等
@@ -113,3 +129,15 @@ a1TSa1
 ## 物体识别 CNN
 
 ## 图像分割
+
+------------------
+
+# Additional Part
+
+## 计算机视觉的研究内容
+
+- 输入设备
+- 低层视觉
+- 中层视觉
+- 高层视觉
+- 体系结构
