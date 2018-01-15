@@ -184,6 +184,7 @@ $$
 公式：
 
 窗口平移产生的变化：$E(u,v)\approx [u,v]M[u,v]^T$
+
 $$
 E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2 \\
 u,v ~\text{are small in values} \\
@@ -205,6 +206,7 @@ I_x^2 & I_xI_y \\
 I_xI_y & I_y^2 \\
 \end{pmatrix}
 $$
+
 其中 $I_x,I_y$ 是矩阵 $M$ 的特征根。
 
 上面那句没懂。
