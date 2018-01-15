@@ -14,6 +14,8 @@ tags:
   - 推导题
   - 12-13道大题左右
 
+<!-- more -->
+
 ## 格式塔法则
 primal sketch
 2.5Dsketch
