@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG的G 双阈值算法 一阶偏导有限差分 Harris 推导">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-15T19:37:48.178Z">
+<meta property="og:updated_time" content="2018-01-16T04:59:37.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
 <meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG的G 双阈值算法 一阶偏导有限差分 Harris 推导">
@@ -575,10 +575,18 @@ I_xI_y &amp; I_y^2 \\
 <p>PCA 的基本思想 作用 优化目标函数的推导 a1TSa1</p>
 </blockquote>
 <h3 id="pca-主成分分析">PCA 主成分分析</h3>
-<p>投影方向 <span class="math inline">\(\vec a_1\)</span></p>
+<p>投影方向 <span class="math inline">\(\vec a_1\)</span>，有 <span class="math inline">\(a_1^Ta_1=1\)</span></p>
 <p><span class="math inline">\(d\)</span> 维空间中 <span class="math inline">\(\vec x\)</span> 最大化 <span class="math inline">\(\text{var}(z_1)=\text{var}(\vec a_1\cdot \vec x)\)</span></p>
-<p>求投影方向，即 <span class="math inline">\(\arg\max a_1\)</span></p>
-<p><span class="math inline">\(a_1^TSa_1\)</span></p>
+<p>求投影方向，即 <span class="math inline">\(\arg\max _{a_1}\text{var}(z_1)\)</span></p>
+<p><span class="math inline">\(\text{var}(z_1)=a_1^TSa_1\)</span></p>
+<p>其中 <span class="math inline">\(S=E(x_i,y_i)-E(x_i)E(y_i)=\text{Cov}(x_i,y_i)\)</span></p>
+<p>使用 Lagrange 乘子法</p>
+<p>记 Lagrange 乘子为 <span class="math inline">\(\lambda\)</span></p>
+<p>转化为最大化 <span class="math inline">\(a_1^TSa_1-\lambda(a_1^Ta_1-1)\)</span></p>
+<p>对 <span class="math inline">\(a_1^T\)</span> 求微分并且令结果为0，得</p>
+<p><span class="math inline">\(Sa_1-\lambda a_1=0\)</span></p>
+<p>此为最优化的必要条件。</p>
+<p>上式就是矩阵特征值的定义，所以必须用协方差矩阵最大特征值对应的特征向量，转化为求协方差矩阵。</p>
 <h2 id="eigenface">eigenface</h2>
 <blockquote>
 <p>是什么，基本步骤 将重构用于人脸检测的原理</p>

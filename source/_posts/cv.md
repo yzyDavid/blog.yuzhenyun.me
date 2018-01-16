@@ -326,22 +326,42 @@ $\text{trace}~M=\lambda_1+\lambda_2$
 
 ### PCA 主成分分析
 
-投影方向 $\vec a_1$
+投影方向 $\vec a_1$，有 $a_1^Ta_1=1$
 
 $d$ 维空间中 $\vec x$
 最大化 $\text{var}(z_1)=\text{var}(\vec a_1\cdot \vec x)$
 
-求投影方向，即 $\arg\max  a_1$
+求投影方向，即 $\arg\max _{a_1}\text{var}(z_1)$
 
-$a_1^TSa_1$
+$\text{var}(z_1)=a_1^TSa_1$
+
+其中 $S=E(x_i,y_i)-E(x_i)E(y_i)=\text{Cov}(x_i,y_i)$
+
+使用 Lagrange 乘子法
+
+记 Lagrange 乘子为 $\lambda$
+
+转化为最大化 $a_1^TSa_1-\lambda(a_1^Ta_1-1)$
+
+对 $a_1^T$ 求微分并且令结果为0，得
+
+$Sa_1-\lambda a_1=0$
+
+此为最优化的必要条件。
+
+上式就是矩阵特征值的定义，所以必须用协方差矩阵最大特征值对应的特征向量，转化为求协方差矩阵。
 
 ## eigenface
 > 是什么，基本步骤
 > 将重构用于人脸检测的原理
 
+
+
 ## visual recognition
 > 基本任务 4类
 > 都有哪些挑战因素
+
+
 
 ## 基于bag of words的物体分类
 > 是什么意思，几个基本步骤
