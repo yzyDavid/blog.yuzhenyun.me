@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG的G 双阈值算法 一阶偏导有限差分 Harris 推导">
+<meta name="description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法">
 <meta name="keywords" content="课程,计算机视觉">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浙江大学 计算机视觉 复习提纲">
 <meta property="og:url" content="http://blog.yuzhenyun.me/2018/01/14/cv/index.html">
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
-<meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG的G 双阈值算法 一阶偏导有限差分 Harris 推导">
+<meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-16T04:59:37.461Z">
+<meta property="og:updated_time" content="2018-01-16T05:44:13.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
-<meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG的G 双阈值算法 一阶偏导有限差分 Harris 推导">
+<meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法">
 
 
 
@@ -329,10 +329,10 @@
 <h2 id="todo-list">TODO List</h2>
 <ul>
 <li>NMS 非极大值抑制</li>
-<li>LoG的G</li>
-<li>双阈值算法</li>
-<li>一阶偏导有限差分</li>
+<li>LoG 的 G</li>
+<li>一阶偏导<strong>有限</strong>差分</li>
 <li>Harris 推导</li>
+<li>PCA 协方差矩阵的用法</li>
 </ul>
 <a id="more"></a>
 <hr>
@@ -538,6 +538,10 @@ I_xI_y &amp; I_y^2 \\
 <blockquote>
 <p>理解 光圈 景深 焦距 视场</p>
 </blockquote>
+<ul>
+<li>光圈越大<del>越土豪</del>，景深越小</li>
+<li>焦距越大，视场越小</li>
+</ul>
 <h2 id="理想针孔相机模型">理想针孔相机模型</h2>
 <blockquote>
 <p>基本投影公式 画图说明 齐次坐标形式的透视投影公式 矩阵形式 内参和内参矩阵 不包括畸变参数 会写会背即可</p>
@@ -546,6 +550,12 @@ I_xI_y &amp; I_y^2 \\
 <blockquote>
 <p>常见的哪两种 各是什么原因引起的 外参有哪几个，含义 内参 外参 畸变参数在成像各个阶段的角色 三维物体到真实图像的过程</p>
 </blockquote>
+<h3 id="相机参数">相机参数</h3>
+<ul>
+<li>4 个内参 <span class="math inline">\((f_x,f_y,c_x,c_y)\)</span></li>
+<li>6 个外参 <span class="math inline">\((\theta,\varphi,\psi,t_x,t_y,t_z)\)</span></li>
+<li>5 个畸变参数 <span class="math inline">\((k_1,k_2,p_1,p_2,k_3)\)</span></li>
+</ul>
 <h2 id="相机标定">相机标定</h2>
 <blockquote>
 <p>需要求解哪些参数 基于pattern / reference object 的相机定标 已知什么，求解什么 简述基本过程，几个步骤</p>
@@ -575,6 +585,8 @@ I_xI_y &amp; I_y^2 \\
 <p>PCA 的基本思想 作用 优化目标函数的推导 a1TSa1</p>
 </blockquote>
 <h3 id="pca-主成分分析">PCA 主成分分析</h3>
+<h4 id="基本思想-作用">基本思想 作用</h4>
+<h4 id="优化目标函数的推导">优化目标函数的推导</h4>
 <p>投影方向 <span class="math inline">\(\vec a_1\)</span>，有 <span class="math inline">\(a_1^Ta_1=1\)</span></p>
 <p><span class="math inline">\(d\)</span> 维空间中 <span class="math inline">\(\vec x\)</span> 最大化 <span class="math inline">\(\text{var}(z_1)=\text{var}(\vec a_1\cdot \vec x)\)</span></p>
 <p>求投影方向，即 <span class="math inline">\(\arg\max _{a_1}\text{var}(z_1)\)</span></p>
@@ -587,10 +599,17 @@ I_xI_y &amp; I_y^2 \\
 <p><span class="math inline">\(Sa_1-\lambda a_1=0\)</span></p>
 <p>此为最优化的必要条件。</p>
 <p>上式就是矩阵特征值的定义，所以必须用协方差矩阵最大特征值对应的特征向量，转化为求协方差矩阵。</p>
-<h2 id="eigenface">eigenface</h2>
+<h3 id="eigenface">eigenface</h3>
 <blockquote>
 <p>是什么，基本步骤 将重构用于人脸检测的原理</p>
 </blockquote>
+<h4 id="步骤">步骤</h4>
+<ul>
+<li>将所有人脸归一化</li>
+<li>通过 PCA 计算获得一组特征向量，一般 100 个就足够了</li>
+<li>将每个人脸投影到此空间中，得到坐标</li>
+<li>对于输入的图像，度量在此空间中的某种距离得到最近的结果</li>
+</ul>
 <h2 id="visual-recognition">visual recognition</h2>
 <blockquote>
 <p>基本任务 4类 都有哪些挑战因素</p>
@@ -823,7 +842,7 @@ I_xI_y &amp; I_y^2 \\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#todo-list"><span class="nav-number">1.</span> <span class="nav-text">TODO List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式塔法则-gestalt-theory"><span class="nav-number">2.</span> <span class="nav-text">格式塔法则 Gestalt Theory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#marr-视觉表示框架"><span class="nav-number">3.</span> <span class="nav-text">Marr 视觉表示框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#primal-sketch"><span class="nav-number">3.1.</span> <span class="nav-text">primal sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-sketch"><span class="nav-number">3.2.</span> <span class="nav-text">2.5D sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-model"><span class="nav-number">3.3.</span> <span class="nav-text">3D model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二值图像"><span class="nav-number">4.</span> <span class="nav-text">二值图像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何特性"><span class="nav-number">4.1.</span> <span class="nav-text">几何特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投影计算"><span class="nav-number">4.2.</span> <span class="nav-text">投影计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连通区域"><span class="nav-number">4.3.</span> <span class="nav-text">连通区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边缘"><span class="nav-number">5.</span> <span class="nav-text">边缘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四种主要的不连续"><span class="nav-number">5.1.</span> <span class="nav-text">四种主要的不连续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于一阶导数的边缘检测"><span class="nav-number">5.2.</span> <span class="nav-text">基于一阶导数的边缘检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度"><span class="nav-number">5.2.1.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#roberts-交叉算子"><span class="nav-number">5.2.2.</span> <span class="nav-text">Roberts 交叉算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sobel-算子"><span class="nav-number">5.2.3.</span> <span class="nav-text">Sobel 算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prewitt-算子"><span class="nav-number">5.2.4.</span> <span class="nav-text">Prewitt 算子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于二阶导数的边缘检测"><span class="nav-number">5.3.</span> <span class="nav-text">基于二阶导数的边缘检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#laplacian-算子"><span class="nav-number">5.3.1.</span> <span class="nav-text">Laplacian 算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#log-算子"><span class="nav-number">5.3.2.</span> <span class="nav-text">LoG 算子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canny-边缘检测"><span class="nav-number">5.4.</span> <span class="nav-text">Canny 边缘检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#harris角点检测"><span class="nav-number">6.</span> <span class="nav-text">harris角点检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sift-描述子的计算"><span class="nav-number">7.</span> <span class="nav-text">SIFT 描述子的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转不变性"><span class="nav-number">7.1.</span> <span class="nav-text">旋转不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尺度不变性"><span class="nav-number">7.2.</span> <span class="nav-text">尺度不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算步骤"><span class="nav-number">7.3.</span> <span class="nav-text">计算步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hough-变换-直线检测"><span class="nav-number">8.</span> <span class="nav-text">Hough 变换 直线检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的傅立叶变换"><span class="nav-number">9.</span> <span class="nav-text">图像的傅立叶变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机模型"><span class="nav-number">10.</span> <span class="nav-text">相机模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理想针孔相机模型"><span class="nav-number">11.</span> <span class="nav-text">理想针孔相机模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#径向畸变和切向畸变"><span class="nav-number">12.</span> <span class="nav-text">径向畸变和切向畸变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机标定"><span class="nav-number">13.</span> <span class="nav-text">相机标定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立体视觉-三角测量基本原理"><span class="nav-number">14.</span> <span class="nav-text">立体视觉 三角测量基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维数据获取-结构光成像系统的构成"><span class="nav-number">15.</span> <span class="nav-text">三维数据获取 结构光成像系统的构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光流"><span class="nav-number">16.</span> <span class="nav-text">光流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像拼接"><span class="nav-number">17.</span> <span class="nav-text">图像拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ransac"><span class="nav-number">18.</span> <span class="nav-text">ransac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人脸识别-主成分分析"><span class="nav-number">19.</span> <span class="nav-text">人脸识别 主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pca-主成分分析"><span class="nav-number">19.1.</span> <span class="nav-text">PCA 主成分分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eigenface"><span class="nav-number">20.</span> <span class="nav-text">eigenface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-recognition"><span class="nav-number">21.</span> <span class="nav-text">visual recognition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于bag-of-words的物体分类"><span class="nav-number">22.</span> <span class="nav-text">基于bag of words的物体分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物体识别-cnn"><span class="nav-number">23.</span> <span class="nav-text">物体识别 CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像分割"><span class="nav-number">24.</span> <span class="nav-text">图像分割</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#additional-part"><span class="nav-number"></span> <span class="nav-text">Additional Part</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机视觉的研究内容"><span class="nav-number">1.</span> <span class="nav-text">计算机视觉的研究内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#todo-list"><span class="nav-number">1.</span> <span class="nav-text">TODO List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式塔法则-gestalt-theory"><span class="nav-number">2.</span> <span class="nav-text">格式塔法则 Gestalt Theory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#marr-视觉表示框架"><span class="nav-number">3.</span> <span class="nav-text">Marr 视觉表示框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#primal-sketch"><span class="nav-number">3.1.</span> <span class="nav-text">primal sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-sketch"><span class="nav-number">3.2.</span> <span class="nav-text">2.5D sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-model"><span class="nav-number">3.3.</span> <span class="nav-text">3D model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二值图像"><span class="nav-number">4.</span> <span class="nav-text">二值图像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何特性"><span class="nav-number">4.1.</span> <span class="nav-text">几何特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投影计算"><span class="nav-number">4.2.</span> <span class="nav-text">投影计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连通区域"><span class="nav-number">4.3.</span> <span class="nav-text">连通区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边缘"><span class="nav-number">5.</span> <span class="nav-text">边缘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四种主要的不连续"><span class="nav-number">5.1.</span> <span class="nav-text">四种主要的不连续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于一阶导数的边缘检测"><span class="nav-number">5.2.</span> <span class="nav-text">基于一阶导数的边缘检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度"><span class="nav-number">5.2.1.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#roberts-交叉算子"><span class="nav-number">5.2.2.</span> <span class="nav-text">Roberts 交叉算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sobel-算子"><span class="nav-number">5.2.3.</span> <span class="nav-text">Sobel 算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prewitt-算子"><span class="nav-number">5.2.4.</span> <span class="nav-text">Prewitt 算子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于二阶导数的边缘检测"><span class="nav-number">5.3.</span> <span class="nav-text">基于二阶导数的边缘检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#laplacian-算子"><span class="nav-number">5.3.1.</span> <span class="nav-text">Laplacian 算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#log-算子"><span class="nav-number">5.3.2.</span> <span class="nav-text">LoG 算子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canny-边缘检测"><span class="nav-number">5.4.</span> <span class="nav-text">Canny 边缘检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#harris角点检测"><span class="nav-number">6.</span> <span class="nav-text">harris角点检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sift-描述子的计算"><span class="nav-number">7.</span> <span class="nav-text">SIFT 描述子的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转不变性"><span class="nav-number">7.1.</span> <span class="nav-text">旋转不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尺度不变性"><span class="nav-number">7.2.</span> <span class="nav-text">尺度不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算步骤"><span class="nav-number">7.3.</span> <span class="nav-text">计算步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hough-变换-直线检测"><span class="nav-number">8.</span> <span class="nav-text">Hough 变换 直线检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的傅立叶变换"><span class="nav-number">9.</span> <span class="nav-text">图像的傅立叶变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机模型"><span class="nav-number">10.</span> <span class="nav-text">相机模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理想针孔相机模型"><span class="nav-number">11.</span> <span class="nav-text">理想针孔相机模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#径向畸变和切向畸变"><span class="nav-number">12.</span> <span class="nav-text">径向畸变和切向畸变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相机参数"><span class="nav-number">12.1.</span> <span class="nav-text">相机参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机标定"><span class="nav-number">13.</span> <span class="nav-text">相机标定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立体视觉-三角测量基本原理"><span class="nav-number">14.</span> <span class="nav-text">立体视觉 三角测量基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维数据获取-结构光成像系统的构成"><span class="nav-number">15.</span> <span class="nav-text">三维数据获取 结构光成像系统的构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光流"><span class="nav-number">16.</span> <span class="nav-text">光流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像拼接"><span class="nav-number">17.</span> <span class="nav-text">图像拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ransac"><span class="nav-number">18.</span> <span class="nav-text">ransac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人脸识别-主成分分析"><span class="nav-number">19.</span> <span class="nav-text">人脸识别 主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pca-主成分分析"><span class="nav-number">19.1.</span> <span class="nav-text">PCA 主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本思想-作用"><span class="nav-number">19.1.1.</span> <span class="nav-text">基本思想 作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化目标函数的推导"><span class="nav-number">19.1.2.</span> <span class="nav-text">优化目标函数的推导</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eigenface"><span class="nav-number">19.2.</span> <span class="nav-text">eigenface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤"><span class="nav-number">19.2.1.</span> <span class="nav-text">步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-recognition"><span class="nav-number">20.</span> <span class="nav-text">visual recognition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于bag-of-words的物体分类"><span class="nav-number">21.</span> <span class="nav-text">基于bag of words的物体分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物体识别-cnn"><span class="nav-number">22.</span> <span class="nav-text">物体识别 CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像分割"><span class="nav-number">23.</span> <span class="nav-text">图像分割</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#additional-part"><span class="nav-number"></span> <span class="nav-text">Additional Part</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机视觉的研究内容"><span class="nav-number">1.</span> <span class="nav-text">计算机视觉的研究内容</span></a></li></ol></div>
             
 
           </div>
