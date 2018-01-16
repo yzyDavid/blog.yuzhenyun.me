@@ -26,12 +26,11 @@ tags:
 
 ## TODO list
 
-- [ ] 各种语言的 closure property
-- [ ] DFA <=> NFA
-- [ ] 泵定理 * 2
-- [ ] primitive recursive function
-- [ ] automata encoding
-- [ ] simple TMs
+- 各种语言的 closure property
+- 泵定理 * 2
+- primitive recursive function
+- automata encoding
+- simple TMs
 
 <!-- more -->
 
@@ -160,6 +159,8 @@ $G=(V,\Sigma,R,S),R=\{A\to u\}$
 
 #### Chomsky Normal Form
 
+TODO
+
 #### CFL to CFG
 
 手动构造。
@@ -267,13 +268,27 @@ $move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换�
 
 #### 算法
 
+#### 判定
+
+#### 半判定
+
 #### 不可判定
 
 #### 函数
 
 #### 递归语言
 
+图灵机可以停机并给出判定的语言。
+
+若语言 $L$ 与 $\bar{L}$ 均为递归可枚举语言（即正反都能停机判定），则 $L$ 为递归语言。
+
+对于补运算封闭。
+
 #### 递归可枚举语言
+
+图灵机对于接受的字符串可以停机，对于不接受的字符串可能不停机的语言。
+
+递归可枚举语言即图灵可枚举语言。
 
 #### 通用图灵机
 
