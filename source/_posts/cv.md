@@ -284,6 +284,10 @@ $\text{trace}~M=\lambda_1+\lambda_2$
 - 光圈越大~~越土豪~~，景深越小
 - 焦距越大，视场越小
 
+Thin lens equation:
+
+$\frac{1}{d_o}+\frac{1}{d_i}=\frac{1}{f}$
+
 ## 理想针孔相机模型
 > 基本投影公式 画图说明 齐次坐标形式的透视投影公式 矩阵形式
 > 内参和内参矩阵 不包括畸变参数 会写会背即可
@@ -328,7 +332,13 @@ $\text{trace}~M=\lambda_1+\lambda_2$
 > 一个点的约束公式 会推导
 > 哪些位置的光流比较可靠，why
 
+解决像素对应问题，找到两幅图之间距离不远的像素之间的对应关系。
 
+基本假设：
+
+- 亮度恒定 Brightness constancy
+- 空间相干性 Spatial coherence
+- 小移动 Small motion
 
 ## 图像拼接
 > 实现两张图像自动拼接的基本步骤

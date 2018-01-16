@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-16T05:44:13.110Z">
+<meta property="og:updated_time" content="2018-01-16T05:59:20.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
 <meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法">
@@ -542,6 +542,8 @@ I_xI_y &amp; I_y^2 \\
 <li>光圈越大<del>越土豪</del>，景深越小</li>
 <li>焦距越大，视场越小</li>
 </ul>
+<p>Thin lens equation:</p>
+<p><span class="math inline">\(\frac{1}{d_o}+\frac{1}{d_i}=\frac{1}{f}\)</span></p>
 <h2 id="理想针孔相机模型">理想针孔相机模型</h2>
 <blockquote>
 <p>基本投影公式 画图说明 齐次坐标形式的透视投影公式 矩阵形式 内参和内参矩阵 不包括畸变参数 会写会背即可</p>
@@ -572,6 +574,13 @@ I_xI_y &amp; I_y^2 \\
 <blockquote>
 <p>解决什么问题 三个基本假设 一个点的约束公式 会推导 哪些位置的光流比较可靠，why</p>
 </blockquote>
+<p>解决像素对应问题，找到两幅图之间距离不远的像素之间的对应关系。</p>
+<p>基本假设：</p>
+<ul>
+<li>亮度恒定 Brightness constancy</li>
+<li>空间相干性 Spatial coherence</li>
+<li>小移动 Small motion</li>
+</ul>
 <h2 id="图像拼接">图像拼接</h2>
 <blockquote>
 <p>实现两张图像自动拼接的基本步骤</p>
