@@ -392,6 +392,19 @@ TODO 画图与推导公式
 - 空间相干性 Spatial coherence
 - 小移动 Small motion
 
+### 一个点的约束公式
+
+$$
+O\approx I_t+\nabla I\cdot[u,v] \\
+\text{证明如下：} \\
+O=I(x+u,y+v)-H(x,y) \\
+\approx I(x,y)+uI_x+vI_y-H(x,y) \\
+\approx (I(x,y)-H(x,y))+uI_x+vI_y \\
+\approx I_t+\nabla I\cdot[u,v]
+$$
+
+
+
 ## 图像拼接
 > 实现两张图像自动拼接的基本步骤
 
