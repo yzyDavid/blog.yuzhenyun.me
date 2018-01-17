@@ -313,6 +313,29 @@ Pinhole camera model:
 
 $-x=f\frac{X}{Z}$
 
+### 齐次坐标的透视投影公式
+
+$$
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1\frac{1}{d} & 0 \\
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y \\ z \\ 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+x \\ y \\ -\frac{z}{d} \\
+\end{pmatrix}
+$$
+
+$$
+(-d\frac{x}{z},-d\frac{y}{z})
+$$
+
+
+
 ## 径向畸变和切向畸变
 > 常见的哪两种 各是什么原因引起的
 > 外参有哪几个，含义
@@ -512,7 +535,7 @@ $Sa_1-\lambda a_1=0$
 
 计算参数个数与连接数
 
-不要忘记 bias 项？
+考虑么？ bias 项？
 
 - 参数个数
   - 卷积核面积 $\times$ 卷积核个数
