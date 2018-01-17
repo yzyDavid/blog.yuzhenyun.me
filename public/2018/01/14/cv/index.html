@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-17T15:14:59.279Z">
+<meta property="og:updated_time" content="2018-01-17T15:21:54.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
 <meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
@@ -600,6 +600,7 @@ x \\ y \\ -\frac{z}{d} \\
 <li>透镜不是完美地平行于图像平面</li>
 <li>导致部分区域看起来更近</li>
 </ul></li>
+<li>外参 含义</li>
 </ul>
 <h2 id="相机标定">相机标定</h2>
 <blockquote>
@@ -618,7 +619,14 @@ f_x &amp; 0 &amp; c_x \\
 0 &amp; f_y &amp; c_y \\
 0 &amp; 0 &amp; 1 \\
 \end{pmatrix}
-\]</span></p>
+\]</span> 外参矩阵： <span class="math display">\[
+P=
+\begin{pmatrix}
+R_{3\times 3} &amp; t_{3\times 1} \\
+0 ~~~ 0 ~~~ 0 &amp; 1 \\
+\end{pmatrix}
+P_0
+\]</span> 由三维旋转矩阵与平移矩阵合并而成</p>
 <h3 id="过程">过程</h3>
 <ul>
 <li>已知
@@ -705,6 +713,7 @@ O=I(x+u,y+v)-H(x,y) \\
 <li>仿射变换</li>
 </ul></li>
 <li>RANSAC</li>
+<li>Image Blending</li>
 </ul>
 <h3 id="ransac-随机抽样一致性算法">RANSAC 随机抽样一致性算法</h3>
 <blockquote>
