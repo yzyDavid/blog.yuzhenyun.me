@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
+<meta name="description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
 <meta name="keywords" content="课程,计算机视觉">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浙江大学 计算机视觉 复习提纲">
 <meta property="og:url" content="http://blog.yuzhenyun.me/2018/01/14/cv/index.html">
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
-<meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
+<meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-17T11:17:12.878Z">
+<meta property="og:updated_time" content="2018-01-17T14:14:52.932Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
-<meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
+<meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
 
 
 
@@ -328,7 +328,6 @@
 </ul>
 <h2 id="todo-list">TODO List</h2>
 <ul>
-<li>NMS 非极大值抑制</li>
 <li>LoG 的 G</li>
 <li>一阶偏导<strong>有限</strong>差分</li>
 <li>Harris 推导</li>
@@ -568,7 +567,7 @@ I_xI_y &amp; I_y^2 \\
 \begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1\frac{1}{d} &amp; 0 \\
+0 &amp; 0 &amp; -\frac{1}{d} &amp; 0 \\
 \end{pmatrix}
 \begin{pmatrix}
 x \\ y \\ z \\ 1 \\
@@ -651,7 +650,7 @@ f_x &amp; 0 &amp; c_x \\
 <li>计算 Y 中每一个点在 X 中的对应最近点</li>
 <li>求使上述对应点对的平均距离最小的<strong>刚体变换</strong>，获得刚体变换参数（平移参数与旋转参数）</li>
 <li>对 Y 应用上一步求得的刚体变换（平移与旋转），更新Y</li>
-<li>如果不到阈值一下，从第一步重新迭代</li>
+<li>如果不到阈值以下，从第一步重新迭代</li>
 </ul>
 <h2 id="光流">光流</h2>
 <blockquote>
