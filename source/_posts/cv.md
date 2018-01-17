@@ -328,6 +328,17 @@ $-x=f\frac{X}{Z}$
 - 6 个外参 $(\theta,\varphi,\psi,t_x,t_y,t_z)$
 - 5 个畸变参数 $(k_1,k_2,p_1,p_2,k_3)$
 
+内参矩阵：
+$$
+M=
+\begin{pmatrix}
+f_x & 0 & c_x \\
+0 & f_y & c_y \\
+0 & 0 & 1 \\
+\end{pmatrix}
+$$
+
+
 ### 过程
 
 - 已知

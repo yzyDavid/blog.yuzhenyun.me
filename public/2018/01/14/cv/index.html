@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-17T08:40:37.286Z">
+<meta property="og:updated_time" content="2018-01-17T08:43:41.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
 <meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法">
@@ -574,6 +574,14 @@ I_xI_y &amp; I_y^2 \\
 <li>6 个外参 <span class="math inline">\((\theta,\varphi,\psi,t_x,t_y,t_z)\)</span></li>
 <li>5 个畸变参数 <span class="math inline">\((k_1,k_2,p_1,p_2,k_3)\)</span></li>
 </ul>
+<p>内参矩阵： <span class="math display">\[
+M=
+\begin{pmatrix}
+f_x &amp; 0 &amp; c_x \\
+0 &amp; f_y &amp; c_y \\
+0 &amp; 0 &amp; 1 \\
+\end{pmatrix}
+\]</span></p>
 <h3 id="过程">过程</h3>
 <ul>
 <li>已知
