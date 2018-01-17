@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-17T15:21:54.325Z">
+<meta property="og:updated_time" content="2018-01-17T15:43:52.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
 <meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
@@ -721,9 +721,16 @@ O=I(x+u,y+v)-H(x,y) \\
 </blockquote>
 <p><em>RANdom SAmple Consensus</em></p>
 <h4 id="优点">优点</h4>
+<ul>
+<li>计算快</li>
+<li>robust</li>
+<li>抗噪 适合多种场景 实现方便</li>
+</ul>
 <h4 id="步骤">步骤</h4>
 <ul>
-<li>​</li>
+<li>随机选取一组点</li>
+<li>用这组点估计到的模型去检测还有哪些局内点，计数</li>
+<li>用新的局内点重新计算模型，迭代</li>
 </ul>
 <h2 id="人脸识别-主成分分析">人脸识别 主成分分析</h2>
 <blockquote>
