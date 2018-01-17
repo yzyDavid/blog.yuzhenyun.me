@@ -21,6 +21,7 @@ tags:
 - 一阶偏导**有限**差分
 - Harris 推导
 - PCA 协方差矩阵的用法
+- weight 数
 
 <!-- more -->
 
@@ -28,9 +29,9 @@ tags:
 
 ## 格式塔法则 Gestalt Theory
 
-- Law of Proximity
-- Law of Similarity
-- Law of Good Continuation
+- Law of Proximity 距离近的
+- Law of Similarity 长得像的
+- Law of Good Continuation 
 - Law of Closure
 - Law of Goodform
 - Law of Figure / Ground
@@ -43,9 +44,13 @@ tags:
 
 ### 2.5D sketch
 
+在以观测者为中心的坐标系中
+
 深度 法线 轮廓
 
 ### 3D model
+
+在以物体为中心的坐标系中
 
 恢复，重建和表示三维模型
 
@@ -427,14 +432,18 @@ $$
   - 仿射变换
 - RANSAC
 
-### RANSAC
+### RANSAC 随机抽样一致性算法
 
 > 理解其过程的核心思想
 > 优点，基本步骤
 
 *RANdom SAmple Consensus*
 
+#### 优点
 
+#### 步骤
+
+- ​
 
 ## 人脸识别 主成分分析
 > PCA 的基本思想 作用
@@ -501,7 +510,13 @@ $Sa_1-\lambda a_1=0$
 
 ## 物体识别 CNN
 
+计算参数个数与连接数
 
+不要忘记 bias 项
+
+- 参数个数
+- 连接数
+- 权重数
 
 ## 图像分割
 
