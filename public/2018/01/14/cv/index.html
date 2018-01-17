@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-17T10:49:55.606Z">
+<meta property="og:updated_time" content="2018-01-17T11:10:08.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
 <meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  NMS 非极大值抑制 LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
@@ -729,11 +729,20 @@ O=I(x+u,y+v)-H(x,y) \\
 </ul>
 <h2 id="物体识别-cnn">物体识别 CNN</h2>
 <p>计算参数个数与连接数</p>
-<p>不要忘记 bias 项</p>
+<p>不要忘记 bias 项？</p>
 <ul>
-<li>参数个数</li>
-<li>连接数</li>
-<li>权重数</li>
+<li>参数个数
+<ul>
+<li>卷积核面积 <span class="math inline">\(\times\)</span> 卷积核个数</li>
+</ul></li>
+<li>连接数
+<ul>
+<li>参数个数 <span class="math inline">\(\times\)</span> feature map 面积</li>
+</ul></li>
+<li>权重 (weight) 数
+<ul>
+<li>同连接数</li>
+</ul></li>
 </ul>
 <h2 id="图像分割">图像分割</h2>
 <h3 id="图像分割的目标">图像分割的目标</h3>
