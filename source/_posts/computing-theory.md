@@ -29,11 +29,13 @@ tags:
 - primitive recursive function
 - automata encoding
 - simple TMs
-- Theorem 3.5.2 (P 144)
+- 证明语言递归、递归可枚举
 
 <!-- more -->
 
 ## 14 - 15年考卷
+
+下面题目都不保证正确
 
 ### 判断题
 
@@ -61,23 +63,53 @@ False
 
 #### (e)
 
+False
+
 $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
 
-泵定理
+泵定理（还没自己算过）
 
 #### (f)
 
+True
+
+?
+
 #### (g)
+
+False
 
 #### (h)
 
+True
+
 #### (i)
+
+False
+
+?
 
 #### (j)
 
+True
+
 #### (k)
 
+True
+
 #### (l)
+
+True
+
+### 简答题
+
+#### 1
+
+##### (a)
+
+No
+
+take $a^{2n}ca^n$,
 
 ## 复习PPT考点
 
@@ -280,7 +312,9 @@ $move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换�
   - $L-R\in$ CFL, for $L-R=L\cap\bar{R}$
   - $R-L$ 不一定，具有反例：$R=a^*b^*c^*,R-L=\{a^nb^nc^n\}$
 
+### 判断语言是否为递归语言
 
+递归语言对于交、并、补、差，连接，克林闭包封闭。
 
 ### 判断语言是否为递归可枚举
 
