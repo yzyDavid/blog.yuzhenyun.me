@@ -260,8 +260,8 @@ $move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换�
 - F - 正则语言都有正则的真子集（空集没有）
 - T - 正则语言 $L~x,y\in L,\{xy|x\in L,y\not\in L\}$ 是正则语言（补集与连接）
 - F - $\{w|w=w^R\}$ 是正则语言
-- T - $\{w|w\in L ~\text{and}~ w^R\in L\}$ （$L$ 是正则语言，$L=L\cap L^R$）???
-- F - If $C$ is any set of regular languages, then $\cup C$ is a regular language. ???
+- T - $\{w|w\in L ~\text{and}~ w^R\in L\}$ （$L$ 是正则语言，$L'=L\cap L^R$）
+- F - If $C$ is any set of regular languages, then $\cup C$ is a regular language. （无限集）
 - T - $\{xyx^R|x,y=\Sigma^*\}$ 是正则语言（$x$ 可以为空，$y=\Sigma^*$ ）
 
 ### 判断语言是否为上下文无关
@@ -272,7 +272,7 @@ $move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换�
 
 ### 判断语言是否为递归可枚举
 
-递归可枚举语言对于交，并，连接和克林闭包运算封闭。对补与差运算不封闭。
+递归可枚举语言对于**交**，并，连接和克林闭包运算封闭。对补与差运算不封闭。
 
 ### 不可判定性
 
