@@ -26,11 +26,10 @@ tags:
 
 ## TODO list
 
-- 各种语言的 closure property
-- 泵定理 * 2
 - primitive recursive function
 - automata encoding
 - simple TMs
+- Theorem 3.5.2 (P 144)
 
 <!-- more -->
 
@@ -99,6 +98,11 @@ $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
   - 判断函数是否为 primitive recursive function
 - 不可判定性
   - 判断语言递归可枚举 / 不递归
+  - 乔姆斯基层次（此条与下述来自更以前的PPT）
+  - 邱奇图灵论题
+  - 通用图灵机
+  - 停机问题
+  - 一些不可判定的问题
 - P与NP
   - 判断语言属于P问题还是NP问题
 - NP完全
@@ -272,6 +276,11 @@ $move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换�
 
 - $\{a^mb^nc^p\}$ 其中 $m,n,p$ 三者有两个相等或者不等，是上下文无关语言。三者均相等**不**是上下文无关语言。均不等呢？
 - $L=\{w\in \{a,b,c\}^*|\text{其中三个字母出现次数均不相等}\}$ 是上下文无关的，由三者中两个不等并运算得到。
+- $L$: CFL, $R$: RL
+  - $L-R\in$ CFL, for $L-R=L\cap\bar{R}$
+  - $R-L$ 不一定，具有反例：$R=a^*b^*c^*,R-L=\{a^nb^nc^n\}$
+
+
 
 ### 判断语言是否为递归可枚举
 
