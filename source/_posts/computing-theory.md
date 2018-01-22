@@ -28,8 +28,10 @@ tags:
 
 - primitive recursive function
 - automata encoding
-- simple TMs
+- simple TMs (elementary Turing Machine)
 - 证明语言递归、递归可枚举
+- 规约
+- 判定递归语言
 
 <!-- more -->
 
