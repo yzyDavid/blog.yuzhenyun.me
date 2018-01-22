@@ -35,7 +35,7 @@ tags:
 
 ## 14 - 15年考卷
 
-下面题目都不保证正确
+选择题答案已经修正
 
 ### 判断题
 
@@ -63,25 +63,25 @@ False
 
 #### (e)
 
-False
+True
 
 $\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}$ is context-free
 
-泵定理（还没自己算过）
-
 #### (f)
 
-True
+False
 
 ?
 
 #### (g)
 
-False
+True
 
 #### (h)
 
-True
+False
+
+半判定，因为没说对不接受的串能否停机
 
 #### (i)
 
