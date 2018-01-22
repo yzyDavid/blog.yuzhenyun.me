@@ -32,6 +32,8 @@ tags:
 - 证明语言递归、递归可枚举
 - 规约
 - 判定递归语言
+- CFG 2 PDA
+- chomsky hierachy
 
 <!-- more -->
 
@@ -197,7 +199,13 @@ $G=(V,\Sigma,R,S),R=\{A\to u\}$
 
 #### Chomsky Normal Form
 
-TODO
+$$
+S\to\epsilon \\
+A\to a \\
+A\to BC
+$$
+
+
 
 #### CFL to CFG
 
