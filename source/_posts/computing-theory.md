@@ -146,6 +146,13 @@ take $a^{2n}ca^n$,
 
 ## 知识点
 
+### Chomsky Hierarchy
+
+- 0型
+- 1 - 上下文相关
+- 2 - 上下文无关
+- 3 - 正则
+
 ### 下推自动机
 
 六元组 $M=(K,\Sigma,\Gamma,\Delta,s,F)$
