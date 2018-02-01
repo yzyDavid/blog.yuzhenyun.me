@@ -2,6 +2,8 @@
 title: KDE plasma 5 的 baloo 文件搜索
 date: 2018-01-03 01:05:12
 tags:
+- Linux
+- KDE
 ---
 
 垃圾应用，磁盘IO一直高占用。
