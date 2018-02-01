@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="如果报错信息如下，原因是 openmpi 配置不正确。 还是第一次见 DL 框架要使用 MPI 的，感觉不错，就是这依赖的文件不太妙 1ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or directory 嘛，官方只钦定 Ubuntu 那我们自己修库的依赖： 123sudo pacman -S">
+<meta name="description" content="如果报错信息如下，原因是 openmpi 配置不正确。 还是第一次见 DL 框架要使用 MPI 的，感觉不错，就是这依赖的文件不太妙 1ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or directory 嘛，官方只钦定 Ubuntu 那我们自己修库的依赖： 12345sudo pacman">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Arch Linux 中 CNTK 安装后运行时报错">
 <meta property="og:url" content="http://blog.yuzhenyun.me/2018/02/01/arch-cntk/index.html">
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
-<meta property="og:description" content="如果报错信息如下，原因是 openmpi 配置不正确。 还是第一次见 DL 框架要使用 MPI 的，感觉不错，就是这依赖的文件不太妙 1ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or directory 嘛，官方只钦定 Ubuntu 那我们自己修库的依赖： 123sudo pacman -S">
+<meta property="og:description" content="如果报错信息如下，原因是 openmpi 配置不正确。 还是第一次见 DL 框架要使用 MPI 的，感觉不错，就是这依赖的文件不太妙 1ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or directory 嘛，官方只钦定 Ubuntu 那我们自己修库的依赖： 12345sudo pacman">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-01T13:53:51.324Z">
+<meta property="og:updated_time" content="2018-02-01T14:07:52.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Arch Linux 中 CNTK 安装后运行时报错">
-<meta name="twitter:description" content="如果报错信息如下，原因是 openmpi 配置不正确。 还是第一次见 DL 框架要使用 MPI 的，感觉不错，就是这依赖的文件不太妙 1ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or directory 嘛，官方只钦定 Ubuntu 那我们自己修库的依赖： 123sudo pacman -S">
+<meta name="twitter:description" content="如果报错信息如下，原因是 openmpi 配置不正确。 还是第一次见 DL 框架要使用 MPI 的，感觉不错，就是这依赖的文件不太妙 1ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or directory 嘛，官方只钦定 Ubuntu 那我们自己修库的依赖： 12345sudo pacman">
 
 
 
@@ -320,7 +320,7 @@
 <p><del>还是第一次见 DL 框架要使用 MPI 的，感觉不错，就是这依赖的文件不太妙</del></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
 <p>嘛，官方只钦定 <code>Ubuntu</code> 那我们自己修库的依赖：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S openmpi</span><br><span class="line">sudo ln -s /usr/lib/openmpi/libmpi_cxx.so /usr/lib/libmpi_cxx.so</span><br><span class="line">sudo ln -s /usr/lib/libmpi_cxx.so /usr/lib/libmpi_cxx.so.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S openmpi</span><br><span class="line">sudo ln -s /usr/lib/openmpi/libmpi_cxx.so /usr/lib/libmpi_cxx.so</span><br><span class="line">sudo ln -s /usr/lib/libmpi_cxx.so /usr/lib/libmpi_cxx.so.1</span><br><span class="line">sudo ln -s /usr/lib/openmpi/libmpi.so /usr/lib/libmpi.so</span><br><span class="line">sudo ln -s /usr/lib/libmpi.so /usr/lib/libmpi.so.12</span><br></pre></td></tr></table></figure>
 <p>虽然很脏，并且我还没看其他平台比如 <code>RHEL</code> 上面的 <code>OpenMPI</code> 库是不是单独分了目录。总之这样 import 的时候没出错，有问题我再更新博客吧。</p>
 
       

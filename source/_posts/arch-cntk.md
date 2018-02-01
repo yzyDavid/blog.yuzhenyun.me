@@ -19,6 +19,8 @@ ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or di
 sudo pacman -S openmpi
 sudo ln -s /usr/lib/openmpi/libmpi_cxx.so /usr/lib/libmpi_cxx.so
 sudo ln -s /usr/lib/libmpi_cxx.so /usr/lib/libmpi_cxx.so.1
+sudo ln -s /usr/lib/openmpi/libmpi.so /usr/lib/libmpi.so
+sudo ln -s /usr/lib/libmpi.so /usr/lib/libmpi.so.12
 ```
 
 虽然很脏，并且我还没看其他平台比如 `RHEL` 上面的 `OpenMPI` 库是不是单独分了目录。总之这样 import 的时候没出错，有问题我再更新博客吧。
