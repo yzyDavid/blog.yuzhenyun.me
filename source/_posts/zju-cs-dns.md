@@ -21,3 +21,7 @@ ZJU 部分课程网站链接收录
   - 作业：ftp://10.214.211.211 cv2017song cv123456
 - 编译原理 李莹
   - 课件：https://pan.baidu.com/s/1c2OAjmw
+  - 助教邮箱 Cheny_17@zju.edu.cn
+- B/S 体系软件设计
+- 软件工程
+- 人工智能
