@@ -9,6 +9,8 @@ tags:
 
 ~~还是第一次见 DL 框架要使用 MPI 的，感觉不错，就是这依赖的文件不太妙~~
 
+hotfix: 是我见识少了，借助于 MPI 进行通信的框架其实不少，只是不一定将 MPI 作为必需依赖。比如 `Tensorflow` 通过源代码编译安装就可以添加 MPI 作为依赖。
+
 ```
 ImportError: libmpi_cxx.so.1: cannot open shared object file: No such file or directory
 ```
