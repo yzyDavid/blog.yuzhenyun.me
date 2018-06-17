@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="本文的目标是记录下来关于 core dump 你应该知道和操作的那些事情。 施工中。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-17T03:46:19.508Z">
+<meta property="og:updated_time" content="2018-06-17T04:32:44.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于 core dump 的那些事">
 <meta name="twitter:description" content="本文的目标是记录下来关于 core dump 你应该知道和操作的那些事情。 施工中。">
@@ -327,6 +327,10 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gdb -p &lt;pid&gt;</span><br><span class="line">gdb&gt;generate-core-file</span><br></pre></td></tr></table></figure>
 <p>会生成文件名为 <code>core.&lt;pid&gt;</code> 的 core dump 文件。</p>
 <p>下一个问题是 kernel 如何设置是否进行 core dump 以及 dump 的结果如何处理，存放在何处。这些通过系统暴露出来的 <code>/proc</code> 文件系统进行设置。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/proc/sys/kernel/core_pattern</span><br><span class="line">/proc/sys/kernel/core_pipe_limit</span><br><span class="line">/proc/sys/kernel/core_uses_pid</span><br></pre></td></tr></table></figure>
+<p>在笔者的笔记本中的 Arch Linux 内，内容如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yzy@yzy-arch [12:30:51 PM] [/proc/sys/kernel] </span><br><span class="line">-&gt; % cat core_pipe_limit </span><br><span class="line">0</span><br><span class="line">yzy@yzy-arch [12:31:32 PM] [/proc/sys/kernel] </span><br><span class="line">-&gt; % cat core_uses_pid </span><br><span class="line">1</span><br><span class="line">yzy@yzy-arch [12:31:37 PM] [/proc/sys/kernel] </span><br><span class="line">-&gt; % cat core_pattern </span><br><span class="line">|/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h %e</span><br></pre></td></tr></table></figure>
+<p>要注意的是 <code>systemd</code> 也会更改这里的设置，所以虚拟文件系统中生效的设置和某些配置文件对不上很正常，一定是你没找全配置文件。</p>
 <h3 id="吐出来的核-存放在哪里">“吐出来的核” 存放在哪里</h3>
 <h2 id="如何进行分析">如何进行分析</h2>
 <p>最主要的方式还是 <code>gdb</code>，同时有一个名为 <code>crash</code> 的小工具可以帮助我们。</p>

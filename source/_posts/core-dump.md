@@ -31,6 +31,28 @@ gdb>generate-core-file
 
 下一个问题是 kernel 如何设置是否进行 core dump 以及 dump 的结果如何处理，存放在何处。这些通过系统暴露出来的 `/proc` 文件系统进行设置。
 
+```sh
+/proc/sys/kernel/core_pattern
+/proc/sys/kernel/core_pipe_limit
+/proc/sys/kernel/core_uses_pid
+```
+
+在笔者的笔记本中的 Arch Linux 内，内容如下：
+
+```sh
+yzy@yzy-arch [12:30:51 PM] [/proc/sys/kernel] 
+-> % cat core_pipe_limit 
+0
+yzy@yzy-arch [12:31:32 PM] [/proc/sys/kernel] 
+-> % cat core_uses_pid 
+1
+yzy@yzy-arch [12:31:37 PM] [/proc/sys/kernel] 
+-> % cat core_pattern 
+|/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h %e
+```
+
+要注意的是 `systemd` 也会更改这里的设置，所以虚拟文件系统中生效的设置和某些配置文件对不上很正常，一定是你没找全配置文件。
+
 ### “吐出来的核” 存放在哪里
 
 ## 如何进行分析
