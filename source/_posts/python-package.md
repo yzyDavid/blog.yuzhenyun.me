@@ -14,7 +14,7 @@ Python 模块相关的细节：
 - 包/模块
 - `__name__ == '__main__'`
 
-参考文档：http://www.pythondoc.com/pythontutorial3/modules.html
+参考文档：[http://www.pythondoc.com/pythontutorial3/modules.html](http://www.pythondoc.com/pythontutorial3/modules.html)
 
 <!-- more -->
 
@@ -33,9 +33,17 @@ python foo/bar.py
 
 -----------------------------------
 
+这指的是导入时搜索的路径不同。
+
 Python 2 - 默认相对路径导入
 
 Python 3 - 默认绝对路径导入
+
+当然对于 Python2 玩家，有喜闻乐见的
+
+```python
+from __future__ import absolute_import
+```
 
 -----------------------------------
 

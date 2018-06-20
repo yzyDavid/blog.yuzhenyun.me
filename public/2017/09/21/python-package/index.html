@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="Python 模块相关的细节：  Python 2/3 区别 绝对路径导入/相对路径导入 模块启动/单文件启动 包/模块 __name__ == &apos;__main__&apos;  参考文档：http://www.pythondoc.com/pythontutorial3/modules.html">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-10T08:00:17.796Z">
+<meta property="og:updated_time" content="2018-06-20T17:27:30.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 包与路径相关的一堆坑">
 <meta name="twitter:description" content="Python 模块相关的细节：  Python 2/3 区别 绝对路径导入/相对路径导入 模块启动/单文件启动 包/模块 __name__ == &apos;__main__&apos;  参考文档：http://www.pythondoc.com/pythontutorial3/modules.html">
@@ -324,7 +324,7 @@
 <li>包/模块</li>
 <li><code>__name__ == '__main__'</code></li>
 </ul>
-<p>参考文档：http://www.pythondoc.com/pythontutorial3/modules.html</p>
+<p>参考文档：<a href="http://www.pythondoc.com/pythontutorial3/modules.html" class="uri" target="_blank" rel="noopener">http://www.pythondoc.com/pythontutorial3/modules.html</a></p>
 <a id="more"></a>
 <hr>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python -m foo/bar</span><br><span class="line">python foo/bar.py</span><br></pre></td></tr></table></figure>
@@ -332,8 +332,11 @@
 <p>模块启动 - 可以相对路径导入自己目录的其他模块</p>
 <p>文件启动 - 不可以</p>
 <hr>
+<p>这指的是导入时搜索的路径不同。</p>
 <p>Python 2 - 默认相对路径导入</p>
 <p>Python 3 - 默认绝对路径导入</p>
+<p>当然对于 Python2 玩家，有喜闻乐见的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import</span><br></pre></td></tr></table></figure>
 <hr>
 <p>包 - 含有<code>__init__.py</code>的目录</p>
 <p>模块 - <code>.py</code>文件</p>
