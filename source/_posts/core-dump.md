@@ -76,7 +76,7 @@ coredumpctl info <match>
 coredumpctl gdb <match>
 ```
 
-至于这个变量后面的格式化字符串的含义等等，请参阅 http://man7.org/linux/man-pages/man5/core.5.html，也就是
+至于这个变量后面的格式化字符串的含义等等，请参阅 [http://man7.org/linux/man-pages/man5/core.5.html](http://man7.org/linux/man-pages/man5/core.5.html)，也就是
 
 ```sh
 man core
@@ -107,7 +107,7 @@ npc: /home/yzy/repos/naive-pascal-compiler/src/utils/../ast/../utils/ast_utils.h
 gdb -c <coredump-file>
 ```
 
-进行调试，更多用法请参考https://stackoverflow.com/questions/5115613/core-dump-file-analysis，本例中我们使用
+进行调试，更多用法请参考[https://stackoverflow.com/questions/5115613/core-dump-file-analysis](https://stackoverflow.com/questions/5115613/core-dump-file-analysis) ，本例中我们使用
 
 ```sh
 coredumpctl gdb 16042  # 要调试的 core 文件 PID 为 16042 且在我的记录中唯一，可以 match
@@ -198,10 +198,10 @@ Program terminated with signal SIGABRT, Aborted.
 
 ## 参考资料
 
-https://en.wikipedia.org/wiki/Core_dump
+[https://en.wikipedia.org/wiki/Core_dump](https://en.wikipedia.org/wiki/Core_dump)
 
-https://en.wikipedia.org/wiki/Magnetic-core_memory
+[https://en.wikipedia.org/wiki/Magnetic-core_memory](https://en.wikipedia.org/wiki/Magnetic-core_memory)
 
-https://wiki.archlinux.org/index.php/Core_dump
+[https://wiki.archlinux.org/index.php/Core_dump](https://wiki.archlinux.org/index.php/Core_dump)
 
-http://man7.org/linux/man-pages/man5/core.5.html
+[http://man7.org/linux/man-pages/man5/core.5.html](http://man7.org/linux/man-pages/man5/core.5.html)
