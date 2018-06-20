@@ -19,7 +19,7 @@ Scrapy 作为最负盛名的 Python 爬虫框架，本身以及强大的中间�
 
   如无特殊说明，本文中的源代码均摘录于此环境，为说明方便，可能会删减改动。
 
-官方文档：https://docs.scrapy.org/en/latest/index.html    此链接总是指向最新版本的文档。
+官方文档：[https://docs.scrapy.org/en/latest/index.html](https://docs.scrapy.org/en/latest/index.html)    此链接总是指向最新版本的文档。
 
 ## 架构简介
 

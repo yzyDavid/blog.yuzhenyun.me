@@ -9,7 +9,7 @@ tags:
 
 本文写作时 `PyTorch` 版本为 0.2.0
 
-官方文档：http://pytorch.org/docs/master/data.html
+官方文档：[http://pytorch.org/docs/master/data.html](http://pytorch.org/docs/master/data.html)
 
 `Dataset` 表达数据集，`Sampler` 表达取样数据的方式，`DataLoader` 将两者组合起来，达到一个可以源源不断提取数据的工厂的效果。所以 `DataLoader` 类只有一个，而 `Sampler` 有很多种。
 

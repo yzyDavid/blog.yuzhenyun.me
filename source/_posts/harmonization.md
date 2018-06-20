@@ -8,7 +8,7 @@ tags:
 
 原文为  Color Harmonization，MSRA 的一篇文章，自己写的笔记格式比较复杂，以图片形式附在后面了。
 
-原文链接： http://dl.acm.org/citation.cfm?doid=1179352.1141933
+原文链接： [http://dl.acm.org/citation.cfm?doid=1179352.1141933](http://dl.acm.org/citation.cfm?doid=1179352.1141933)
 
 <!-- more -->
 

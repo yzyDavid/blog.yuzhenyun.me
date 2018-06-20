@@ -21,11 +21,11 @@ tags:
 
 `Keras` 模型有 `summary` 函数，可以打出模型之中每一层的参数总个数(但是不包括shape以及层相关的信息，比如卷积层的padding，strides等等)，还可打出输出张量的 Shape，PyTorch 可以直接 print 一个模型，得到每一层的参数但是不包括输出的 Shape。你们俩让我怎么吐槽比较好（
 
-`OpenCV` 官方文档：http://docs.opencv.org/master/
+`OpenCV` 官方文档：[http://docs.opencv.org/master/](http://docs.opencv.org/master/)
 
-`Keras` 英文文档：https://keras.io/
+`Keras` 英文文档：[https://keras.io/](https://keras.io/)
 
-`Keras` 中文文档：http://keras-cn.readthedocs.io/en/latest/
+`Keras` 中文文档：[http://keras-cn.readthedocs.io/en/latest/](http://keras-cn.readthedocs.io/en/latest/)
 
 cv2.imwrite 写入灰度图像再读出时候会自动转换为三通道的……问题应该是imread读入时候转换的。Keras 的 image.load_img 函数同样有这个问题，需自行转换。
 
@@ -34,6 +34,6 @@ img_a = np.zeros((x, y), dtype=img.dtype)
 img_a[:, :] = img[:, :, 0]
 ```
 
-`PyTorch` 英文文档：http://pytorch.org/docs/master/
+`PyTorch` 英文文档：[http://pytorch.org/docs/master/](http://pytorch.org/docs/master/)
 
 `PyTorch` 中貌似不存在 argmax 函数，我们可以使用 `numpy` 实现这种功能。np.argmax 返回 Python 整数。`PyTorch` Tensor 可以调用 .numpy() 方法将其转换为 `numpy` 数组。

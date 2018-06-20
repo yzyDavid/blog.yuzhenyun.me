@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="踩到啥就说啥。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-26T00:40:17.799Z">
+<meta property="og:updated_time" content="2018-06-20T17:46:02.590Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习框架坑点槽点亮点注意点笔记">
 <meta name="twitter:description" content="踩到啥就说啥。">
@@ -323,12 +323,12 @@
 <p><code>PyTorch</code> 的<code>deconv2d</code> 默认为 <code>same</code> 工作模式，并且设置了长度为1的 padding 之后也没有起效果（待查）的样子？总之要注意。</p>
 <p><code>Keras</code> 使用后端函数的东西无法直接放进模型，需要用 <code>Lambda</code> 层包装一下。为了统一抽象的代价吧。</p>
 <p><code>Keras</code> 模型有 <code>summary</code> 函数，可以打出模型之中每一层的参数总个数(但是不包括shape以及层相关的信息，比如卷积层的padding，strides等等)，还可打出输出张量的 Shape，PyTorch 可以直接 print 一个模型，得到每一层的参数但是不包括输出的 Shape。你们俩让我怎么吐槽比较好（</p>
-<p><code>OpenCV</code> 官方文档：http://docs.opencv.org/master/</p>
-<p><code>Keras</code> 英文文档：https://keras.io/</p>
-<p><code>Keras</code> 中文文档：http://keras-cn.readthedocs.io/en/latest/</p>
+<p><code>OpenCV</code> 官方文档：<a href="http://docs.opencv.org/master/" class="uri" target="_blank" rel="noopener">http://docs.opencv.org/master/</a></p>
+<p><code>Keras</code> 英文文档：<a href="https://keras.io/" class="uri" target="_blank" rel="noopener">https://keras.io/</a></p>
+<p><code>Keras</code> 中文文档：<a href="http://keras-cn.readthedocs.io/en/latest/" class="uri" target="_blank" rel="noopener">http://keras-cn.readthedocs.io/en/latest/</a></p>
 <p>cv2.imwrite 写入灰度图像再读出时候会自动转换为三通道的……问题应该是imread读入时候转换的。Keras 的 image.load_img 函数同样有这个问题，需自行转换。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img_a = np.zeros((x, y), dtype=img.dtype)</span><br><span class="line">img_a[:, :] = img[:, :, <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<p><code>PyTorch</code> 英文文档：http://pytorch.org/docs/master/</p>
+<p><code>PyTorch</code> 英文文档：<a href="http://pytorch.org/docs/master/" class="uri" target="_blank" rel="noopener">http://pytorch.org/docs/master/</a></p>
 <p><code>PyTorch</code> 中貌似不存在 argmax 函数，我们可以使用 <code>numpy</code> 实现这种功能。np.argmax 返回 Python 整数。<code>PyTorch</code> Tensor 可以调用 .numpy() 方法将其转换为 <code>numpy</code> 数组。</p>
 
       

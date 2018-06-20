@@ -10,7 +10,7 @@ tags:
 
 - e-mail: trf at zju
 - ftp://csyq2017:csyq2017@give.zju.edu.cn
-- http://give.zju.edu.cn/cgcourse
+- [http://give.zju.edu.cn/cgcourse](http://give.zju.edu.cn/cgcourse)
 - TA-email: 
 - Evaluation
   - Assignment 30%
@@ -98,7 +98,7 @@ tags:
 
 进行优化的思路：浮点运算 -> 整型运算    乘法运算 -> 加法运算
 
-参考文章： https://zhuanlan.zhihu.com/p/20213658
+参考文章： [https://zhuanlan.zhihu.com/p/20213658](https://zhuanlan.zhihu.com/p/20213658)
 
 ## 第三课
 

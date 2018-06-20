@@ -11,11 +11,11 @@ tags:
 
 本文写作于 2017年10月8日，`kotlin` 语言版本为 1.1，`kotlinx.coroutines`版本为 0.19.1，其中协程为实验特性。需要指定编译器选项以启用此功能。实验阶段表明此功能稳定性不能得到保证，请慎用！
 
-Kotlin 官网上对于协程实现的大概介绍：https://kotlinlang.org/docs/reference/coroutines.html
+Kotlin 官网上对于协程实现的大概介绍：[https://kotlinlang.org/docs/reference/coroutines.html](https://kotlinlang.org/docs/reference/coroutines.html)
 
-教程实例 Repo：https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt
+教程实例 Repo：[https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt](https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt)
 
-kotlinx.coroutines 协程库：https://github.com/kotlin/kotlinx.coroutines
+kotlinx.coroutines 协程库：[https://github.com/kotlin/kotlinx.coroutines](https://github.com/kotlin/kotlinx.coroutines)
 
 <!-- more -->
 
@@ -35,7 +35,7 @@ Kotlin 的实现设计思路有以下几个特点：
 
 ## 实现
 
-本部分中我们通过完成`kotlinx.coroutines`官方教程来实际体验一下`kotlin`的协程。https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md 这篇文档为`kotlinx`协程的 tutorial，我们主要完成 https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md 这一篇专注于 UI 编程的 tutorial。首先可以 clone https://github.com/Kotlin/kotlinx.coroutines 这个 repo，其中 ui/kotlinx-coroutines-android/example-app/ 目录下有 tutorial 用到的脚手架。
+本部分中我们通过完成`kotlinx.coroutines`官方教程来实际体验一下`kotlin`的协程。[https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md](https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md) 这篇文档为`kotlinx`协程的 tutorial，我们主要完成 [https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md](https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md) 这一篇专注于 UI 编程的 tutorial。首先可以 clone [https://github.com/Kotlin/kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) 这个 repo，其中 ui/kotlinx-coroutines-android/example-app/ 目录下有 tutorial 用到的脚手架。
 
 使用 Android Studio 打开项目，跟着向导一通安装 SDK 之后可以通过 build 了，来看一下 MainActivity.kt 目前的内容：
 
@@ -117,7 +117,7 @@ fun setup(hello: TextView, fab: FloatingActionButton) {
 
 随后刷新，调试。可以看到点击后倒计时停住不动了。
 
-Standard.kt 中定义的 `let` `apply`等 one-liner 工具函数的说明可以查阅文档：https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html
+Standard.kt 中定义的 `let` `apply`等 one-liner 工具函数的说明可以查阅文档：[https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html)
 
 在 UI 上下文中可以使用 actor 完成进阶功能，比如限制线程上同时存在的协程个数。这些需求比较高级，需要使用时请查阅文档即可。
 
