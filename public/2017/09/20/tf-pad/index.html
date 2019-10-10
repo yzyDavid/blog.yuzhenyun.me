@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="en">
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -74,21 +74,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="深度学习,tensorflow," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="深度学习,tensorflow,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="1234567pad(    tensor,    paddings,    mode=&apos;CONSTANT&apos;,    name=None,    constant_values=0) 关键的就是其中paddings这个参数，接受一个二维张量，且需要为 [n, 2] 这种 shape。 举个栗子： 12345678910[    [        1, # 第0维，前面补1个      	2  #">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-20T17:48:07.601Z">
+<meta property="og:updated_time" content="2019-10-10T16:20:33.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tf.pad 通俗解释">
 <meta name="twitter:description" content="1234567pad(    tensor,    paddings,    mode=&apos;CONSTANT&apos;,    name=None,    constant_values=0) 关键的就是其中paddings这个参数，接受一个二维张量，且需要为 [n, 2] 这种 shape。 举个栗子： 12345678910[    [        1, # 第0维，前面补1个      	2  #">
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.yuzhenyun.me/2017/09/20/tf-pad/"/>
+  <link rel="canonical" href="http://blog.yuzhenyun.me/2017/09/20/tf-pad/">
 
 
 
@@ -180,7 +180,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Blog of Zhenyun Yu</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +210,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             Home
           </a>
@@ -253,7 +253,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -316,13 +316,13 @@
       
 
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pad(</span><br><span class="line">    tensor,</span><br><span class="line">    paddings,</span><br><span class="line">    mode=<span class="string">'CONSTANT'</span>,</span><br><span class="line">    name=<span class="keyword">None</span>,</span><br><span class="line">    constant_values=<span class="number">0</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pad(</span><br><span class="line">    tensor,</span><br><span class="line">    paddings,</span><br><span class="line">    mode=<span class="string">'CONSTANT'</span>,</span><br><span class="line">    name=<span class="literal">None</span>,</span><br><span class="line">    constant_values=<span class="number">0</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>关键的就是其中<code>paddings</code>这个参数，接受一个二维张量，且需要为 [n, 2] 这种 shape。</p>
 <p>举个栗子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    [</span><br><span class="line">        <span class="number">1</span>, <span class="comment"># 第0维，前面补1个</span></span><br><span class="line">      	<span class="number">2</span>  <span class="comment"># 第0维，后面补2个</span></span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">     	<span class="number">3</span>, <span class="comment"># 第1维，前面补3个</span></span><br><span class="line">      	<span class="number">4</span>  <span class="comment"># 第2维，后面补4个</span></span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>有几个维度，就要几个数对，每个数对指示那个维度上前后分别补几个。</p>
 <a id="more"></a>
-<p>中文文档不能看，毕竟更新不及时啊，还是来看原文吧 <a href="https://www.tensorflow.org/api_docs/python/tf/pad" class="uri" target="_blank" rel="noopener">https://www.tensorflow.org/api_docs/python/tf/pad</a></p>
+<p>中文文档不能看，毕竟更新不及时啊，还是来看原文吧 <a href="https://www.tensorflow.org/api_docs/python/tf/pad" target="_blank" rel="noopener">https://www.tensorflow.org/api_docs/python/tf/pad</a></p>
 <p><code>mode</code>参数现在有了 3 种取值，分别为<code>CONSTANT</code> <code>REFLECT</code> <code>SYMMETRIC</code>，其中REFLECT就是回环补齐。</p>
 <p>还是放一下官方文档那个例子吧，挺清楚的。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 't' is [[1, 2, 3], [4, 5, 6]].</span></span><br><span class="line"><span class="comment"># 'paddings' is [[1, 1,], [2, 2]].</span></span><br><span class="line"><span class="comment"># 'constant_values' is 0.</span></span><br><span class="line"><span class="comment"># rank of 't' is 2.</span></span><br><span class="line">pad(t, paddings, "CONSTANT") ==&gt; [[0, 0, 0, 0, 0, 0, 0],</span><br><span class="line">                                  [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                                  [<span class="number">0</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                                  [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]]</span><br><span class="line"></span><br><span class="line">pad(t, paddings, "REFLECT") ==&gt; [[6, 5, 4, 5, 6, 5, 4],</span><br><span class="line">                                 [<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">                                 [<span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>],</span><br><span class="line">                                 [<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]]</span><br><span class="line"></span><br><span class="line">pad(t, paddings, "SYMMETRIC") ==&gt; [[2, 1, 1, 2, 3, 3, 2],</span><br><span class="line">                                   [<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>],</span><br><span class="line">                                   [<span class="number">5</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">5</span>],</span><br><span class="line">                                   [<span class="number">5</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">5</span>]]</span><br></pre></td></tr></table></figure>
@@ -438,7 +438,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -538,10 +538,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="en">
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -74,21 +74,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="编程,Android,Kotlin," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="编程,Android,Kotlin,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -104,7 +104,7 @@
 <meta property="og:description" content="背景 本文写作于 2017年10月8日，kotlin 语言版本为 1.1，kotlinx.coroutines版本为 0.19.1，其中协程为实验特性。需要指定编译器选项以启用此功能。实验阶段表明此功能稳定性不能得到保证，请慎用！ Kotlin 官网上对于协程实现的大概介绍：https://kotlinlang.org/docs/reference/coroutines.html 教程实例 Rep">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://blog.yuzhenyun.me/2017/10/08/kotlin-android-coroutines/1.png">
-<meta property="og:updated_time" content="2018-06-20T17:43:27.411Z">
+<meta property="og:updated_time" content="2019-10-10T16:20:33.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin Android 开发当中使用 coroutines 实现异步操作">
 <meta name="twitter:description" content="背景 本文写作于 2017年10月8日，kotlin 语言版本为 1.1，kotlinx.coroutines版本为 0.19.1，其中协程为实验特性。需要指定编译器选项以启用此功能。实验阶段表明此功能稳定性不能得到保证，请慎用！ Kotlin 官网上对于协程实现的大概介绍：https://kotlinlang.org/docs/reference/coroutines.html 教程实例 Rep">
@@ -138,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.yuzhenyun.me/2017/10/08/kotlin-android-coroutines/"/>
+  <link rel="canonical" href="http://blog.yuzhenyun.me/2017/10/08/kotlin-android-coroutines/">
 
 
 
@@ -182,7 +182,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Blog of Zhenyun Yu</span>
         <span class="logo-line-after"><i></i></span>
@@ -212,7 +212,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             Home
           </a>
@@ -255,7 +255,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -320,9 +320,9 @@
       
         <h2 id="背景">背景</h2>
 <p>本文写作于 2017年10月8日，<code>kotlin</code> 语言版本为 1.1，<code>kotlinx.coroutines</code>版本为 0.19.1，其中协程为实验特性。需要指定编译器选项以启用此功能。实验阶段表明此功能稳定性不能得到保证，请慎用！</p>
-<p>Kotlin 官网上对于协程实现的大概介绍：<a href="https://kotlinlang.org/docs/reference/coroutines.html" class="uri" target="_blank" rel="noopener">https://kotlinlang.org/docs/reference/coroutines.html</a></p>
-<p>教程实例 Repo：<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt" class="uri" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt</a></p>
-<p>kotlinx.coroutines 协程库：<a href="https://github.com/kotlin/kotlinx.coroutines" class="uri" target="_blank" rel="noopener">https://github.com/kotlin/kotlinx.coroutines</a></p>
+<p>Kotlin 官网上对于协程实现的大概介绍：<a href="https://kotlinlang.org/docs/reference/coroutines.html" target="_blank" rel="noopener">https://kotlinlang.org/docs/reference/coroutines.html</a></p>
+<p>教程实例 Repo：<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt</a></p>
+<p>kotlinx.coroutines 协程库：<a href="https://github.com/kotlin/kotlinx.coroutines" target="_blank" rel="noopener">https://github.com/kotlin/kotlinx.coroutines</a></p>
 <a id="more"></a>
 <h2 id="概述">概述</h2>
 <p>协程可能是近几年来最新的并行/并发模型实现，常见语言中最早的实现可能是<code>lua</code>，近年来新晋语言<code>golang</code>的崛起更把这个概念发扬光大。</p>
@@ -335,7 +335,7 @@
 <p>尽管如此，官方也不得不加入<code>suspend</code>关键字来标记协程可挂起函数，同时协程的实现也需要编译器支持。</p>
 <p><code>suspend</code>关键字与<code>C#</code>等语言中的<code>async</code>关键字很接近。线程的调度由操作系统完成，而协程需要由运行时管理。为了标记一个函数可以被运行时挂起，需要此关键字。当然协程的范围比异步更广，这里不再赘述。</p>
 <h2 id="实现">实现</h2>
-<p>本部分中我们通过完成<code>kotlinx.coroutines</code>官方教程来实际体验一下<code>kotlin</code>的协程。<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md" class="uri" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md</a> 这篇文档为<code>kotlinx</code>协程的 tutorial，我们主要完成 <a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md" class="uri" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md</a> 这一篇专注于 UI 编程的 tutorial。首先可以 clone <a href="https://github.com/Kotlin/kotlinx.coroutines" class="uri" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines</a> 这个 repo，其中 ui/kotlinx-coroutines-android/example-app/ 目录下有 tutorial 用到的脚手架。</p>
+<p>本部分中我们通过完成<code>kotlinx.coroutines</code>官方教程来实际体验一下<code>kotlin</code>的协程。<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md</a> 这篇文档为<code>kotlinx</code>协程的 tutorial，我们主要完成 <a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md</a> 这一篇专注于 UI 编程的 tutorial。首先可以 clone <a href="https://github.com/Kotlin/kotlinx.coroutines" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines</a> 这个 repo，其中 ui/kotlinx-coroutines-android/example-app/ 目录下有 tutorial 用到的脚手架。</p>
 <p>使用 Android Studio 打开项目，跟着向导一通安装 SDK 之后可以通过 build 了，来看一下 MainActivity.kt 目前的内容：</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.app</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle</span><br><span class="line"><span class="keyword">import</span> android.support.design.widget.FloatingActionButton</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity</span><br><span class="line"><span class="keyword">import</span> android.view.Menu</span><br><span class="line"><span class="keyword">import</span> android.view.MenuItem</span><br><span class="line"><span class="keyword">import</span> android.widget.TextView</span><br><span class="line"><span class="keyword">import</span> kotlinx.android.synthetic.main.activity_main.*</span><br><span class="line"><span class="keyword">import</span> kotlinx.android.synthetic.main.content_main.*</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_main)</span><br><span class="line">        setSupportActionBar(toolbar)</span><br><span class="line">        setup(hello, fab)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreateOptionsMenu</span><span class="params">(menu: <span class="type">Menu</span>)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">        <span class="comment">// Inflate the menu; this adds items to the action bar if it is present.</span></span><br><span class="line">        menuInflater.inflate(R.menu.menu_main, menu)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onOptionsItemSelected</span><span class="params">(item: <span class="type">MenuItem</span>)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">        <span class="comment">// Handle action bar item clicks here. The action bar will</span></span><br><span class="line">        <span class="comment">// automatically handle clicks on the Home/Up button, so long</span></span><br><span class="line">        <span class="comment">// as you specify a parent activity in AndroidManifest.xml.</span></span><br><span class="line">        <span class="keyword">val</span> id = item.itemId</span><br><span class="line">        <span class="keyword">if</span> (id == R.id.action_settings) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onOptionsItemSelected(item)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">setup</span><span class="params">(hello: <span class="type">TextView</span>, fab: <span class="type">FloatingActionButton</span>)</span></span> &#123;</span><br><span class="line">    <span class="comment">// placeholder</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="在-ui-中使用-coroutine">在 UI 中使用 coroutine</h3>
@@ -345,17 +345,17 @@
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">setup</span><span class="params">(hello: <span class="type">TextView</span>, fab: <span class="type">FloatingActionButton</span>)</span></span> &#123;</span><br><span class="line">    launch(UI) &#123;</span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">10</span> downTo <span class="number">1</span>) &#123;</span><br><span class="line">            hello.text = <span class="string">"Countdown <span class="variable">$i</span> ..."</span></span><br><span class="line">            delay(<span class="number">500</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        hello.text = <span class="string">"Done!"</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>运行效果图如下：</p>
 <img src="/2017/10/08/kotlin-android-coroutines/1.png">
-<p>如何做到点击右下角圆形悬浮按钮就停止倒计时呢？在前面的 launch(UI) { … } 随后的 lambda 表达式后链式调用以下内容：</p>
+<p>如何做到点击右下角圆形悬浮按钮就停止倒计时呢？在前面的 launch(UI) { ... } 随后的 lambda 表达式后链式调用以下内容：</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.apply &#123;</span><br><span class="line">        fab.setOnClickListener &#123; cancel() &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>随后刷新，调试。可以看到点击后倒计时停住不动了。</p>
-<p>Standard.kt 中定义的 <code>let</code> <code>apply</code>等 one-liner 工具函数的说明可以查阅文档：<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html" class="uri" target="_blank" rel="noopener">https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html</a></p>
+<p>Standard.kt 中定义的 <code>let</code> <code>apply</code>等 one-liner 工具函数的说明可以查阅文档：<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html" target="_blank" rel="noopener">https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html</a></p>
 <p>在 UI 上下文中可以使用 actor 完成进阶功能，比如限制线程上同时存在的协程个数。这些需求比较高级，需要使用时请查阅文档即可。</p>
 <h3 id="在非-ui-上下文中执行阻塞耗时的操作">在非 UI 上下文中执行阻塞耗时的操作</h3>
 <p>这种操作主要有两种，一是计算密集型，占用大量 CPU 时间使得函数无法及时返回，造成阻塞的。本文将要举的例子是 Fibonacci 数列的计算。还有一种是 IO 密集型，比如最常见的网络访问。Android 系统是禁止 UI 线程访问网络的，这样的尝试会被强行抛异常。下面介绍一下具体做法。</p>
 <p>普通的 fib 函数：</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">fib</span><span class="params">(x: <span class="type">Int</span>)</span></span>: <span class="built_in">Int</span> = <span class="keyword">if</span> (x &lt;= <span class="number">1</span>) <span class="number">1</span> <span class="keyword">else</span> fib(x - <span class="number">1</span>) + fib(x - <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <p>特效版本的 fib 函数：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.experimental.run</span><br><span class="line"><span class="keyword">import</span> kotlinx.coroutines.experimental.CommonPool</span><br><span class="line"></span><br><span class="line">suspend <span class="function"><span class="keyword">fun</span> <span class="title">fib</span><span class="params">(x: <span class="type">Int</span>)</span></span>: <span class="built_in">Int</span> = run(CommonPool) &#123;</span><br><span class="line">  <span class="keyword">if</span> (x &lt;= <span class="number">1</span>) <span class="number">1</span> <span class="keyword">else</span> fib(x - <span class="number">1</span>) + fib(x - <span class="number">2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.experimental.run</span><br><span class="line"><span class="keyword">import</span> kotlinx.coroutines.experimental.CommonPool</span><br><span class="line"></span><br><span class="line"><span class="keyword">suspend</span> <span class="function"><span class="keyword">fun</span> <span class="title">fib</span><span class="params">(x: <span class="type">Int</span>)</span></span>: <span class="built_in">Int</span> = run(CommonPool) &#123;</span><br><span class="line">  <span class="keyword">if</span> (x &lt;= <span class="number">1</span>) <span class="number">1</span> <span class="keyword">else</span> fib(x - <span class="number">1</span>) + fib(x - <span class="number">2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可见我们只要显式指定协程池为 CommonPool 即可。这里的 run 函数比起 launch 来，区别在于可以返回值而非 Unit。</p>
 <h3 id="asyncawait">async/await</h3>
 <p>这部分内容没有包含在原文当中，但是对于了解过其他语言中这种编程范式的读者来说很有必要也很易懂。</p>
@@ -464,7 +464,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -487,7 +487,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -603,10 +603,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

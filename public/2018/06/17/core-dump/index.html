@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="en">
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -74,21 +74,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="编程,Linux," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="编程,Linux,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="本文的目标是记录下来关于 core dump 你应该知道的背景知识和进行诊断操作的那些事情。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-20T17:37:06.053Z">
+<meta property="og:updated_time" content="2019-10-10T16:20:33.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于 core dump 的那些事">
 <meta name="twitter:description" content="本文的目标是记录下来关于 core dump 你应该知道的背景知识和进行诊断操作的那些事情。">
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.yuzhenyun.me/2018/06/17/core-dump/"/>
+  <link rel="canonical" href="http://blog.yuzhenyun.me/2018/06/17/core-dump/">
 
 
 
@@ -180,7 +180,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Blog of Zhenyun Yu</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +210,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             Home
           </a>
@@ -253,7 +253,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -337,7 +337,7 @@
 <p>这取决于 <code>core_pattern</code> 这个变量的设置。</p>
 <p>在我的本机上可以看到该变量设置为了管道符的后半段，这时它的内容借助 <code>coredumpctl</code> 来管理。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">coredumpctl list  <span class="comment"># 列出 core</span></span><br><span class="line">coredumpctl info &lt;match&gt;</span><br><span class="line">coredumpctl gdb &lt;match&gt;</span><br></pre></td></tr></table></figure>
-<p>至于这个变量后面的格式化字符串的含义等等，请参阅 <a href="http://man7.org/linux/man-pages/man5/core.5.html" class="uri" target="_blank" rel="noopener">http://man7.org/linux/man-pages/man5/core.5.html</a>，也就是</p>
+<p>至于这个变量后面的格式化字符串的含义等等，请参阅 <a href="http://man7.org/linux/man-pages/man5/core.5.html" target="_blank" rel="noopener">http://man7.org/linux/man-pages/man5/core.5.html</a>，也就是</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man core</span><br></pre></td></tr></table></figure>
 <p>Since  kernel  2.6.19,  Linux  supports  an alternate syntax for the /proc/sys/kernel/core_pattern file.  If the first character of this file is a pipe symbol (|), then the remainder of the line is interpreted as the command-line for a user-space program (or script) that is to be executed.  Instead of being written to a disk file, the core dump is given as standard input to the program.</p>
 <p>使用管道符的语法从 man page 中摘抄如上。</p>
@@ -349,7 +349,7 @@
 <p>上面非常长的那一行应该是标准库 assert 宏断言失败的输出，然后这个宏中断了程序运行，内核对此进程进行 dump 输出下面那一行。</p>
 <p>对于保存成文件的，我们可以使用</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb -c &lt;coredump-file&gt;</span><br></pre></td></tr></table></figure>
-<p>进行调试，更多用法请参考<a href="https://stackoverflow.com/questions/5115613/core-dump-file-analysis" class="uri" target="_blank" rel="noopener">https://stackoverflow.com/questions/5115613/core-dump-file-analysis</a> ，本例中我们使用</p>
+<p>进行调试，更多用法请参考<a href="https://stackoverflow.com/questions/5115613/core-dump-file-analysis" target="_blank" rel="noopener">https://stackoverflow.com/questions/5115613/core-dump-file-analysis</a> ，本例中我们使用</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">coredumpctl gdb 16042  <span class="comment"># 要调试的 core 文件 PID 为 16042 且在我的记录中唯一，可以 match</span></span><br></pre></td></tr></table></figure>
 <p>进入 gdb 查看。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">           PID: 16042 (npc)</span><br><span class="line">           UID: 1000 (yzy)</span><br><span class="line">           GID: 100 (users)</span><br><span class="line">        Signal: 6 (ABRT)</span><br><span class="line">     Timestamp: Sun 2018-06-17 10:52:15 +08 (7h ago)</span><br><span class="line">  Command Line: ./npc</span><br><span class="line">    Executable: /home/yzy/Repos/naive-pascal-compiler/cmake-build-debug/npc</span><br><span class="line"> Control Group: /user.slice/user-1000.slice/session-c2.scope</span><br><span class="line">          Unit: session-c2.scope</span><br><span class="line">         Slice: user-1000.slice</span><br><span class="line">       Session: c2</span><br><span class="line">     Owner UID: 1000 (yzy)</span><br><span class="line">       Boot ID: 6d54757c981742b6984d6d89a59ba2a3</span><br><span class="line">    Machine ID: adbc8ab8645546ffb9ef66ec15b02081</span><br><span class="line">      Hostname: yzy-arch</span><br><span class="line">       Storage: /var/lib/systemd/coredump/core.npc.1000.6d54757c981742b6984d6d89a59ba2a3.16042.1529203935000000.lz4</span><br><span class="line">       Message: Process 16042 (npc) of user 1000 dumped core.</span><br><span class="line">                </span><br><span class="line">                Stack trace of thread 16042:</span><br><span class="line">                #0  0x00007f8df8f4986b raise (libc.so.6)</span><br><span class="line">                #1  0x00007f8df8f3440e abort (libc.so.6)</span><br><span class="line">                #2  0x00007f8df8f342e0 __assert_fail_base.cold.0 (libc.so.6)</span><br><span class="line">                #3  0x00007f8df8f42112 __assert_fail (libc.so.6)</span><br><span class="line">                #4  0x0000563a871686f3 n/a (/home/yzy/Repos/naive-pascal-compiler/cmake-build-debug/npc)</span><br><span class="line">                #5  0x0000563a87166c3c n/a (/home/yzy/Repos/naive-pascal-compiler/cmake-build-debug/npc)</span><br><span class="line">                #6  0x0000563a8716afe3 n/a (/home/yzy/Repos/naive-pascal-compiler/cmake-build-debug/npc)</span><br><span class="line">                #7  0x0000563a8716582b n/a (/home/yzy/Repos/naive-pascal-compiler/cmake-build-debug/npc)</span><br><span class="line">                #8  0x0000563a8715e499 n/a (/home/yzy/Repos/naive-pascal-compiler/cmake-build-debug/npc)</span><br><span class="line">                #9  0x00007f8df8f3606b __libc_start_main (libc.so.6)</span><br><span class="line">                #10 0x0000563a8715e36a n/a (/home/yzy/Repos/naive-pascal-compiler/cmake-build-debug/npc)</span><br><span class="line"></span><br><span class="line">GNU gdb (GDB) 8.1</span><br><span class="line">Copyright (C) 2018 Free Software Foundation, Inc.</span><br><span class="line">License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;</span><br><span class="line">This is free software: you are free to change and redistribute it.</span><br><span class="line">There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot;</span><br><span class="line">and &quot;show warranty&quot; for details.</span><br><span class="line">This GDB was configured as &quot;x86_64-pc-linux-gnu&quot;.</span><br><span class="line">Type &quot;show configuration&quot; for configuration details.</span><br><span class="line">For bug reporting instructions, please see:</span><br><span class="line">&lt;http://www.gnu.org/software/gdb/bugs/&gt;.</span><br><span class="line">Find the GDB manual and other documentation resources online at:</span><br><span class="line">&lt;http://www.gnu.org/software/gdb/documentation/&gt;.</span><br><span class="line">For help, type &quot;help&quot;.</span><br><span class="line">Type &quot;apropos word&quot; to search for commands related to &quot;word&quot;...</span><br><span class="line">Reading symbols from /home/yzy/Repos/naive-pascal-compiler/cmake-build-debug/npc...done.</span><br><span class="line">[New LWP 16042]</span><br><span class="line">Core was generated by `./npc&apos;.</span><br><span class="line">Program terminated with signal SIGABRT, Aborted.</span><br><span class="line">#0  0x00007f8df8f4986b in raise () from /usr/lib/libc.so.6</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
@@ -360,10 +360,10 @@
 <p>调用栈最近发生的在最上面，函数名和模板参数都打了出来，对照源代码进行阅读，阅读打印的类型信息可以得出我们执行了错误类型的 <code>dynamic_cast</code> 之前，assert 报错。<code>cast_node</code> 函数是在 <code>BinopExprNode</code> 的构造函数前初始化成员时被调用的。试图将子节点 cast 为 <code>ExprNode</code> 时出错。</p>
 <p>可见比起 assertion error 的单行信息，没有调用栈现场的话我们无从确定事故发生在 <code>BinopExprNode</code> 构造时，进行排查就大海捞针了很多。</p>
 <h2 id="参考资料">参考资料</h2>
-<p><a href="https://en.wikipedia.org/wiki/Core_dump" class="uri" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Core_dump</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Magnetic-core_memory" class="uri" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Magnetic-core_memory</a></p>
-<p><a href="https://wiki.archlinux.org/index.php/Core_dump" class="uri" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Core_dump</a></p>
-<p><a href="http://man7.org/linux/man-pages/man5/core.5.html" class="uri" target="_blank" rel="noopener">http://man7.org/linux/man-pages/man5/core.5.html</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Core_dump" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Core_dump</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Magnetic-core_memory" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Magnetic-core_memory</a></p>
+<p><a href="https://wiki.archlinux.org/index.php/Core_dump" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Core_dump</a></p>
+<p><a href="http://man7.org/linux/man-pages/man5/core.5.html" target="_blank" rel="noopener">http://man7.org/linux/man-pages/man5/core.5.html</a></p>
 
       
     </div>
@@ -405,6 +405,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/11/hello-again/" rel="prev" title="Hello ECS!">
+                Hello ECS! <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -457,7 +461,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -480,7 +484,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -596,10 +600,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="en">
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -74,21 +74,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.yuzhenyun.me/page/2/"/>
+  <link rel="canonical" href="http://blog.yuzhenyun.me/page/2/">
 
 
 
@@ -176,7 +176,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Blog of Zhenyun Yu</span>
         <span class="logo-line-after"><i></i></span>
@@ -206,7 +206,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             Home
           </a>
@@ -245,11 +245,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/10/08/kotlin-android-coroutines/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhenyun Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of Zhenyun Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/08/kotlin-android-coroutines/" itemprop="url">Kotlin Android 开发当中使用 coroutines 实现异步操作</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T01:21:12+08:00">
+                2017-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="背景">背景</h2>
+<p>本文写作于 2017年10月8日，<code>kotlin</code> 语言版本为 1.1，<code>kotlinx.coroutines</code>版本为 0.19.1，其中协程为实验特性。需要指定编译器选项以启用此功能。实验阶段表明此功能稳定性不能得到保证，请慎用！</p>
+<p>Kotlin 官网上对于协程实现的大概介绍：<a href="https://kotlinlang.org/docs/reference/coroutines.html" target="_blank" rel="noopener">https://kotlinlang.org/docs/reference/coroutines.html</a></p>
+<p>教程实例 Repo：<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt</a></p>
+<p>kotlinx.coroutines 协程库：<a href="https://github.com/kotlin/kotlinx.coroutines" target="_blank" rel="noopener">https://github.com/kotlin/kotlinx.coroutines</a></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/08/kotlin-android-coroutines/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/30/android-scala/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -316,11 +444,11 @@
       
         
           
-            <p>参考这篇文章：<a href="http://git.bookislife.com/post/2016/dev-android-using-scala/" class="uri" target="_blank" rel="noopener">http://git.bookislife.com/post/2016/dev-android-using-scala/</a></p>
-<p>这篇只关于 gradle，与 Android 无关：<a href="http://blog.csdn.net/maosidiaoxian/article/details/45476579" class="uri" target="_blank" rel="noopener">http://blog.csdn.net/maosidiaoxian/article/details/45476579</a></p>
-<p><code>gradle-android-scala-plugin</code>的文档肯定最权威，在 Github 的 README 当中：<a href="https://github.com/saturday06/gradle-android-scala-plugin" class="uri" target="_blank" rel="noopener">https://github.com/saturday06/gradle-android-scala-plugin</a></p>
-<p>这个是 scala-plugin 的文档，不是给 Android 用的：<a href="https://docs.gradle.org/current/userguide/scala_plugin.html" class="uri" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/scala_plugin.html</a></p>
-<p>这篇是基于 SBT 的：<a href="http://www.jianshu.com/p/37e9a544afb3" class="uri" target="_blank" rel="noopener">http://www.jianshu.com/p/37e9a544afb3</a> ，还有下篇：<a href="http://www.jianshu.com/p/886ebfb1f51e" class="uri" target="_blank" rel="noopener">http://www.jianshu.com/p/886ebfb1f51e</a></p>
+            <p>参考这篇文章：<a href="http://git.bookislife.com/post/2016/dev-android-using-scala/" target="_blank" rel="noopener">http://git.bookislife.com/post/2016/dev-android-using-scala/</a></p>
+<p>这篇只关于 gradle，与 Android 无关：<a href="http://blog.csdn.net/maosidiaoxian/article/details/45476579" target="_blank" rel="noopener">http://blog.csdn.net/maosidiaoxian/article/details/45476579</a></p>
+<p><code>gradle-android-scala-plugin</code>的文档肯定最权威，在 Github 的 README 当中：<a href="https://github.com/saturday06/gradle-android-scala-plugin" target="_blank" rel="noopener">https://github.com/saturday06/gradle-android-scala-plugin</a></p>
+<p>这个是 scala-plugin 的文档，不是给 Android 用的：<a href="https://docs.gradle.org/current/userguide/scala_plugin.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/scala_plugin.html</a></p>
+<p>这篇是基于 SBT 的：<a href="http://www.jianshu.com/p/37e9a544afb3" target="_blank" rel="noopener">http://www.jianshu.com/p/37e9a544afb3</a> ，还有下篇：<a href="http://www.jianshu.com/p/886ebfb1f51e" target="_blank" rel="noopener">http://www.jianshu.com/p/886ebfb1f51e</a></p>
 <p>还是要说一句，顺应时代，使用 kotlin 吧（</p>
 
           
@@ -374,7 +502,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -499,7 +627,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -624,7 +752,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -748,7 +876,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -822,7 +950,7 @@
 <li>包/模块</li>
 <li><code>__name__ == '__main__'</code></li>
 </ul>
-<p>参考文档：<a href="http://www.pythondoc.com/pythontutorial3/modules.html" class="uri" target="_blank" rel="noopener">http://www.pythondoc.com/pythontutorial3/modules.html</a></p>
+<p>参考文档：<a href="http://www.pythondoc.com/pythontutorial3/modules.html" target="_blank" rel="noopener">http://www.pythondoc.com/pythontutorial3/modules.html</a></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/21/python-package/#more" rel="contents">
@@ -880,7 +1008,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -946,7 +1074,7 @@
 
       
         
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pad(</span><br><span class="line">    tensor,</span><br><span class="line">    paddings,</span><br><span class="line">    mode=<span class="string">'CONSTANT'</span>,</span><br><span class="line">    name=<span class="keyword">None</span>,</span><br><span class="line">    constant_values=<span class="number">0</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pad(</span><br><span class="line">    tensor,</span><br><span class="line">    paddings,</span><br><span class="line">    mode=<span class="string">'CONSTANT'</span>,</span><br><span class="line">    name=<span class="literal">None</span>,</span><br><span class="line">    constant_values=<span class="number">0</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>关键的就是其中<code>paddings</code>这个参数，接受一个二维张量，且需要为 [n, 2] 这种 shape。</p>
 <p>举个栗子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    [</span><br><span class="line">        <span class="number">1</span>, <span class="comment"># 第0维，前面补1个</span></span><br><span class="line">      	<span class="number">2</span>  <span class="comment"># 第0维，后面补2个</span></span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">     	<span class="number">3</span>, <span class="comment"># 第1维，前面补3个</span></span><br><span class="line">      	<span class="number">4</span>  <span class="comment"># 第2维，后面补4个</span></span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
@@ -1008,7 +1136,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1135,7 +1263,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1205,7 +1333,7 @@
 <ul>
 <li>e-mail: trf at zju</li>
 <li>ftp://csyq2017:csyq2017@give.zju.edu.cn</li>
-<li><a href="http://give.zju.edu.cn/cgcourse" class="uri" target="_blank" rel="noopener">http://give.zju.edu.cn/cgcourse</a></li>
+<li><a href="http://give.zju.edu.cn/cgcourse" target="_blank" rel="noopener">http://give.zju.edu.cn/cgcourse</a></li>
 <li>TA-email:</li>
 <li>Evaluation
 <ul>
@@ -1276,7 +1404,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -1384,131 +1512,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/08/harmonization/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of Zhenyun Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/08/harmonization/" itemprop="url">Color Harmonization 色彩和谐化</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-08T15:41:38+08:00">
-                2017-09-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>原文为 Color Harmonization，MSRA 的一篇文章，自己写的笔记格式比较复杂，以图片形式附在后面了。</p>
-<p>原文链接： <a href="http://dl.acm.org/citation.cfm?doid=1179352.1141933" class="uri" target="_blank" rel="noopener">http://dl.acm.org/citation.cfm?doid=1179352.1141933</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/08/harmonization/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1558,7 +1561,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1658,10 +1661,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
