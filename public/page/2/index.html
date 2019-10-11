@@ -245,7 +245,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/10/08/kotlin-android-coroutines/">
+    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/harmonization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
@@ -264,7 +264,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/08/kotlin-android-coroutines/" itemprop="url">Kotlin Android 开发当中使用 coroutines 实现异步操作</a></h2>
+                <a class="post-title-link" href="/harmonization/" itemprop="url">Color Harmonization 色彩和谐化</a></h2>
         
 
         <div class="post-meta">
@@ -276,8 +276,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T01:21:12+08:00">
-                2017-10-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-08T15:41:38+08:00">
+                2017-09-08
               </time>
             
 
@@ -315,14 +315,11 @@
 
       
         
-          <h2 id="背景">背景</h2>
-<p>本文写作于 2017年10月8日，<code>kotlin</code> 语言版本为 1.1，<code>kotlinx.coroutines</code>版本为 0.19.1，其中协程为实验特性。需要指定编译器选项以启用此功能。实验阶段表明此功能稳定性不能得到保证，请慎用！</p>
-<p>Kotlin 官网上对于协程实现的大概介绍：<a href="https://kotlinlang.org/docs/reference/coroutines.html" target="_blank" rel="noopener">https://kotlinlang.org/docs/reference/coroutines.html</a></p>
-<p>教程实例 Repo：<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt" target="_blank" rel="noopener">https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/kotlinx-coroutines-android/example-app/app/src/main/java/com/example/app/MainActivity.kt</a></p>
-<p>kotlinx.coroutines 协程库：<a href="https://github.com/kotlin/kotlinx.coroutines" target="_blank" rel="noopener">https://github.com/kotlin/kotlinx.coroutines</a></p>
+          <p>原文为 Color Harmonization，MSRA 的一篇文章，自己写的笔记格式比较复杂，以图片形式附在后面了。</p>
+<p>原文链接： <a href="http://dl.acm.org/citation.cfm?doid=1179352.1141933" target="_blank" rel="noopener">http://dl.acm.org/citation.cfm?doid=1179352.1141933</a></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/08/kotlin-android-coroutines/#more" rel="contents">
+            <a class="btn" href="/harmonization/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -373,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/30/android-scala/">
+    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/hook-deploy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
@@ -392,7 +389,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/30/android-scala/" itemprop="url">Android 开发中使用 scala</a></h2>
+                <a class="post-title-link" href="/hook-deploy/" itemprop="url">使用钩子自动部署</a></h2>
         
 
         <div class="post-meta">
@@ -404,8 +401,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-30T00:22:35+08:00">
-                2017-09-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-07T23:28:21+08:00">
+                2017-09-07
               </time>
             
 
@@ -444,12 +441,9 @@
       
         
           
-            <p>参考这篇文章：<a href="http://git.bookislife.com/post/2016/dev-android-using-scala/" target="_blank" rel="noopener">http://git.bookislife.com/post/2016/dev-android-using-scala/</a></p>
-<p>这篇只关于 gradle，与 Android 无关：<a href="http://blog.csdn.net/maosidiaoxian/article/details/45476579" target="_blank" rel="noopener">http://blog.csdn.net/maosidiaoxian/article/details/45476579</a></p>
-<p><code>gradle-android-scala-plugin</code>的文档肯定最权威，在 Github 的 README 当中：<a href="https://github.com/saturday06/gradle-android-scala-plugin" target="_blank" rel="noopener">https://github.com/saturday06/gradle-android-scala-plugin</a></p>
-<p>这个是 scala-plugin 的文档，不是给 Android 用的：<a href="https://docs.gradle.org/current/userguide/scala_plugin.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/scala_plugin.html</a></p>
-<p>这篇是基于 SBT 的：<a href="http://www.jianshu.com/p/37e9a544afb3" target="_blank" rel="noopener">http://www.jianshu.com/p/37e9a544afb3</a> ，还有下篇：<a href="http://www.jianshu.com/p/886ebfb1f51e" target="_blank" rel="noopener">http://www.jianshu.com/p/886ebfb1f51e</a></p>
-<p>还是要说一句，顺应时代，使用 kotlin 吧（</p>
+            <p>如题，这篇post就是配置好自动部署以后的第一篇文章。现在我将博客的repo托管在github上，只要本地做好修改以后push到github，github的web hook请求我的服务器，一个clone-hexo generate-replace的脚本就会自动完成替换任务。</p>
+<p>思路借鉴了这篇博客文章 http://www.cnblogs.com/lianer/p/5836194.html</p>
+<p>这个脚本也放在github上面供大家参考了，链接为 https://github.com/yzyDavid/hexo-blog-deployer</p>
 
           
         
@@ -498,7 +492,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/27/zju-cs-dns/">
+    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/git-archive/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
@@ -517,7 +511,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/27/zju-cs-dns/" itemprop="url">某不科学的域名解析服务</a></h2>
+                <a class="post-title-link" href="/git-archive/" itemprop="url">Git archive 命令</a></h2>
         
 
         <div class="post-meta">
@@ -529,8 +523,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-27T10:46:48+08:00">
-                2017-09-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-05T14:13:31+08:00">
+                2017-09-05
               </time>
             
 
@@ -568,11 +562,11 @@
 
       
         
-          <p>ZJU 部分课程网站链接收录</p>
-<p>发送邮件至 me at yuzhenyun.me 添加新条目。</p>
+          <p>优雅地使用 git 提取特定版本的压缩包。</p>
+<p>总有一些时候需要你把最新的版本或者某个历史版本打包，再使用 scp，邮件甚至 QQ 等方式分发出去。如果手动打包，不但复杂，容易用错命令，另外对于版本库没有跟踪的文件也是一个负担，打出来的包不干净。其实 git 提供了解决方案。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/27/zju-cs-dns/#more" rel="contents">
+            <a class="btn" href="/git-archive/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -623,7 +617,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/26/arch-course/">
+    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/hello/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhenyun Yu">
@@ -642,7 +636,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/26/arch-course/" itemprop="url">浙江大学 计算机体系结构 课堂笔记</a></h2>
+                <a class="post-title-link" href="/hello/" itemprop="url">重新Hello World！</a></h2>
         
 
         <div class="post-meta">
@@ -654,8 +648,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T14:00:04+08:00">
-                2017-09-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-03T00:37:33+08:00">
+                2017-09-03
               </time>
             
 
@@ -693,792 +687,13 @@
 
       
         
-          <p>仅包含部分提纲。</p>
-<p>等死吧，老子不整理了。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/26/arch-course/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/25/dl-framework-hint/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of Zhenyun Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/25/dl-framework-hint/" itemprop="url">深度学习框架坑点槽点亮点注意点笔记</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T15:52:33+08:00">
-                2017-09-25
-              </time>
-            
-
-            
-
-            
-          </span>
+          
+            <p>hexo确实好用，一小会时间就能搭好这个博客了。但是post-commit自动化流程还没有配置。之前wordpress博客中招的事情，有空再讲吧。</p>
+<p>自动化部署已经配置好了。</p>
+<p>之前为了远程查看数据库方便，我为mariadb设置了弱密码并且打开了3306端口，结果被加密勒索了。黑客在库里面留了个表，写下了比特币账户和邮箱……</p>
+<p>注意安全.jpg</p>
 
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>踩到啥就说啥。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/25/dl-framework-hint/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/21/python-package/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of Zhenyun Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/21/python-package/" itemprop="url">Python 包与路径相关的一堆坑</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-21T15:37:42+08:00">
-                2017-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Python 模块相关的细节：</p>
-<ul>
-<li>Python 2/3 区别</li>
-<li>绝对路径导入/相对路径导入</li>
-<li>模块启动/单文件启动</li>
-<li>包/模块</li>
-<li><code>__name__ == '__main__'</code></li>
-</ul>
-<p>参考文档：<a href="http://www.pythondoc.com/pythontutorial3/modules.html" target="_blank" rel="noopener">http://www.pythondoc.com/pythontutorial3/modules.html</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/21/python-package/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/20/tf-pad/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of Zhenyun Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/20/tf-pad/" itemprop="url">tf.pad 通俗解释</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-20T15:49:48+08:00">
-                2017-09-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pad(</span><br><span class="line">    tensor,</span><br><span class="line">    paddings,</span><br><span class="line">    mode=<span class="string">'CONSTANT'</span>,</span><br><span class="line">    name=<span class="literal">None</span>,</span><br><span class="line">    constant_values=<span class="number">0</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>关键的就是其中<code>paddings</code>这个参数，接受一个二维张量，且需要为 [n, 2] 这种 shape。</p>
-<p>举个栗子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    [</span><br><span class="line">        <span class="number">1</span>, <span class="comment"># 第0维，前面补1个</span></span><br><span class="line">      	<span class="number">2</span>  <span class="comment"># 第0维，后面补2个</span></span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">     	<span class="number">3</span>, <span class="comment"># 第1维，前面补3个</span></span><br><span class="line">      	<span class="number">4</span>  <span class="comment"># 第2维，后面补4个</span></span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>有几个维度，就要几个数对，每个数对指示那个维度上前后分别补几个。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/20/tf-pad/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/19/git-blame/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of Zhenyun Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/19/git-blame/" itemprop="url">git-blame</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-19T10:24:45+08:00">
-                2017-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>某些小朋友在 <code>git</code> 托管的文件里面聊起了天我不能忍啊……</p>
-<p>这个时候请你们使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git blame</span><br></pre></td></tr></table></figure>
-<p>如果使用<code>zsh</code>的 alias 的话，可以直接使用<code>gbl</code>这个缩写。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/19/git-blame/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/18/cg/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of Zhenyun Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/18/cg/" itemprop="url">浙江大学 计算机图形学 课堂笔记</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T09:48:52+08:00">
-                2017-09-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>童若锋老师的计算机图形学课程</p>
-<ul>
-<li>e-mail: trf at zju</li>
-<li>ftp://csyq2017:csyq2017@give.zju.edu.cn</li>
-<li><a href="http://give.zju.edu.cn/cgcourse" target="_blank" rel="noopener">http://give.zju.edu.cn/cgcourse</a></li>
-<li>TA-email:</li>
-<li>Evaluation
-<ul>
-<li>Assignment 30%</li>
-<li>Final-Exam Big-Project 40%</li>
-<li>In-class performance 30%
-<ul>
-<li>in-class test</li>
-<li>attendance</li>
-<li>question-answer</li>
-</ul></li>
-</ul></li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/18/cg/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/2017/09/09/scrapy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of Zhenyun Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/09/scrapy/" itemprop="url">Scrapy 爬虫框架源码架构初探</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T16:53:04+08:00">
-                2017-09-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="简介">简介</h2>
-<p>Scrapy 作为最负盛名的 Python 爬虫框架，本身以及强大的中间件机制提供了爬虫管理的方方面面，让开发者只需专注于网页解析的逻辑本身。本文从离用户最近的代码出发稍稍探索一下这个框架。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/09/scrapy/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1516,7 +731,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="编程,Python,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="简介 Scrapy 作为最负盛名的 Python 爬虫框架，本身以及强大的中间件机制提供了爬虫管理的方方面面，让开发者只需专注于网页解析的逻辑本身。本文从离用户最近的代码出发稍稍探索一下这个框架。">
+<meta name="keywords" content="编程,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scrapy 爬虫框架源码架构初探">
+<meta property="og:url" content="http://blog.yuzhenyun.me/scrapy/index.html">
+<meta property="og:site_name" content="Blog of Zhenyun Yu">
+<meta property="og:description" content="简介 Scrapy 作为最负盛名的 Python 爬虫框架，本身以及强大的中间件机制提供了爬虫管理的方方面面，让开发者只需专注于网页解析的逻辑本身。本文从离用户最近的代码出发稍稍探索一下这个框架。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://blog.yuzhenyun.me/scrapy/arch2.png">
+<meta property="og:updated_time" content="2019-10-10T16:20:33.563Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scrapy 爬虫框架源码架构初探">
+<meta name="twitter:description" content="简介 Scrapy 作为最负盛名的 Python 爬虫框架，本身以及强大的中间件机制提供了爬虫管理的方方面面，让开发者只需专注于网页解析的逻辑本身。本文从离用户最近的代码出发稍稍探索一下这个框架。">
+<meta name="twitter:image" content="http://blog.yuzhenyun.me/scrapy/arch2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.yuzhenyun.me/scrapy/">
+
+
+
+
+
+  <title>Scrapy 爬虫框架源码架构初探 | Blog of Zhenyun Yu</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6febf75fce436b62a0390863fe760705";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog of Zhenyun Yu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">A place for technology and anything</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/scrapy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhenyun Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of Zhenyun Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Scrapy 爬虫框架源码架构初探</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T16:53:04+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简介">简介</h2>
+<p>Scrapy 作为最负盛名的 Python 爬虫框架，本身以及强大的中间件机制提供了爬虫管理的方方面面，让开发者只需专注于网页解析的逻辑本身。本文从离用户最近的代码出发稍稍探索一下这个框架。</p>
+<a id="more"></a>
+<ul>
+<li><p>环境：</p>
+<ul>
+<li>Python 3.6.1</li>
+<li>Scrapy 1.4.0</li>
+</ul>
+<p>如无特殊说明，本文中的源代码均摘录于此环境，为说明方便，可能会删减改动。</p></li>
+</ul>
+<p>官方文档：<a href="https://docs.scrapy.org/en/latest/index.html" target="_blank" rel="noopener">https://docs.scrapy.org/en/latest/index.html</a> 此链接总是指向最新版本的文档。</p>
+<h2 id="架构简介">架构简介</h2>
+<p>官方文档上找到了架构的流程图，附上。</p>
+<img src="/scrapy/arch2.png">
+<p>长话短说，以下几点是关键核心。</p>
+<ul>
+<li>Item, Pipeline, Spider 是用户需要定义的部分。</li>
+<li>Spider 中的 parse 方法是解析过程的发动机，如果有多种页面和 Item 类型，也可以定义更多签名一致的 parse 方法。</li>
+<li>parse 方法可以 yield 请求，从而被调度，也可 yield Item，直接进入流水线然后作为结果被保存。</li>
+</ul>
+<h2 id="命令行工具">命令行工具</h2>
+<p>在我的机器上安装为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/scrapy</span><br></pre></td></tr></table></figure>
+<p>的命令行入口是脚手架及管理工具，我打算从这里开始分析。</p>
+<p>这个文件也是一段 Python 脚本，内容非常简短，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> scrapy.cmdline <span class="keyword">import</span> execute</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    sys.argv[<span class="number">0</span>] = re.sub(<span class="string">r'(-script\.pyw?|\.exe)?$'</span>, <span class="string">''</span>, sys.argv[<span class="number">0</span>])</span><br><span class="line">    sys.exit(execute())</span><br></pre></td></tr></table></figure>
+<p>可见此入口仅仅在处理了命令行参数，修整文件名之后调用了 <code>scrapy.cmdline.execute</code>方法，这个模块的路径为<code>/usr/lib/python3.6/site-packages/scrapy/cmdline.py</code></p>
+<p>execute 方法为全局方法，不属于某个类，摘录如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">execute</span><span class="params">(argv=None, settings=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> argv <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        argv = sys.argv</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> settings <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        settings = get_project_settings()</span><br><span class="line">        <span class="comment"># set EDITOR from environment if available</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            editor = os.environ[<span class="string">'EDITOR'</span>]</span><br><span class="line">        <span class="keyword">except</span> KeyError: <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            settings[<span class="string">'EDITOR'</span>] = editor</span><br><span class="line">    check_deprecated_settings(settings)</span><br><span class="line"></span><br><span class="line">    inproject = inside_project()</span><br><span class="line">    cmds = _get_commands_dict(settings, inproject)</span><br><span class="line">    cmdname = _pop_command_name(argv)</span><br><span class="line">    parser = optparse.OptionParser(formatter=optparse.TitledHelpFormatter(), \</span><br><span class="line">        conflict_handler=<span class="string">'resolve'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> cmdname:</span><br><span class="line">        _print_commands(settings, inproject)</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">elif</span> cmdname <span class="keyword">not</span> <span class="keyword">in</span> cmds:</span><br><span class="line">        _print_unknown_command(settings, cmdname, inproject)</span><br><span class="line">        sys.exit(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    cmd = cmds[cmdname]</span><br><span class="line">    parser.usage = <span class="string">"scrapy %s %s"</span> % (cmdname, cmd.syntax())</span><br><span class="line">    parser.description = cmd.long_desc()</span><br><span class="line">    settings.setdict(cmd.default_settings, priority=<span class="string">'command'</span>)</span><br><span class="line">    cmd.settings = settings</span><br><span class="line">    cmd.add_options(parser)</span><br><span class="line">    opts, args = parser.parse_args(args=argv[<span class="number">1</span>:])</span><br><span class="line">    _run_print_help(parser, cmd.process_options, args, opts)</span><br><span class="line"></span><br><span class="line">    cmd.crawler_process = CrawlerProcess(settings)</span><br><span class="line">    _run_print_help(parser, _run_command, cmd, args, opts)</span><br><span class="line">    sys.exit(cmd.exitcode)</span><br></pre></td></tr></table></figure>
+<p>作为命令行工具的实际入口被调用，此时没有传入任何参数到方法中。命令行参数与系统默认设置被加载。</p>
+<p>此方法随后判断工作目录是否为具有爬虫项目的目录，从而决定是否加载额外而最为关键的几个命令如<code>crawl</code> 。<code>_run_print_help</code>方法是一个 wrapper，尝试调用后面传入的方法与参数。从<code>cmds</code>字典中获得的<code>cmd</code>是属于<code>ScrapyCommand</code>的子类型的对象。<code>CrawlerProcess</code>对象可以接管 Ctrl-C 信号等等，<code>_run_command</code>方法会判断是否需要性能分析，然后调用<code>cmd.run</code>方法。这一段代码主要都是工程实现上的封装，到这里即将可以看到实际开始工作的部分。下面一段我们查看<code>crawl</code>命令的工作流程。</p>
+<h2 id="crawl-过程">crawl 过程</h2>
+<p>crawl 命令是实际运行爬虫的命令。也是最核心的命令。希望本段的分析可以给引擎的调度运行过程一瞥。</p>
+<p>在文件<code>/usr/lib/python3.6/site-packages/scrapy/commands/__init__.py</code>中定义了<code>ScrapyCommand</code>类，作为所有命令的抽象基类。源代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ScrapyCommand</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    requires_project = <span class="literal">False</span></span><br><span class="line">    crawler_process = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># default settings to be used for this command instead of global defaults</span></span><br><span class="line">    default_settings = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    exitcode = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.settings = <span class="literal">None</span>  <span class="comment"># set in scrapy.cmdline</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_crawler</span><span class="params">(self, crawler)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> <span class="keyword">not</span> hasattr(self, <span class="string">'_crawler'</span>), <span class="string">"crawler already set"</span></span><br><span class="line">        self._crawler = crawler</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, args, opts)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Entry point for running commands</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">raise</span> NotImplementedError</span><br></pre></td></tr></table></figure>
+<p>这个类的核心是<code>crawler_process</code>字段与<code>run</code>方法。下面看 crawl 命令的 Command 类实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Command</span><span class="params">(ScrapyCommand)</span>:</span></span><br><span class="line"></span><br><span class="line">    requires_project = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">syntax</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"[options] &lt;spider&gt;"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">short_desc</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Run a spider"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, args, opts)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(args) &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">raise</span> UsageError()</span><br><span class="line">        <span class="keyword">elif</span> len(args) &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">raise</span> UsageError(<span class="string">"running 'scrapy crawl' with more than one spider is no longer supported"</span>)</span><br><span class="line">        spname = args[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        self.crawler_process.crawl(spname, **opts.spargs)</span><br><span class="line">        self.crawler_process.start()</span><br></pre></td></tr></table></figure>
+<p>重载的<code>run</code>方法调用了<code>crawler_process.crawl</code>方法。下面给出 CrawlerProcess 类的定义。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlerProcess</span><span class="params">(CrawlerRunner)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    A class to run multiple scrapy crawlers in a process simultaneously.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    This class extends :class:`~scrapy.crawler.CrawlerRunner` by adding support</span></span><br><span class="line"><span class="string">    for starting a Twisted `reactor`_ and handling shutdown signals, like the</span></span><br><span class="line"><span class="string">    keyboard interrupt command Ctrl-C. It also configures top-level logging.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, settings=None)</span>:</span></span><br><span class="line">        super(CrawlerProcess, self).__init__(settings)</span><br><span class="line">        install_shutdown_handlers(self._signal_shutdown)</span><br><span class="line">        configure_logging(self.settings)</span><br><span class="line">        log_scrapy_info(self.settings)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_signal_shutdown</span><span class="params">(self, signum, _)</span>:</span></span><br><span class="line">        install_shutdown_handlers(self._signal_kill)</span><br><span class="line">        signame = signal_names[signum]</span><br><span class="line">        logger.info(<span class="string">"Received %(signame)s, shutting down gracefully. Send again to force "</span>,</span><br><span class="line">                    &#123;<span class="string">'signame'</span>: signame&#125;)</span><br><span class="line">        reactor.callFromThread(self._graceful_stop_reactor)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_signal_kill</span><span class="params">(self, signum, _)</span>:</span></span><br><span class="line">        install_shutdown_handlers(signal.SIG_IGN)</span><br><span class="line">        signame = signal_names[signum]</span><br><span class="line">        logger.info(<span class="string">'Received %(signame)s twice, forcing unclean shutdown'</span>,</span><br><span class="line">                    &#123;<span class="string">'signame'</span>: signame&#125;)</span><br><span class="line">        reactor.callFromThread(self._stop_reactor)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">start</span><span class="params">(self, stop_after_crawl=True)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        This method starts a Twisted `reactor`_, adjusts its pool size to</span></span><br><span class="line"><span class="string">        :setting:`REACTOR_THREADPOOL_MAXSIZE`, and installs a DNS cache based</span></span><br><span class="line"><span class="string">        on :setting:`DNSCACHE_ENABLED` and :setting:`DNSCACHE_SIZE`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        If `stop_after_crawl` is True, the reactor will be stopped after all</span></span><br><span class="line"><span class="string">        crawlers have finished, using :meth:`join`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        :param boolean stop_after_crawl: stop or not the reactor when all</span></span><br><span class="line"><span class="string">            crawlers have finished</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> stop_after_crawl:</span><br><span class="line">            d = self.join()</span><br><span class="line">            <span class="comment"># Don't start the reactor if the deferreds are already fired</span></span><br><span class="line">            <span class="keyword">if</span> d.called:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            d.addBoth(self._stop_reactor)</span><br><span class="line"></span><br><span class="line">        reactor.installResolver(self._get_dns_resolver())</span><br><span class="line">        tp = reactor.getThreadPool()</span><br><span class="line">        tp.adjustPoolsize(maxthreads=self.settings.getint(<span class="string">'REACTOR_THREADPOOL_MAXSIZE'</span>))</span><br><span class="line">        reactor.addSystemEventTrigger(<span class="string">'before'</span>, <span class="string">'shutdown'</span>, self.stop)</span><br><span class="line">        reactor.run(installSignalHandlers=<span class="literal">False</span>)  <span class="comment"># blocking call</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_graceful_stop_reactor</span><span class="params">(self)</span>:</span></span><br><span class="line">        d = self.stop()</span><br><span class="line">        d.addBoth(self._stop_reactor)</span><br><span class="line">        <span class="keyword">return</span> d</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_stop_reactor</span><span class="params">(self, _=None)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            reactor.stop()</span><br><span class="line">        <span class="keyword">except</span> RuntimeError:  <span class="comment"># raised if already stopped or in shutdown stage</span></span><br><span class="line">            <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>可见这个类当中并不包含<code>crawl</code>方法。于是寻找基类，幸运地找到了这个方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlerRunner</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    This is a convenient helper class that keeps track of, manages and runs</span></span><br><span class="line"><span class="string">    crawlers inside an already setup Twisted `reactor`_.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    crawlers = property(</span><br><span class="line">        <span class="keyword">lambda</span> self: self._crawlers,</span><br><span class="line">        doc=<span class="string">"Set of :class:`crawlers &lt;scrapy.crawler.Crawler&gt;` started by "</span></span><br><span class="line">            <span class="string">":meth:`crawl` and managed by this class."</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, settings=None)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> isinstance(settings, dict) <span class="keyword">or</span> settings <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            settings = Settings(settings)</span><br><span class="line">        self.settings = settings</span><br><span class="line">        self.spider_loader = _get_spider_loader(settings)</span><br><span class="line">        self._crawlers = set()</span><br><span class="line">        self._active = set()</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spiders</span><span class="params">(self)</span>:</span></span><br><span class="line">        warnings.warn(<span class="string">"CrawlerRunner.spiders attribute is renamed to "</span></span><br><span class="line">                      <span class="string">"CrawlerRunner.spider_loader."</span>,</span><br><span class="line">                      category=ScrapyDeprecationWarning, stacklevel=<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> self.spider_loader</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">crawl</span><span class="params">(self, crawler_or_spidercls, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Run a crawler with the provided arguments.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        It will call the given Crawler's :meth:`~Crawler.crawl` method, while</span></span><br><span class="line"><span class="string">        keeping track of it so it can be stopped later.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        If `crawler_or_spidercls` isn't a :class:`~scrapy.crawler.Crawler`</span></span><br><span class="line"><span class="string">        instance, this method will try to create one using this parameter as</span></span><br><span class="line"><span class="string">        the spider class given to it.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns a deferred that is fired when the crawling is finished.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        :param crawler_or_spidercls: already created crawler, or a spider class</span></span><br><span class="line"><span class="string">            or spider's name inside the project to create it</span></span><br><span class="line"><span class="string">        :type crawler_or_spidercls: :class:`~scrapy.crawler.Crawler` instance,</span></span><br><span class="line"><span class="string">            :class:`~scrapy.spiders.Spider` subclass or string</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        :param list args: arguments to initialize the spider</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        :param dict kwargs: keyword arguments to initialize the spider</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        crawler = self.create_crawler(crawler_or_spidercls)</span><br><span class="line">        <span class="keyword">return</span> self._crawl(crawler, *args, **kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_crawl</span><span class="params">(self, crawler, *args, **kwargs)</span>:</span></span><br><span class="line">        self.crawlers.add(crawler)</span><br><span class="line">        d = crawler.crawl(*args, **kwargs)</span><br><span class="line">        self._active.add(d)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_done</span><span class="params">(result)</span>:</span></span><br><span class="line">            self.crawlers.discard(crawler)</span><br><span class="line">            self._active.discard(d)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> d.addBoth(_done)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create_crawler</span><span class="params">(self, crawler_or_spidercls)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Return a :class:`~scrapy.crawler.Crawler` object.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        * If `crawler_or_spidercls` is a Crawler, it is returned as-is.</span></span><br><span class="line"><span class="string">        * If `crawler_or_spidercls` is a Spider subclass, a new Crawler</span></span><br><span class="line"><span class="string">          is constructed for it.</span></span><br><span class="line"><span class="string">        * If `crawler_or_spidercls` is a string, this function finds</span></span><br><span class="line"><span class="string">          a spider with this name in a Scrapy project (using spider loader),</span></span><br><span class="line"><span class="string">          then creates a Crawler instance for it.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> isinstance(crawler_or_spidercls, Crawler):</span><br><span class="line">            <span class="keyword">return</span> crawler_or_spidercls</span><br><span class="line">        <span class="keyword">return</span> self._create_crawler(crawler_or_spidercls)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_create_crawler</span><span class="params">(self, spidercls)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> isinstance(spidercls, six.string_types):</span><br><span class="line">            spidercls = self.spider_loader.load(spidercls)</span><br><span class="line">        <span class="keyword">return</span> Crawler(spidercls, self.settings)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">stop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Stops simultaneously all the crawling jobs taking place.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns a deferred that is fired when they all have ended.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> defer.DeferredList([c.stop() <span class="keyword">for</span> c <span class="keyword">in</span> list(self.crawlers)])</span><br><span class="line"></span><br><span class="line"><span class="meta">    @defer.inlineCallbacks</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">join</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        join()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns a deferred that is fired when all managed :attr:`crawlers` have</span></span><br><span class="line"><span class="string">        completed their executions.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">while</span> self._active:</span><br><span class="line">            <span class="keyword">yield</span> defer.DeferredList(self._active)</span><br></pre></td></tr></table></figure>
+<p><code>~scrapy.crawler.Crawler</code>为 Crawler 的类型。注意这个框架下 Crawler 与 Spider 是两个不同的概念。得益于 Python 的动态特性，我们看到代码当中可以通过字符串来动态寻找并且实例化一个 Crawler，并且调用其 crawl 方法。总之我们先跟进这个类当中一探究竟。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Crawler</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, spidercls, settings=None)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> isinstance(settings, dict) <span class="keyword">or</span> settings <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            settings = Settings(settings)</span><br><span class="line"></span><br><span class="line">        self.spidercls = spidercls</span><br><span class="line">        self.settings = settings.copy()</span><br><span class="line">        self.spidercls.update_settings(self.settings)</span><br><span class="line"></span><br><span class="line">        self.settings.freeze()</span><br><span class="line">        self.crawling = <span class="literal">False</span></span><br><span class="line">        self.spider = <span class="literal">None</span></span><br><span class="line">        self.engine = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spiders</span><span class="params">(self)</span>:</span></span><br><span class="line">            self._spiders = _get_spider_loader(self.settings.frozencopy())</span><br><span class="line">        <span class="keyword">return</span> self._spiders</span><br><span class="line"></span><br><span class="line"><span class="meta">    @defer.inlineCallbacks</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">crawl</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> <span class="keyword">not</span> self.crawling, <span class="string">"Crawling already taking place"</span></span><br><span class="line">        self.crawling = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            self.spider = self._create_spider(*args, **kwargs)</span><br><span class="line">            self.engine = self._create_engine()</span><br><span class="line">            start_requests = iter(self.spider.start_requests())</span><br><span class="line">            <span class="keyword">yield</span> self.engine.open_spider(self.spider, start_requests)</span><br><span class="line">            <span class="keyword">yield</span> defer.maybeDeferred(self.engine.start)</span><br><span class="line">        <span class="keyword">except</span> Exception:</span><br><span class="line">            self.crawling = <span class="literal">False</span></span><br><span class="line">            <span class="keyword">if</span> self.engine <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="keyword">yield</span> self.engine.close()</span><br><span class="line">            <span class="keyword">raise</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_create_spider</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.spidercls.from_crawler(self, *args, **kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_create_engine</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> ExecutionEngine(self, <span class="keyword">lambda</span> _: self.stop())</span><br><span class="line"></span><br><span class="line"><span class="meta">    @defer.inlineCallbacks</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">stop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.crawling:</span><br><span class="line">            self.crawling = <span class="literal">False</span></span><br><span class="line">            <span class="keyword">yield</span> defer.maybeDeferred(self.engine.stop)</span><br></pre></td></tr></table></figure>
+<p>在这里先提一下，<code>@defer.inlineCallbacks</code>是 twisted 网络库当中使用的异步封装。Scrapy 框架就是全盘构建于 twisted 之上的。对于了解 async/await 风格异步编程的读者来说，这个 attribute 相当于 async 声明，随后方法中的 yield 大致相当于 await 运算符。如有疑问，请读者自行查阅相关内容。</p>
+<p>这里 crawl 方法当中创建了 spider 与引擎，并获取了起始 url 列表，启动引擎开始了爬取。使用过 Scrapy 框架的人所了解的那个起始 url 列表就从这里开始参与了工作。从这里开始，我们将看到我们所编写的代码是如何与框架进行交互的。</p>
+<p>--- 未完待续 ---</p>
+<h2 id="parse-方法">parse 方法</h2>
+<p>这个方法个人感觉是整个框架使用过程的核心。在每个相同签名的方法当中既可以迭代返回请求也可以是最终的物品，本段将试图阐释这一机制的运作原理。</p>
+<h2 id="总结">总结</h2>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/harmonization/" rel="next" title="Color Harmonization 色彩和谐化">
+                <i class="fa fa-chevron-left"></i> Color Harmonization 色彩和谐化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/cg/" rel="prev" title="浙江大学 计算机图形学 课堂笔记">
+                浙江大学 计算机图形学 课堂笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Zhenyun Yu</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yzyDavid" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/exciting-gg/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>知乎</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://zmbad.me/" title="ZM-BAD" target="_blank">ZM-BAD</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://colliot.me/zh/" title="Colliot" target="_blank">Colliot</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tigertang.cn/" title="tigertang" target="_blank">tigertang</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zjuwyd.com/" title="wyd" target="_blank">wyd</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://blog.zhangcy.cn/" title="zhangcy" target="_blank">zhangcy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zuhxs.com/" title="zuhxs" target="_blank">zuhxs</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构简介"><span class="nav-number">2.</span> <span class="nav-text">架构简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行工具"><span class="nav-number">3.</span> <span class="nav-text">命令行工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crawl-过程"><span class="nav-number">4.</span> <span class="nav-text">crawl 过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parse-方法"><span class="nav-number">5.</span> <span class="nav-text">parse 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhenyun Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
