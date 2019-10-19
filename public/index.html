@@ -245,6 +245,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/emacs-color/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhenyun Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of Zhenyun Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/emacs-color/" itemprop="url">记一例排查 Emacs 显示颜色的问题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-19T12:31:51+08:00">
+                2019-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我的桌面环境是 <code>KDE plasma</code>，使用的终端模拟器是 <code>konsole</code>，这台机器上的 <code>emacs</code> 没有更改任何颜色相关的配置。我观察到黑色背景的 konsole 下很多颜色对比度非常低，比如 minibuffer 的提示符，是一种非常暗的蓝色，在纯黑背景下极难看清。然而 ssh 连接上去看到的就不一样，就很舒服的颜色。</p>
+<p>到这里，我认为是我的 konsole 颜色配置不太好。我换了十多种颜色主题结果都没解决。此时注意到颜色主题只能指定 8 种标准颜色，而我们的颜色显示丰富度更高，至少是 256 色。</p>
+<p>尝试过程中，我试了下 konsole, konsole+tmux, iTerm ssh, iTerm ssh+tmux 几种组合，发现是否使用 tmux 对颜色显示有影响，konsole 下只要使用了 tmux，颜色也会正确。此时我开始从 tmux 内与外来考虑区别了。</p>
+<p>很快发现 <code>$TERM</code> 这个环境变量会被 tmux 修改从而使 emacs 感知到环境变化。这个变量有以下几种常见的取值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TERM=linux  <span class="comment"># Linux 的 tty，比如 Ctrl-Alt-F2 切到的那种。</span></span><br><span class="line">TERM=dumb  <span class="comment"># Emacs 里面的 shell 或者 eshell 的取值，用来告知内部运行的程序，这不是真的终端。</span></span><br><span class="line">TERM=xterm-256color  <span class="comment"># 支持 256 色的终端，xterm 是一个被广泛接受的终端模拟器名称所以很多软件都会如此设置。比如 konsole, iTerm 甚至 WSL。当然也有真正的 xterm 本身。</span></span><br><span class="line">TERM=screen-256color  <span class="comment"># 为了向前支持，tmux 会假装自己是 screen。</span></span><br><span class="line">TERM=gnome-256color  <span class="comment"># 顾名思义。</span></span><br><span class="line">TERM=konsole-256color  <span class="comment"># 同上。</span></span><br></pre></td></tr></table></figure>
+<p>复现了一下，手动设置 <code>$TERM</code> 的取值就可以改变颜色，问题解决。</p>
+<p>这个设定的原因是什么呢？在 emacs 中 求值 <code>(list-colors-display)</code> 你会得到一个显示所有 emaqcs 认为可以显示的颜色的 buffer，根据你的 <code>$TERM</code> 是否有 256color 后缀，它会判断你是否能支持 256 色。而这些颜色往往不会跟随终端主题变化，主题往往只改变基本的 8 种颜色。而前缀同样重要。如果前缀是 <code>xterm</code> 那么 emacs 认为你的终端背景是白色，于是就会给你比较暗的字符颜色。于是就 gg 了，而其他的变量会使 emacs 认为背景是黑色，which 是我们想要的结果。</p>
+<p>也不是所有的前缀都被支持的，如果你设定了一个非标准的 <code>$TERM</code> 变量，emacs 将会拒绝工作。<code>$TERM</code> 设定为 dumb 时也一样。</p>
+<p>问题最终的解决方案：konsole 设置中导出环境变量 <code>TERM=konsole-256color</code> 即可。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/hello-again/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2707,131 +2835,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/scrapy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of Zhenyun Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/scrapy/" itemprop="url">Scrapy 爬虫框架源码架构初探</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T16:53:04+08:00">
-                2017-09-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="简介">简介</h2>
-<p>Scrapy 作为最负盛名的 Python 爬虫框架，本身以及强大的中间件机制提供了爬虫管理的方方面面，让开发者只需专注于网页解析的逻辑本身。本文从离用户最近的代码出发稍稍探索一下这个框架。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/scrapy/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2881,7 +2884,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
