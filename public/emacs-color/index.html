@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="我的桌面环境是 KDE plasma，使用的终端模拟器是 konsole，这台机器上的 emacs 没有更改任何颜色相关的配置。我观察到黑色背景的 konsole 下很多颜色对比度非常低，比如 minibuffer 的提示符，是一种非常暗的蓝色，在纯黑背景下极难看清。然而 ssh 连接上去看到的就不一样，就很舒服的颜色。 到这里，我认为是我的 konsole 颜色配置不太好。我换了十多种颜色主题结">
+<meta name="description" content="解决方案： 1export TERM=gnome-256color 准确设置你的终端变量，不要保留用于兼容的 xterm，一般常见的终端 emacs 会认识的。xterm 会被当成白色背景。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一例排查 Emacs 显示颜色的问题">
 <meta property="og:url" content="http://blog.yuzhenyun.me/emacs-color/index.html">
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
-<meta property="og:description" content="我的桌面环境是 KDE plasma，使用的终端模拟器是 konsole，这台机器上的 emacs 没有更改任何颜色相关的配置。我观察到黑色背景的 konsole 下很多颜色对比度非常低，比如 minibuffer 的提示符，是一种非常暗的蓝色，在纯黑背景下极难看清。然而 ssh 连接上去看到的就不一样，就很舒服的颜色。 到这里，我认为是我的 konsole 颜色配置不太好。我换了十多种颜色主题结">
+<meta property="og:description" content="解决方案： 1export TERM=gnome-256color 准确设置你的终端变量，不要保留用于兼容的 xterm，一般常见的终端 emacs 会认识的。xterm 会被当成白色背景。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-19T05:11:10.916Z">
+<meta property="og:updated_time" content="2019-10-19T05:31:03.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一例排查 Emacs 显示颜色的问题">
-<meta name="twitter:description" content="我的桌面环境是 KDE plasma，使用的终端模拟器是 konsole，这台机器上的 emacs 没有更改任何颜色相关的配置。我观察到黑色背景的 konsole 下很多颜色对比度非常低，比如 minibuffer 的提示符，是一种非常暗的蓝色，在纯黑背景下极难看清。然而 ssh 连接上去看到的就不一样，就很舒服的颜色。 到这里，我认为是我的 konsole 颜色配置不太好。我换了十多种颜色主题结">
+<meta name="twitter:description" content="解决方案： 1export TERM=gnome-256color 准确设置你的终端变量，不要保留用于兼容的 xterm，一般常见的终端 emacs 会认识的。xterm 会被当成白色背景。">
 
 
 
@@ -315,7 +315,11 @@
       
 
       
-        <p>我的桌面环境是 <code>KDE plasma</code>，使用的终端模拟器是 <code>konsole</code>，这台机器上的 <code>emacs</code> 没有更改任何颜色相关的配置。我观察到黑色背景的 konsole 下很多颜色对比度非常低，比如 minibuffer 的提示符，是一种非常暗的蓝色，在纯黑背景下极难看清。然而 ssh 连接上去看到的就不一样，就很舒服的颜色。</p>
+        <p>解决方案：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> TERM=gnome-256color</span><br></pre></td></tr></table></figure>
+<p>准确设置你的终端变量，不要保留用于兼容的 <code>xterm</code>，一般常见的终端 emacs 会认识的。<code>xterm</code> 会被当成白色背景。</p>
+<a id="more"></a>
+<p>我的桌面环境是 <code>KDE plasma</code>，使用的终端模拟器是 <code>konsole</code>，这台机器上的 <code>emacs</code> 没有更改任何颜色相关的配置。我观察到黑色背景的 konsole 下很多颜色对比度非常低，比如 minibuffer 的提示符，是一种非常暗的蓝色，在纯黑背景下极难看清。然而 ssh 连接上去看到的就不一样，就很舒服的颜色。</p>
 <p>到这里，我认为是我的 konsole 颜色配置不太好。我换了十多种颜色主题结果都没解决。此时注意到颜色主题只能指定 8 种标准颜色，而我们的颜色显示丰富度更高，至少是 256 色。</p>
 <p>尝试过程中，我试了下 konsole, konsole+tmux, iTerm ssh, iTerm ssh+tmux 几种组合，发现是否使用 tmux 对颜色显示有影响，konsole 下只要使用了 tmux，颜色也会正确。此时我开始从 tmux 内与外来考虑区别了。</p>
 <p>很快发现 <code>$TERM</code> 这个环境变量会被 tmux 修改从而使 emacs 感知到环境变化。这个变量有以下几种常见的取值：</p>
