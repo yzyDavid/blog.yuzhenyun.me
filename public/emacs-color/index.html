@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="解决方案： 1export TERM=gnome-256color 准确设置你的终端变量，不要保留用于兼容的 xterm，一般常见的终端 emacs 会认识的。xterm 会被当成白色背景。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-19T05:31:03.116Z">
+<meta property="og:updated_time" content="2019-10-19T05:32:39.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一例排查 Emacs 显示颜色的问题">
 <meta name="twitter:description" content="解决方案： 1export TERM=gnome-256color 准确设置你的终端变量，不要保留用于兼容的 xterm，一般常见的终端 emacs 会认识的。xterm 会被当成白色背景。">
@@ -325,7 +325,7 @@
 <p>很快发现 <code>$TERM</code> 这个环境变量会被 tmux 修改从而使 emacs 感知到环境变化。这个变量有以下几种常见的取值：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TERM=linux  <span class="comment"># Linux 的 tty，比如 Ctrl-Alt-F2 切到的那种。</span></span><br><span class="line">TERM=dumb  <span class="comment"># Emacs 里面的 shell 或者 eshell 的取值，用来告知内部运行的程序，这不是真的终端。</span></span><br><span class="line">TERM=xterm-256color  <span class="comment"># 支持 256 色的终端，xterm 是一个被广泛接受的终端模拟器名称所以很多软件都会如此设置。比如 konsole, iTerm 甚至 WSL。当然也有真正的 xterm 本身。</span></span><br><span class="line">TERM=screen-256color  <span class="comment"># 为了向前支持，tmux 会假装自己是 screen。</span></span><br><span class="line">TERM=gnome-256color  <span class="comment"># 顾名思义。</span></span><br><span class="line">TERM=konsole-256color  <span class="comment"># 同上。</span></span><br></pre></td></tr></table></figure>
 <p>复现了一下，手动设置 <code>$TERM</code> 的取值就可以改变颜色，问题解决。</p>
-<p>这个设定的原因是什么呢？在 emacs 中 求值 <code>(list-colors-display)</code> 你会得到一个显示所有 emaqcs 认为可以显示的颜色的 buffer，根据你的 <code>$TERM</code> 是否有 256color 后缀，它会判断你是否能支持 256 色。而这些颜色往往不会跟随终端主题变化，主题往往只改变基本的 8 种颜色。而前缀同样重要。如果前缀是 <code>xterm</code> 那么 emacs 认为你的终端背景是白色，于是就会给你比较暗的字符颜色。于是就 gg 了，而其他的变量会使 emacs 认为背景是黑色，which 是我们想要的结果。</p>
+<p>这个设定的原因是什么呢？在 emacs 中 求值 <code>(list-colors-display)</code> 你会得到一个显示所有 emacs 认为可以显示的颜色的 buffer，根据你的 <code>$TERM</code> 是否有 256color 后缀，它会判断你是否能支持 256 色。而这些颜色往往不会跟随终端主题变化，主题往往只改变基本的 8 种颜色。而前缀同样重要。如果前缀是 <code>xterm</code> 那么 emacs 认为你的终端背景是白色，于是就会给你比较暗的字符颜色。于是就 gg 了，而其他的变量会使 emacs 认为背景是黑色，which 是我们想要的结果。</p>
 <p>也不是所有的前缀都被支持的，如果你设定了一个非标准的 <code>$TERM</code> 变量，emacs 将会拒绝工作。<code>$TERM</code> 设定为 dumb 时也一样。</p>
 <p>问题最终的解决方案：konsole 设置中导出环境变量 <code>TERM=konsole-256color</code> 即可。</p>
 
