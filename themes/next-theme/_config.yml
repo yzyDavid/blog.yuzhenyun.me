@@ -109,13 +109,13 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  #Title: http://example.com/
-  ZM-BAD: https://zmbad.me/
-  Colliot: https://colliot.me/zh/
+  # Title: http://example.com/
+  # ZM-BAD: https://zmbad.me/
+  # Colliot: https://colliot.me/zh/
   tigertang: http://tigertang.cn/
   wyd: http://zjuwyd.com/
   zhangcy: https://blog.zhangcy.cn/
-  zuhxs: http://zuhxs.com/
+  # zuhxs: http://zuhxs.com/
   hahahaha123567: https://hahahaha123567.github.io/
   Riko: http://www.zjuriko.ml/
   Th3Charlie: http://www.th3charlie.com/
