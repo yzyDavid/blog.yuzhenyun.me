@@ -106,7 +106,7 @@ social_icons:
 
 # Blog rolls
 links_title: Links
-#links_layout: block
+links_layout: block
 #links_layout: inline
 links:
   #Title: http://example.com/
@@ -117,6 +117,9 @@ links:
   zhangcy: https://blog.zhangcy.cn/
   zuhxs: http://zuhxs.com/
   hahahaha123567: https://hahahaha123567.github.io/
+  Riko: http://www.zjuriko.ml/
+  Th3Charlie: http://www.th3charlie.com/
+  Uta: https://utashih.github.io/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
