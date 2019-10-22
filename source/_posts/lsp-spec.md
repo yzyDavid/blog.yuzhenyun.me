@@ -2,6 +2,8 @@
 title: 语言服务器协议 - 规范阅读笔记
 date: 2019-10-20 21:59:34
 tags:
+- Language Server Protocol
+- 开发工具
 ---
 
 ## 语言服务器协议 - Language Server Protocol

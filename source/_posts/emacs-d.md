@@ -2,6 +2,7 @@
 title: 维护一个自用的 .emacs.d
 date: 2019-10-20 15:57:53
 tags:
+- Emacs
 ---
 
 [GitHub](https://github.com/yzyDavid/.emacs.d)

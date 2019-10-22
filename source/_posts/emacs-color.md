@@ -2,6 +2,8 @@
 title: 记一例排查 Emacs 显示颜色的问题
 date: 2019-10-19 12:31:51
 tags:
+- Terminal
+- Emacs
 ---
 
 解决方案：
