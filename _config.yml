@@ -7,8 +7,8 @@ title: Blog of Zhenyun Yu
 subtitle: A place for technology and anything
 description:
 author: Zhenyun Yu
-language: en
-timezone:
+language: zh_CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
