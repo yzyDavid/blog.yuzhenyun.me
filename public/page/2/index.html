@@ -265,6 +265,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/tf-pad/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhenyun Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog of Zhenyun Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/tf-pad/" itemprop="url">tf.pad 通俗解释</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-20T15:49:48+08:00">
+                2017-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pad(</span><br><span class="line">    tensor,</span><br><span class="line">    paddings,</span><br><span class="line">    mode=<span class="string">'CONSTANT'</span>,</span><br><span class="line">    name=<span class="literal">None</span>,</span><br><span class="line">    constant_values=<span class="number">0</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>关键的就是其中<code>paddings</code>这个参数，接受一个二维张量，且需要为 [n, 2] 这种 shape。</p>
+<p>举个栗子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    [</span><br><span class="line">        <span class="number">1</span>, <span class="comment"># 第0维，前面补1个</span></span><br><span class="line">      	<span class="number">2</span>  <span class="comment"># 第0维，后面补2个</span></span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">     	<span class="number">3</span>, <span class="comment"># 第1维，前面补3个</span></span><br><span class="line">      	<span class="number">4</span>  <span class="comment"># 第2维，后面补4个</span></span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>有几个维度，就要几个数对，每个数对指示那个维度上前后分别补几个。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/tf-pad/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/git-blame/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1189,7 +1317,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1202,7 +1330,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
