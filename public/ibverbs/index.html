@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
 <meta property="og:description" content="翻译一些读过了的 ibverbs API。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-11-05T15:44:50.408Z">
+<meta property="og:updated_time" content="2019-11-05T15:50:48.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ibverbs Man page 翻译">
 <meta name="twitter:description" content="翻译一些读过了的 ibverbs API。">
@@ -350,9 +350,14 @@
 <h3 id="ibv_reg_mr">ibv_reg_mr</h3>
 <h3 id="ibv_dereg_mr">ibv_dereg_mr</h3>
 <p><code>MR</code> 为 <code>memory region</code></p>
+<p>每个 <code>MR</code> 关联在一个 <code>PD</code> 上。</p>
 <h3 id="ibv_create_cq">ibv_create_cq</h3>
 <h3 id="ibv_destroy_cq">ibv_destroy_cq</h3>
 <p><code>CQ</code> 为 <code>completion queue</code></p>
+<h3 id="ibv_create_qp">ibv_create_qp</h3>
+<h3 id="ibv_destroy_qp">ibv_destroy_qp</h3>
+<p><code>QP</code> 为<code></code>queue pair`</p>
+<p>每个 <code>QP</code> 关联在一个 <code>PD</code> 上。</p>
 
       
     </div>
@@ -554,6 +559,10 @@
                   <a href="https://blog.yzyzsun.me/" title="yzyzsun" target="_blank">yzyzsun</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.aozora.moe/" title="ANLOF" target="_blank">ANLOF</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -573,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_get_device_list"><span class="nav-number">1.</span> <span class="nav-text">ibv_get_device_list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_free_device_list"><span class="nav-number">2.</span> <span class="nav-text">ibv_free_device_list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_open_device"><span class="nav-number">3.</span> <span class="nav-text">ibv_open_device</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_close_device"><span class="nav-number">4.</span> <span class="nav-text">ibv_close_device</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_alloc_pd"><span class="nav-number">5.</span> <span class="nav-text">ibv_alloc_pd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_dealloc_pd"><span class="nav-number">6.</span> <span class="nav-text">ibv_dealloc_pd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_reg_mr"><span class="nav-number">7.</span> <span class="nav-text">ibv_reg_mr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_dereg_mr"><span class="nav-number">8.</span> <span class="nav-text">ibv_dereg_mr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_create_cq"><span class="nav-number">9.</span> <span class="nav-text">ibv_create_cq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_destroy_cq"><span class="nav-number">10.</span> <span class="nav-text">ibv_destroy_cq</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_get_device_list"><span class="nav-number">1.</span> <span class="nav-text">ibv_get_device_list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_free_device_list"><span class="nav-number">2.</span> <span class="nav-text">ibv_free_device_list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_open_device"><span class="nav-number">3.</span> <span class="nav-text">ibv_open_device</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_close_device"><span class="nav-number">4.</span> <span class="nav-text">ibv_close_device</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_alloc_pd"><span class="nav-number">5.</span> <span class="nav-text">ibv_alloc_pd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_dealloc_pd"><span class="nav-number">6.</span> <span class="nav-text">ibv_dealloc_pd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_reg_mr"><span class="nav-number">7.</span> <span class="nav-text">ibv_reg_mr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_dereg_mr"><span class="nav-number">8.</span> <span class="nav-text">ibv_dereg_mr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_create_cq"><span class="nav-number">9.</span> <span class="nav-text">ibv_create_cq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_destroy_cq"><span class="nav-number">10.</span> <span class="nav-text">ibv_destroy_cq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_create_qp"><span class="nav-number">11.</span> <span class="nav-text">ibv_create_qp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ibv_destroy_qp"><span class="nav-number">12.</span> <span class="nav-text">ibv_destroy_qp</span></a></li></ol></div>
             
 
           </div>
@@ -596,7 +605,7 @@
         <div class="copyright">
   
   &copy;  2017 &mdash; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

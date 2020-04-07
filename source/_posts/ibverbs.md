@@ -34,8 +34,18 @@ tags:
 
 `MR` 为 `memory region`
 
+每个 `MR` 关联在一个 `PD` 上。
+
 ### ibv\_create\_cq
 
 ### ibv\_destroy\_cq
 
 `CQ` 为 `completion queue`
+
+### ibv\_create\_qp
+
+### ibv\_destroy\_qp
+
+`QP` 为` `queue pair`
+
+每个 `QP` 关联在一个 `PD` 上。
