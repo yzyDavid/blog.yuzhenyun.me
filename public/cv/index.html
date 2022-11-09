@@ -1,454 +1,292 @@
 <!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.yuzhenyun.me","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"بحث...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-<html class="theme-next gemini use-motion" lang="zh_CN">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="课程,计算机视觉,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
-
-
-
-
-
-
-<meta name="description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
-<meta name="keywords" content="课程,计算机视觉">
+    <meta name="description" content="计算机视觉 计算题 问答题 推导题 12-13道大题左右    TODO List LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浙江大学 计算机视觉 复习提纲">
 <meta property="og:url" content="http://blog.yuzhenyun.me/cv/index.html">
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
-<meta property="og:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
+<meta property="og:description" content="计算机视觉 计算题 问答题 推导题 12-13道大题左右    TODO List LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-10T16:20:33.553Z">
+<meta property="article:published_time" content="2018-01-14T11:18:40.000Z">
+<meta property="article:modified_time" content="2019-10-10T16:20:33.553Z">
+<meta property="article:author" content="Zhenyun Yu">
+<meta property="article:tag" content="课程">
+<meta property="article:tag" content="计算机视觉">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浙江大学 计算机视觉 复习提纲">
-<meta name="twitter:description" content="计算机视觉  计算题 问答题 推导题 12-13道大题左右   TODO List  LoG 的 G 一阶偏导有限差分 Harris 推导 PCA 协方差矩阵的用法 weight 数">
+
+
+<link rel="canonical" href="http://blog.yuzhenyun.me/cv/">
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_CN","comments":true,"permalink":"http://blog.yuzhenyun.me/cv/","path":"cv/","title":"浙江大学 计算机视觉 复习提纲"}</script>
 
-
-
-  <link rel="canonical" href="http://blog.yuzhenyun.me/cv/">
-
-
-
-
-
-  <title>浙江大学 计算机视觉 复习提纲 | Blog of Zhenyun Yu</title>
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>浙江大学 计算机视觉 复习提纲 | Blog of Zhenyun Yu</title>
   
 
 
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?6febf75fce436b62a0390863fe760705";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-
-
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Blog of Zhenyun Yu</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح" role="button">
     </div>
-      
-        <h1 class="site-subtitle" itemprop="description">A place for technology and anything</h1>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Blog of Zhenyun Yu</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">A place for technology and anything</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
-  
-    <ul id="menu" class="menu">
-      
+
+
+
+
+
+</div>
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-  
-</nav>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          المحتويات
+        </li>
+        <li class="sidebar-nav-overview">
+          عام
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO-List"><span class="nav-number">1.</span> <span class="nav-text">TODO List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%A1%94%E6%B3%95%E5%88%99-Gestalt-Theory"><span class="nav-number">2.</span> <span class="nav-text">格式塔法则 Gestalt Theory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Marr-%E8%A7%86%E8%A7%89%E8%A1%A8%E7%A4%BA%E6%A1%86%E6%9E%B6"><span class="nav-number">3.</span> <span class="nav-text">Marr 视觉表示框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#primal-sketch"><span class="nav-number">3.1.</span> <span class="nav-text">primal sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5D-sketch"><span class="nav-number">3.2.</span> <span class="nav-text">2.5D sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D-model"><span class="nav-number">3.3.</span> <span class="nav-text">3D model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%80%BC%E5%9B%BE%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">二值图像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%E7%89%B9%E6%80%A7"><span class="nav-number">4.1.</span> <span class="nav-text">几何特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E8%AE%A1%E7%AE%97"><span class="nav-number">4.2.</span> <span class="nav-text">投影计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F"><span class="nav-number">4.3.</span> <span class="nav-text">连通区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E7%BC%98"><span class="nav-number">5.</span> <span class="nav-text">边缘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E4%B8%BB%E8%A6%81%E7%9A%84%E4%B8%8D%E8%BF%9E%E7%BB%AD"><span class="nav-number">5.1.</span> <span class="nav-text">四种主要的不连续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E4%B8%80%E9%98%B6%E5%AF%BC%E6%95%B0%E7%9A%84%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="nav-number">5.2.</span> <span class="nav-text">基于一阶导数的边缘检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6"><span class="nav-number">5.2.1.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Roberts-%E4%BA%A4%E5%8F%89%E7%AE%97%E5%AD%90"><span class="nav-number">5.2.2.</span> <span class="nav-text">Roberts 交叉算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sobel-%E7%AE%97%E5%AD%90"><span class="nav-number">5.2.3.</span> <span class="nav-text">Sobel 算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Prewitt-%E7%AE%97%E5%AD%90"><span class="nav-number">5.2.4.</span> <span class="nav-text">Prewitt 算子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E4%BA%8C%E9%98%B6%E5%AF%BC%E6%95%B0%E7%9A%84%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="nav-number">5.3.</span> <span class="nav-text">基于二阶导数的边缘检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Laplacian-%E7%AE%97%E5%AD%90"><span class="nav-number">5.3.1.</span> <span class="nav-text">Laplacian 算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LoG-%E7%AE%97%E5%AD%90"><span class="nav-number">5.3.2.</span> <span class="nav-text">LoG 算子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Canny-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="nav-number">5.4.</span> <span class="nav-text">Canny 边缘检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#harris%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B"><span class="nav-number">6.</span> <span class="nav-text">harris角点检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SIFT-%E6%8F%8F%E8%BF%B0%E5%AD%90%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">7.</span> <span class="nav-text">SIFT 描述子的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="nav-number">7.1.</span> <span class="nav-text">旋转不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%BA%E5%BA%A6%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="nav-number">7.2.</span> <span class="nav-text">尺度不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SIFT-%E6%8F%8F%E8%BF%B0%E5%AD%90"><span class="nav-number">7.3.</span> <span class="nav-text">SIFT 描述子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%AD%A5%E9%AA%A4"><span class="nav-number">7.4.</span> <span class="nav-text">计算步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hough-%E5%8F%98%E6%8D%A2-%E7%9B%B4%E7%BA%BF%E6%A3%80%E6%B5%8B"><span class="nav-number">8.</span> <span class="nav-text">Hough 变换 直线检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E7%9A%84%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="nav-number">9.</span> <span class="nav-text">图像的傅立叶变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B"><span class="nav-number">10.</span> <span class="nav-text">相机模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E6%9C%BA%E5%8F%82%E6%95%B0%E5%9C%A8%E6%88%90%E5%83%8F%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">10.1.</span> <span class="nav-text">相机参数在成像各个阶段的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E6%83%B3%E9%92%88%E5%AD%94%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B"><span class="nav-number">11.</span> <span class="nav-text">理想针孔相机模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%9A%84%E9%80%8F%E8%A7%86%E6%8A%95%E5%BD%B1%E5%85%AC%E5%BC%8F"><span class="nav-number">11.1.</span> <span class="nav-text">齐次坐标的透视投影公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%84%E5%90%91%E7%95%B8%E5%8F%98%E5%92%8C%E5%88%87%E5%90%91%E7%95%B8%E5%8F%98"><span class="nav-number">12.</span> <span class="nav-text">径向畸变和切向畸变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E6%9C%BA%E6%A0%87%E5%AE%9A"><span class="nav-number">13.</span> <span class="nav-text">相机标定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E6%9C%BA%E5%8F%82%E6%95%B0"><span class="nav-number">13.1.</span> <span class="nav-text">相机参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">13.2.</span> <span class="nav-text">过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89-%E4%B8%89%E8%A7%92%E6%B5%8B%E9%87%8F%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">14.</span> <span class="nav-text">立体视觉 三角测量基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="nav-number">14.1.</span> <span class="nav-text">基本步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96-%E7%BB%93%E6%9E%84%E5%85%89%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-number">15.</span> <span class="nav-text">三维数据获取 结构光成像系统的构成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%85%89%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F"><span class="nav-number">15.1.</span> <span class="nav-text">结构光成像系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ICP-%E7%AE%97%E6%B3%95"><span class="nav-number">15.2.</span> <span class="nav-text">ICP 算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%89%E6%B5%81"><span class="nav-number">16.</span> <span class="nav-text">光流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%82%B9%E7%9A%84%E7%BA%A6%E6%9D%9F%E5%85%AC%E5%BC%8F"><span class="nav-number">16.1.</span> <span class="nav-text">一个点的约束公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5"><span class="nav-number">17.</span> <span class="nav-text">图像拼接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RANSAC-%E9%9A%8F%E6%9C%BA%E6%8A%BD%E6%A0%B7%E4%B8%80%E8%87%B4%E6%80%A7%E7%AE%97%E6%B3%95"><span class="nav-number">17.1.</span> <span class="nav-text">RANSAC 随机抽样一致性算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">17.1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">17.1.2.</span> <span class="nav-text">步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90"><span class="nav-number">18.</span> <span class="nav-text">人脸识别 主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PCA-%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90"><span class="nav-number">18.1.</span> <span class="nav-text">PCA 主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3-%E4%BD%9C%E7%94%A8"><span class="nav-number">18.1.1.</span> <span class="nav-text">基本思想 作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0%E7%9A%84%E6%8E%A8%E5%AF%BC"><span class="nav-number">18.1.2.</span> <span class="nav-text">优化目标函数的推导</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eigenface"><span class="nav-number">18.2.</span> <span class="nav-text">eigenface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4-1"><span class="nav-number">18.2.1.</span> <span class="nav-text">步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-recognition"><span class="nav-number">19.</span> <span class="nav-text">visual recognition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E-Bag-of-Words-%EF%BC%88%E8%AF%8D%E8%A2%8B%EF%BC%89%E7%9A%84%E7%89%A9%E4%BD%93%E5%88%86%E7%B1%BB"><span class="nav-number">20.</span> <span class="nav-text">基于 Bag of Words （词袋）的物体分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E4%BD%93%E8%AF%86%E5%88%AB-CNN"><span class="nav-number">21.</span> <span class="nav-text">物体识别 CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2"><span class="nav-number">22.</span> <span class="nav-text">图像分割</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E7%9A%84%E7%9B%AE%E6%A0%87"><span class="nav-number">22.1.</span> <span class="nav-text">图像分割的目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%81%9A%E7%B1%BB%E7%9A%84%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2"><span class="nav-number">22.2.</span> <span class="nav-text">基于聚类的语义分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E-mean-shift-%E7%9A%84%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2"><span class="nav-number">22.3.</span> <span class="nav-text">基于 mean shift 的图像分割</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Additional-Part"><span class="nav-number"></span> <span class="nav-text">Additional Part</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%9A%84%E7%A0%94%E7%A9%B6%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">计算机视觉的研究内容</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Zhenyun Yu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">المقالات</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">الوسوم</span></a>
+      </div>
+  </nav>
+</div>
 
 
 
- </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
 
   
 
-  
+
+<div class="post-block">
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh_CN">
     <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/cv/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zhenyun Yu">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Blog of Zhenyun Yu">
+      <meta itemprop="description" content="">
     </span>
 
-    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="浙江大学 计算机视觉 复习提纲 | Blog of Zhenyun Yu">
+      <meta itemprop="description" content="">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浙江大学 计算机视觉 复习提纲
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">浙江大学 计算机视觉 复习提纲</h2>
-        
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">نُشر في</span>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T19:18:40+08:00">
-                2018-01-14
-              </time>
-            
+      <time title="أُنشأ: 2018-01-14 19:18:40" itemprop="dateCreated datePublished" datetime="2018-01-14T19:18:40+08:00">2018-01-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">عُدل في</span>
+      <time title="عُدل: 2019-10-11 00:20:33" itemprop="dateModified" datetime="2019-10-11T00:20:33+08:00">2019-10-11</time>
+    </span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>﻿</p>
 <ul>
-<li>计算机视觉
-<ul>
+<li>计算机视觉<ul>
 <li>计算题</li>
 <li>问答题</li>
 <li>推导题</li>
 <li>12-13道大题左右</li>
-</ul></li>
 </ul>
-<h2 id="todo-list">TODO List</h2>
-<ul>
+</li>
+</ul>
+<h2 id="TODO-List"><a href="#TODO-List" class="headerlink" title="TODO List"></a>TODO List</h2><ul>
 <li>LoG 的 G</li>
 <li>一阶偏导<strong>有限</strong>差分</li>
 <li>Harris 推导</li>
 <li>PCA 协方差矩阵的用法</li>
 <li>weight 数</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
+
 <hr>
-<h2 id="格式塔法则-gestalt-theory">格式塔法则 Gestalt Theory</h2>
-<ul>
+<h2 id="格式塔法则-Gestalt-Theory"><a href="#格式塔法则-Gestalt-Theory" class="headerlink" title="格式塔法则 Gestalt Theory"></a>格式塔法则 Gestalt Theory</h2><ul>
 <li>Law of Proximity 距离近的</li>
 <li>Law of Similarity 长得像的</li>
-<li>Law of Good Continuation</li>
+<li>Law of Good Continuation </li>
 <li>Law of Closure</li>
 <li>Law of Goodform</li>
-<li>Law of Figure / Ground</li>
+<li>Law of Figure &#x2F; Ground</li>
 </ul>
-<h2 id="marr-视觉表示框架">Marr 视觉表示框架</h2>
-<h3 id="primal-sketch">primal sketch</h3>
-<p>角点 边缘 纹理 线条 边界</p>
-<h3 id="d-sketch">2.5D sketch</h3>
-<p>在以观测者为中心的坐标系中</p>
+<h2 id="Marr-视觉表示框架"><a href="#Marr-视觉表示框架" class="headerlink" title="Marr 视觉表示框架"></a>Marr 视觉表示框架</h2><h3 id="primal-sketch"><a href="#primal-sketch" class="headerlink" title="primal sketch"></a>primal sketch</h3><p>角点 边缘 纹理 线条 边界</p>
+<h3 id="2-5D-sketch"><a href="#2-5D-sketch" class="headerlink" title="2.5D sketch"></a>2.5D sketch</h3><p>在以观测者为中心的坐标系中</p>
 <p>深度 法线 轮廓</p>
-<h3 id="d-model">3D model</h3>
-<p>在以物体为中心的坐标系中</p>
+<h3 id="3D-model"><a href="#3D-model" class="headerlink" title="3D model"></a>3D model</h3><p>在以物体为中心的坐标系中</p>
 <p>恢复，重建和表示三维模型</p>
-<h2 id="二值图像">二值图像</h2>
-<h3 id="几何特性">几何特性</h3>
-<ul>
+<h2 id="二值图像"><a href="#二值图像" class="headerlink" title="二值图像"></a>二值图像</h2><h3 id="几何特性"><a href="#几何特性" class="headerlink" title="几何特性"></a>几何特性</h3><ul>
 <li>面积 零阶矩</li>
 <li>区域中心 一阶矩</li>
-<li>方向
-<ul>
+<li>方向<ul>
 <li>最小化问题</li>
 <li>最小二乘法</li>
-</ul></li>
-<li>伸长率 <span class="math inline">\(E=\frac{\chi_{max}}{\chi_{min}}\)</span></li>
-<li>密集度 p 周长 A 面积 <span class="math inline">\(C=\frac{A}{p^2}\)</span></li>
+</ul>
+</li>
+<li>伸长率 $E&#x3D;\frac{\chi_{max}}{\chi_{min}}$</li>
+<li>密集度 p 周长 A 面积 $C&#x3D;\frac{A}{p^2}$</li>
 <li>形态比：最小外接矩形的长宽比</li>
 <li>欧拉数：连通分量数减去洞数</li>
 </ul>
-<h3 id="投影计算">投影计算</h3>
-<h3 id="连通区域">连通区域</h3>
-<ul>
+<h3 id="投影计算"><a href="#投影计算" class="headerlink" title="投影计算"></a>投影计算</h3><h3 id="连通区域"><a href="#连通区域" class="headerlink" title="连通区域"></a>连通区域</h3><ul>
 <li>递归算法</li>
 <li>序贯算法</li>
 <li><em>区域边界跟踪算法</em></li>
 </ul>
-<h2 id="边缘">边缘</h2>
-<blockquote>
-<p>基本思想 检测灰度不连续的地方 四种不连续 基于一阶和二阶的边缘检测 laplacian log算子 marr hildreth算子 为什么加G canny 边缘检测 重点 要记住详细步骤</p>
+<h2 id="边缘"><a href="#边缘" class="headerlink" title="边缘"></a>边缘</h2><blockquote>
+<p> 基本思想 检测灰度不连续的地方<br> 四种不连续<br> 基于一阶和二阶的边缘检测<br> laplacian log算子<br> marr hildreth算子 为什么加G<br> canny 边缘检测 重点 要记住详细步骤</p>
 </blockquote>
-<h3 id="四种主要的不连续">四种主要的不连续</h3>
-<ul>
+<h3 id="四种主要的不连续"><a href="#四种主要的不连续" class="headerlink" title="四种主要的不连续"></a>四种主要的不连续</h3><ul>
 <li>深度不连续</li>
 <li>颜色不连续</li>
 <li>法向量不连续</li>
 <li>光照不连续</li>
 </ul>
-<h3 id="基于一阶导数的边缘检测">基于一阶导数的边缘检测</h3>
-<p><strong>图像中用差分近似偏导数</strong></p>
-<h4 id="梯度">梯度</h4>
-<p><span class="math inline">\(|G_{(x,y)}|\approx\max(|G_x|,|G_y|)\)</span></p>
-<h4 id="roberts-交叉算子">Roberts 交叉算子</h4>
-<p><span class="math display">\[
-G_x=
-\begin{pmatrix}
-1 &amp;  0 \\
-0 &amp; -1 \\
-\end{pmatrix}
-G_y=
-\begin{pmatrix}
-0 &amp; -1 \\
-1 &amp;  0 \\
-\end{pmatrix}
-\]</span></p>
-<h4 id="sobel-算子">Sobel 算子</h4>
-<p><span class="math display">\[
-G_x=
-\begin{pmatrix}
--1 &amp;  0 &amp;  1 \\
--2 &amp;  0 &amp;  2 \\
--1 &amp;  0 &amp;  1 \\
-\end{pmatrix}
-\]</span></p>
+<h3 id="基于一阶导数的边缘检测"><a href="#基于一阶导数的边缘检测" class="headerlink" title="基于一阶导数的边缘检测"></a>基于一阶导数的边缘检测</h3><p><strong>图像中用差分近似偏导数</strong></p>
+<h4 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h4><p>$|G_{(x,y)}|\approx\max(|G_x|,|G_y|)$</p>
+<h4 id="Roberts-交叉算子"><a href="#Roberts-交叉算子" class="headerlink" title="Roberts 交叉算子"></a>Roberts 交叉算子</h4><p>$$<br>G_x&#x3D;<br>\begin{pmatrix}<br>1 &amp;  0 \<br>0 &amp; -1 \<br>\end{pmatrix}<br>G_y&#x3D;<br>\begin{pmatrix}<br>0 &amp; -1 \<br>1 &amp;  0 \<br>\end{pmatrix}<br>$$</p>
+<h4 id="Sobel-算子"><a href="#Sobel-算子" class="headerlink" title="Sobel 算子"></a>Sobel 算子</h4><p>$$<br>G_x&#x3D;<br>\begin{pmatrix}<br>-1 &amp;  0 &amp;  1 \<br>-2 &amp;  0 &amp;  2 \<br>-1 &amp;  0 &amp;  1 \<br>\end{pmatrix}<br>$$</p>
 <p>y 方向的同理，转置即可。</p>
-<h4 id="prewitt-算子">Prewitt 算子</h4>
-<p>速度较快</p>
+<h4 id="Prewitt-算子"><a href="#Prewitt-算子" class="headerlink" title="Prewitt 算子"></a>Prewitt 算子</h4><p>速度较快</p>
 <p>Sobel 的2全部换成1即可。</p>
-<h3 id="基于二阶导数的边缘检测">基于二阶导数的边缘检测</h3>
-<h4 id="laplacian-算子">Laplacian 算子</h4>
-<p><span class="math display">\[
-\nabla^2=
-\begin{pmatrix}
-0 &amp; 1 &amp; 0 \\
-1 &amp; -4 &amp; 1 \\
-0 &amp; 1 &amp; 0
-\end{pmatrix}
-\]</span></p>
-<h4 id="log-算子">LoG 算子</h4>
-<p>高斯滤波 + 拉普拉斯边缘检测</p>
+<h3 id="基于二阶导数的边缘检测"><a href="#基于二阶导数的边缘检测" class="headerlink" title="基于二阶导数的边缘检测"></a>基于二阶导数的边缘检测</h3><h4 id="Laplacian-算子"><a href="#Laplacian-算子" class="headerlink" title="Laplacian 算子"></a>Laplacian 算子</h4><p>$$<br>\nabla^2&#x3D;<br>\begin{pmatrix}<br>0 &amp; 1 &amp; 0 \<br>1 &amp; -4 &amp; 1 \<br>0 &amp; 1 &amp; 0<br>\end{pmatrix}<br>$$</p>
+<h4 id="LoG-算子"><a href="#LoG-算子" class="headerlink" title="LoG 算子"></a>LoG 算子</h4><p>高斯滤波 + 拉普拉斯边缘检测</p>
 <ul>
 <li>平滑滤波使用高斯滤波</li>
 <li>拉普拉斯算子计算二阶导数</li>
@@ -463,102 +301,78 @@ G_x=
 </ul>
 <p>使用高斯滤波器的原因：</p>
 <p>平滑去噪和边缘检测是一对矛盾，应用高斯函数的<strong>一阶导数</strong>，在二者之间获得最佳的平衡</p>
-<h3 id="canny-边缘检测">Canny 边缘检测</h3>
-<p>步骤：</p>
+<h3 id="Canny-边缘检测"><a href="#Canny-边缘检测" class="headerlink" title="Canny 边缘检测"></a>Canny 边缘检测</h3><p>步骤：</p>
 <ul>
 <li>高斯滤波 平滑图像</li>
 <li>一阶偏导有限差分 计算 梯度幅值与方向</li>
 <li>非极大值抑制</li>
 <li>双阈值算法检测和连接边缘</li>
 </ul>
-<h2 id="harris角点检测">harris角点检测</h2>
-<blockquote>
-<p>知道原理 会推导公式 约等于的 特征值</p>
+<h2 id="harris角点检测"><a href="#harris角点检测" class="headerlink" title="harris角点检测"></a>harris角点检测</h2><blockquote>
+<p>知道原理<br>会推导公式 约等于的 特征值</p>
 </blockquote>
 <p>原理：</p>
 <p>一个窗口在图像上移动。平滑区域里，在各个方向上都没有变化；边缘上，在边缘方向没有变化；角点，在各个方向都有变化。</p>
 <p>公式：</p>
-<p>窗口平移产生的变化：<span class="math inline">\(E(u,v)\approx [u,v]M[u,v]^T\)</span></p>
-<p><span class="math inline">\(E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2\)</span></p>
-<p><span class="math inline">\(u,v ~\text{are small in values}\)</span></p>
-<p><span class="math inline">\(I(x+u,y+v)\approx I(x,y)+uI_x(x,y)+vI_y(x,y)\)</span></p>
-<p><span class="math inline">\(E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2\)</span></p>
-<p><span class="math inline">\(=\sum_{x,y}w(x,y)[I(x,y)+uI_x(x,y)+vI_y(x,y)-I(x,y)]^2\)</span></p>
-<p><span class="math inline">\(=\sum_{x,y}w(x,y)[uI_x(x,y)+vI_y(x,y)]^2\)</span></p>
-<p><span class="math display">\[
-=[u,v]\sum_{x,y}w(x,y)
-\begin{pmatrix}
-I_x^2 &amp; I_xI_y \\
-I_xI_y &amp; I_y^2 \\
-\end{pmatrix}
-[u,v]^T
-\]</span></p>
-<p><span class="math display">\[
-M=
-\sum_{x,y}w(x,y)
-\begin{pmatrix}
-I_x^2 &amp; I_xI_y \\
-I_xI_y &amp; I_y^2 \\
-\end{pmatrix}
-\]</span></p>
-<p>其中 <span class="math inline">\(I_x,I_y\)</span> 是矩阵 <span class="math inline">\(M\)</span> 的特征根。</p>
+<p>窗口平移产生的变化：$E(u,v)\approx [u,v]M[u,v]^T$</p>
+<p>$E(u,v)&#x3D;\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2$</p>
+<p>$u,v ~\text{are small in values}$</p>
+<p>$I(x+u,y+v)\approx I(x,y)+uI_x(x,y)+vI_y(x,y)$</p>
+<p>$E(u,v)&#x3D;\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2$</p>
+<p>$&#x3D;\sum_{x,y}w(x,y)[I(x,y)+uI_x(x,y)+vI_y(x,y)-I(x,y)]^2$</p>
+<p>$&#x3D;\sum_{x,y}w(x,y)[uI_x(x,y)+vI_y(x,y)]^2$</p>
+<p>$$<br>&#x3D;[u,v]\sum_{x,y}w(x,y)<br>\begin{pmatrix}<br>I_x^2 &amp; I_xI_y \<br>I_xI_y &amp; I_y^2 \<br>\end{pmatrix}<br>[u,v]^T<br>$$</p>
+<p>$$<br>M&#x3D;<br>\sum_{x,y}w(x,y)<br>\begin{pmatrix}<br>I_x^2 &amp; I_xI_y \<br>I_xI_y &amp; I_y^2 \<br>\end{pmatrix}<br>$$</p>
+<p>其中 $I_x,I_y$ 是矩阵 $M$ 的特征根。</p>
 <p>上面那句没懂。</p>
-<p><span class="math inline">\(R=\det M-k(\text{trace}~M)^2\)</span></p>
-<p><span class="math inline">\(\det M=\lambda_1\lambda_2\)</span></p>
-<p><span class="math inline">\(\text{trace}~M=\lambda_1+\lambda_2\)</span></p>
+<p>$R&#x3D;\det M-k(\text{trace}~M)^2$</p>
+<p>$\det M&#x3D;\lambda_1\lambda_2$</p>
+<p>$\text{trace}~M&#x3D;\lambda_1+\lambda_2$</p>
 <p>算法流程：</p>
 <ul>
 <li>找出大于阈值的 R 值</li>
 <li>选取其附近的局部极大值</li>
 </ul>
-<h2 id="sift-描述子的计算">SIFT 描述子的计算</h2>
-<blockquote>
-<p>为何只使用梯度信息 计算的基本步骤 full version 如何实现旋转不变性 尺度不变的原理</p>
+<h2 id="SIFT-描述子的计算"><a href="#SIFT-描述子的计算" class="headerlink" title="SIFT 描述子的计算"></a>SIFT 描述子的计算</h2><blockquote>
+<p>为何只使用梯度信息<br>计算的基本步骤 full version<br>如何实现旋转不变性<br>尺度不变的原理</p>
 </blockquote>
-<h3 id="旋转不变性">旋转不变性</h3>
-<p>因为旋转的时候每一个关键点周围的点也会跟着旋转，不会影响SIFT向量。</p>
-<h3 id="尺度不变性">尺度不变性</h3>
-<p>图像金字塔</p>
+<h3 id="旋转不变性"><a href="#旋转不变性" class="headerlink" title="旋转不变性"></a>旋转不变性</h3><p>因为旋转的时候每一个关键点周围的点也会跟着旋转，不会影响SIFT向量。</p>
+<h3 id="尺度不变性"><a href="#尺度不变性" class="headerlink" title="尺度不变性"></a>尺度不变性</h3><p>图像金字塔</p>
 <p>DoG 金字塔，即高斯差分金字塔</p>
-<h3 id="sift-描述子">SIFT 描述子</h3>
-<p>128 维</p>
-<p><span class="math inline">\(4\times 4\)</span> Grid of cells <span class="math inline">\(\times 8\)</span> orientations</p>
-<h3 id="计算步骤">计算步骤</h3>
-<ul>
-<li>Scale-space extrema detection
-<ul>
+<h3 id="SIFT-描述子"><a href="#SIFT-描述子" class="headerlink" title="SIFT 描述子"></a>SIFT 描述子</h3><p>128 维</p>
+<p>$4\times 4$ Grid of cells $\times 8$ orientations</p>
+<h3 id="计算步骤"><a href="#计算步骤" class="headerlink" title="计算步骤"></a>计算步骤</h3><ul>
+<li>Scale-space extrema detection<ul>
 <li>uses Difference-of-Gaussian function</li>
-</ul></li>
-<li>Keypoint localization
-<ul>
-<li>subpixel location and scale fit into the model</li>
-</ul></li>
-<li>Orientation assignment
-<ul>
-<li>1 or more for each point</li>
-</ul></li>
-<li>Keypoint descriptor
-<ul>
-<li>from local image gradients</li>
-</ul></li>
 </ul>
-<h2 id="hough-变换-直线检测">Hough 变换 直线检测</h2>
-<p>基于投票，流程如下：</p>
+</li>
+<li>Keypoint localization<ul>
+<li>subpixel location and scale fit into the model</li>
+</ul>
+</li>
+<li>Orientation assignment<ul>
+<li>1 or more for each point</li>
+</ul>
+</li>
+<li>Keypoint descriptor<ul>
+<li>from local image gradients</li>
+</ul>
+</li>
+</ul>
+<h2 id="Hough-变换-直线检测"><a href="#Hough-变换-直线检测" class="headerlink" title="Hough 变换 直线检测"></a>Hough 变换 直线检测</h2><p>基于投票，流程如下：</p>
 <ul>
 <li>适当地参数化向量空间</li>
 <li>假定参数空间每个单元都是累加器</li>
 <li>对图像空间上每一点，累加器++</li>
 <li>选取最大值</li>
 </ul>
-<h2 id="图像的傅立叶变换">图像的傅立叶变换</h2>
-<blockquote>
-<p>变换本身和性质不用记 理解图像的低频与高频成分 能通俗解释 理解拉普拉斯金字塔的每一层是带通滤波，是怎么来的 语言解释，不需要公式 从高斯金字塔来的</p>
+<h2 id="图像的傅立叶变换"><a href="#图像的傅立叶变换" class="headerlink" title="图像的傅立叶变换"></a>图像的傅立叶变换</h2><blockquote>
+<p>变换本身和性质不用记<br>理解图像的低频与高频成分 能通俗解释<br>理解拉普拉斯金字塔的每一层是带通滤波，是怎么来的<br>语言解释，不需要公式<br>从高斯金字塔来的</p>
 </blockquote>
 <p>拉普拉斯金字塔：高通减低通</p>
 <p>低通：变化慢的信息 <strong>轮廓</strong></p>
 <p>高通：变化快的信息 <strong>噪声与细节</strong></p>
-<h2 id="相机模型">相机模型</h2>
-<blockquote>
+<h2 id="相机模型"><a href="#相机模型" class="headerlink" title="相机模型"></a>相机模型</h2><blockquote>
 <p>理解 光圈 景深 焦距 视场</p>
 </blockquote>
 <ul>
@@ -566,130 +380,89 @@ I_xI_y &amp; I_y^2 \\
 <li>焦距越大，视场越小</li>
 </ul>
 <p>Thin lens equation:</p>
-<p><span class="math inline">\(\frac{1}{d_o}+\frac{1}{d_i}=\frac{1}{f}\)</span></p>
-<p>视场角：<span class="math inline">\(\text{AFOV}^\circ=2\tan^{-1}(\frac{h}{2f})\)</span></p>
-<p>上面的 <span class="math inline">\(h\)</span> 是什么？</p>
+<p>$\frac{1}{d_o}+\frac{1}{d_i}&#x3D;\frac{1}{f}$</p>
+<p>视场角：$\text{AFOV}^\circ&#x3D;2\tan^{-1}(\frac{h}{2f})$</p>
+<p>上面的 $h$ 是什么？</p>
 <p>TODO 相机模型的图</p>
-<h3 id="相机参数在成像各个阶段的作用">相机参数在成像各个阶段的作用</h3>
-<ul>
-<li>世界坐标系 =&gt; 相机坐标系：外参数</li>
-<li>相机坐标系 =&gt; 像平面坐标系(2D)：内参数</li>
-<li>非理想模型：=&gt; 像素：畸变参数
-<ul>
-<li><span class="math inline">\(k\)</span> 和径向畸变有关</li>
-<li><span class="math inline">\(p\)</span> 和切向畸变有关</li>
-</ul></li>
+<h3 id="相机参数在成像各个阶段的作用"><a href="#相机参数在成像各个阶段的作用" class="headerlink" title="相机参数在成像各个阶段的作用"></a>相机参数在成像各个阶段的作用</h3><ul>
+<li>世界坐标系 &#x3D;&gt; 相机坐标系：外参数</li>
+<li>相机坐标系 &#x3D;&gt; 像平面坐标系(2D)：内参数</li>
+<li>非理想模型：&#x3D;&gt; 像素：畸变参数<ul>
+<li>$k$ 和径向畸变有关</li>
+<li>$p$ 和切向畸变有关</li>
 </ul>
-<h2 id="理想针孔相机模型">理想针孔相机模型</h2>
-<blockquote>
-<p>基本投影公式 画图说明 齐次坐标形式的透视投影公式 矩阵形式 内参和内参矩阵 不包括畸变参数 会写会背即可</p>
+</li>
+</ul>
+<h2 id="理想针孔相机模型"><a href="#理想针孔相机模型" class="headerlink" title="理想针孔相机模型"></a>理想针孔相机模型</h2><blockquote>
+<p>基本投影公式 画图说明 齐次坐标形式的透视投影公式 矩阵形式<br>内参和内参矩阵 不包括畸变参数 会写会背即可</p>
 </blockquote>
 <p>Pinhole camera model:</p>
-<p><span class="math inline">\(-x=f\frac{X}{Z}\)</span></p>
-<h3 id="齐次坐标的透视投影公式">齐次坐标的透视投影公式</h3>
-<p><span class="math display">\[
-\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 1 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; -\frac{1}{d} &amp; 0 \\
-\end{pmatrix}
-\begin{pmatrix}
-x \\ y \\ z \\ 1 \\
-\end{pmatrix}
-=
-\begin{pmatrix}
-x \\ y \\ -\frac{z}{d} \\
-\end{pmatrix}
-\]</span></p>
-<p><span class="math display">\[
-(-d\frac{x}{z},-d\frac{y}{z})
-\]</span></p>
-<h2 id="径向畸变和切向畸变">径向畸变和切向畸变</h2>
-<blockquote>
-<p>常见的哪两种 各是什么原因引起的 外参有哪几个，含义 内参 外参 畸变参数在成像各个阶段的角色 三维物体到真实图像的过程</p>
+<p>$-x&#x3D;f\frac{X}{Z}$</p>
+<h3 id="齐次坐标的透视投影公式"><a href="#齐次坐标的透视投影公式" class="headerlink" title="齐次坐标的透视投影公式"></a>齐次坐标的透视投影公式</h3><p>$$<br>\begin{pmatrix}<br>1 &amp; 0 &amp; 0 &amp; 0 \<br>0 &amp; 1 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; -\frac{1}{d} &amp; 0 \<br>\end{pmatrix}<br>\begin{pmatrix}<br>x \ y \ z \ 1 \<br>\end{pmatrix}<br>&#x3D;<br>\begin{pmatrix}<br>x \ y \ -\frac{z}{d} \<br>\end{pmatrix}<br>$$</p>
+<p>$$<br>(-d\frac{x}{z},-d\frac{y}{z})<br>$$</p>
+<h2 id="径向畸变和切向畸变"><a href="#径向畸变和切向畸变" class="headerlink" title="径向畸变和切向畸变"></a>径向畸变和切向畸变</h2><blockquote>
+<p>常见的哪两种 各是什么原因引起的<br>外参有哪几个，含义<br>内参 外参 畸变参数在成像各个阶段的角色<br>三维物体到真实图像的过程</p>
 </blockquote>
 <ul>
-<li>径向畸变
-<ul>
+<li>径向畸变<ul>
 <li>原因：镜头径向曲率的不规则变化</li>
 <li>使点产生径向位置的偏差，正向畸变称为枕形畸变，负向畸变称为桶形畸变</li>
 <li>由镜头的形状缺陷造成，关于主光轴对称</li>
-</ul></li>
-<li>切向畸变
-<ul>
+</ul>
+</li>
+<li>切向畸变<ul>
 <li>透镜不是完美地平行于图像平面</li>
 <li>导致部分区域看起来更近</li>
-</ul></li>
+</ul>
+</li>
 <li>外参 含义</li>
 </ul>
-<h2 id="相机标定">相机标定</h2>
-<blockquote>
-<p>需要求解哪些参数 基于pattern / reference object 的相机定标 已知什么，求解什么 简述基本过程，几个步骤</p>
+<h2 id="相机标定"><a href="#相机标定" class="headerlink" title="相机标定"></a>相机标定</h2><blockquote>
+<p>需要求解哪些参数<br>基于pattern &#x2F; reference object 的相机定标<br>已知什么，求解什么<br>简述基本过程，几个步骤</p>
 </blockquote>
-<h3 id="相机参数">相机参数</h3>
-<ul>
-<li>4 个内参 <span class="math inline">\((f_x,f_y,c_x,c_y)\)</span></li>
-<li>6 个外参 <span class="math inline">\((\theta,\varphi,\psi,t_x,t_y,t_z)\)</span></li>
-<li>5 个畸变参数 <span class="math inline">\((k_1,k_2,p_1,p_2,k_3)\)</span></li>
+<h3 id="相机参数"><a href="#相机参数" class="headerlink" title="相机参数"></a>相机参数</h3><ul>
+<li>4 个内参 $(f_x,f_y,c_x,c_y)$</li>
+<li>6 个外参 $(\theta,\varphi,\psi,t_x,t_y,t_z)$</li>
+<li>5 个畸变参数 $(k_1,k_2,p_1,p_2,k_3)$</li>
 </ul>
-<p>内参矩阵： <span class="math display">\[
-M=
-\begin{pmatrix}
-f_x &amp; 0 &amp; c_x \\
-0 &amp; f_y &amp; c_y \\
-0 &amp; 0 &amp; 1 \\
-\end{pmatrix}
-\]</span> 外参矩阵： <span class="math display">\[
-P=
-\begin{pmatrix}
-R_{3\times 3} &amp; t_{3\times 1} \\
-0 ~~~ 0 ~~~ 0 &amp; 1 \\
-\end{pmatrix}
-P_0
-\]</span> 由三维旋转矩阵与平移矩阵合并而成</p>
-<h3 id="过程">过程</h3>
-<ul>
-<li>已知
-<ul>
+<p>内参矩阵：<br>$$<br>M&#x3D;<br>\begin{pmatrix}<br>f_x &amp; 0 &amp; c_x \<br>0 &amp; f_y &amp; c_y \<br>0 &amp; 0 &amp; 1 \<br>\end{pmatrix}<br>$$<br>外参矩阵：<br>$$<br>P&#x3D;<br>\begin{pmatrix}<br>R_{3\times 3} &amp; t_{3\times 1} \<br>0 ~~~ 0 ~~~ 0 &amp; 1 \<br>\end{pmatrix}<br>P_0<br>$$<br>由三维旋转矩阵与平移矩阵合并而成</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><ul>
+<li>已知<ul>
 <li>N 个角点的标定对象</li>
 <li>K 个标定对象的视角</li>
-</ul></li>
-<li>求解
-<ul>
+</ul>
+</li>
+<li>求解<ul>
 <li>相机参数，包括内参，外参与畸变参数</li>
-</ul></li>
-<li>流程
-<ul>
+</ul>
+</li>
+<li>流程<ul>
 <li>标定对象：知道网格角点的位置</li>
 <li>从图像中找到角点</li>
 <li>建立等式：将图像坐标转换到世界坐标的等式</li>
 <li>求解，得到相机参数</li>
-</ul></li>
 </ul>
-<h2 id="立体视觉-三角测量基本原理">立体视觉 三角测量基本原理</h2>
-<blockquote>
-<p>会画视差disparity的图 并能推导公式 立体视觉的基本步骤</p>
+</li>
+</ul>
+<h2 id="立体视觉-三角测量基本原理"><a href="#立体视觉-三角测量基本原理" class="headerlink" title="立体视觉 三角测量基本原理"></a>立体视觉 三角测量基本原理</h2><blockquote>
+<p>会画视差disparity的图 并能推导公式<br>立体视觉的基本步骤</p>
 </blockquote>
-<h3 id="基本步骤">基本步骤</h3>
-<ul>
+<h3 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h3><ul>
 <li>标定相机，消除畸变</li>
 <li>校正图像</li>
 <li>计算差距</li>
 <li>估计深度</li>
 </ul>
-<h2 id="三维数据获取-结构光成像系统的构成">三维数据获取 结构光成像系统的构成</h2>
-<blockquote>
-<p>利用结构光获取三维数据的基本原理 会画图 会推导公式 icp算法的作用和基本步骤</p>
+<h2 id="三维数据获取-结构光成像系统的构成"><a href="#三维数据获取-结构光成像系统的构成" class="headerlink" title="三维数据获取 结构光成像系统的构成"></a>三维数据获取 结构光成像系统的构成</h2><blockquote>
+<p>利用结构光获取三维数据的基本原理<br>会画图 会推导公式<br>icp算法的作用和基本步骤</p>
 </blockquote>
 <p>TODO 画图与推导公式</p>
-<h3 id="结构光成像系统">结构光成像系统</h3>
-<ul>
+<h3 id="结构光成像系统"><a href="#结构光成像系统" class="headerlink" title="结构光成像系统"></a>结构光成像系统</h3><ul>
 <li>结构光投影仪</li>
 <li>CCD 相机</li>
 <li>深度信息重建系统</li>
 </ul>
-<h3 id="icp-算法">ICP 算法</h3>
-<p>迭代最近点算法 Iterative Closest Point</p>
+<h3 id="ICP-算法"><a href="#ICP-算法" class="headerlink" title="ICP 算法"></a>ICP 算法</h3><p>迭代最近点算法 Iterative Closest Point</p>
 <p>给定两个三维点集 X 与 Y，将 Y 配准到 X。</p>
 <ul>
 <li>计算 Y 中每一个点在 X 中的对应最近点</li>
@@ -697,9 +470,8 @@ P_0
 <li>对 Y 应用上一步求得的刚体变换（平移与旋转），更新Y</li>
 <li>如果不到阈值以下，从第一步重新迭代</li>
 </ul>
-<h2 id="光流">光流</h2>
-<blockquote>
-<p>解决什么问题 三个基本假设 一个点的约束公式 会推导 哪些位置的光流比较可靠，why</p>
+<h2 id="光流"><a href="#光流" class="headerlink" title="光流"></a>光流</h2><blockquote>
+<p>解决什么问题<br>三个基本假设<br>一个点的约束公式 会推导<br>哪些位置的光流比较可靠，why</p>
 </blockquote>
 <p>解决像素对应问题，找到两幅图之间距离不远的像素之间的对应关系。</p>
 <p>基本假设：</p>
@@ -708,88 +480,68 @@ P_0
 <li>空间相干性 Spatial coherence</li>
 <li>小移动 Small motion</li>
 </ul>
-<h3 id="一个点的约束公式">一个点的约束公式</h3>
-<p><span class="math display">\[
-O\approx I_t+\nabla I\cdot[u,v] \\
-\text{证明如下：} \\
-O=I(x+u,y+v)-H(x,y) \\
-\approx I(x,y)+uI_x+vI_y-H(x,y) \\
-\approx (I(x,y)-H(x,y))+uI_x+vI_y \\
-\approx I_t+\nabla I\cdot[u,v]
-\]</span></p>
-<h2 id="图像拼接">图像拼接</h2>
-<blockquote>
+<h3 id="一个点的约束公式"><a href="#一个点的约束公式" class="headerlink" title="一个点的约束公式"></a>一个点的约束公式</h3><p>$$<br>O\approx I_t+\nabla I\cdot[u,v] \<br>\text{证明如下：} \<br>O&#x3D;I(x+u,y+v)-H(x,y) \<br>\approx I(x,y)+uI_x+vI_y-H(x,y) \<br>\approx (I(x,y)-H(x,y))+uI_x+vI_y \<br>\approx I_t+\nabla I\cdot[u,v]<br>$$</p>
+<h2 id="图像拼接"><a href="#图像拼接" class="headerlink" title="图像拼接"></a>图像拼接</h2><blockquote>
 <p>实现两张图像自动拼接的基本步骤</p>
 </blockquote>
 <ul>
 <li>找到关键点</li>
 <li>建立 SIFT 描述子</li>
-<li>建立一一对应关系
-<ul>
+<li>建立一一对应关系<ul>
 <li>计算 SIFT 描述子之间的欧氏距离</li>
-</ul></li>
-<li>拟合变换矩阵
-<ul>
+</ul>
+</li>
+<li>拟合变换矩阵<ul>
 <li>仿射变换</li>
-</ul></li>
+</ul>
+</li>
 <li>RANSAC</li>
 <li>Image Blending</li>
 </ul>
-<h3 id="ransac-随机抽样一致性算法">RANSAC 随机抽样一致性算法</h3>
-<blockquote>
-<p>理解其过程的核心思想 优点，基本步骤</p>
+<h3 id="RANSAC-随机抽样一致性算法"><a href="#RANSAC-随机抽样一致性算法" class="headerlink" title="RANSAC 随机抽样一致性算法"></a>RANSAC 随机抽样一致性算法</h3><blockquote>
+<p>理解其过程的核心思想<br>优点，基本步骤</p>
 </blockquote>
 <p><em>RANdom SAmple Consensus</em></p>
-<h4 id="优点">优点</h4>
-<ul>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
 <li>计算快</li>
 <li>robust</li>
 <li>抗噪 适合多种场景 实现方便</li>
 </ul>
-<h4 id="步骤">步骤</h4>
-<ul>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ul>
 <li>随机选取一组点</li>
 <li>用这组点估计到的模型去检测还有哪些局内点，计数</li>
 <li>用新的局内点重新计算模型，迭代</li>
 </ul>
-<h2 id="人脸识别-主成分分析">人脸识别 主成分分析</h2>
-<blockquote>
-<p>PCA 的基本思想 作用 优化目标函数的推导 a1TSa1</p>
+<h2 id="人脸识别-主成分分析"><a href="#人脸识别-主成分分析" class="headerlink" title="人脸识别 主成分分析"></a>人脸识别 主成分分析</h2><blockquote>
+<p>PCA 的基本思想 作用<br>优化目标函数的推导<br>a1TSa1</p>
 </blockquote>
-<h3 id="pca-主成分分析">PCA 主成分分析</h3>
-<h4 id="基本思想-作用">基本思想 作用</h4>
-<p>降维</p>
-<h4 id="优化目标函数的推导">优化目标函数的推导</h4>
-<p>投影方向 <span class="math inline">\(\vec a_1\)</span>，有 <span class="math inline">\(a_1^Ta_1=1\)</span></p>
-<p><span class="math inline">\(d\)</span> 维空间中 <span class="math inline">\(\vec x\)</span> 最大化 <span class="math inline">\(\text{var}(z_1)=\text{var}(\vec a_1\cdot \vec x)\)</span></p>
-<p>求投影方向，即 <span class="math inline">\(\arg\max _{a_1}\text{var}(z_1)\)</span></p>
-<p><span class="math inline">\(\text{var}(z_1)=a_1^TSa_1\)</span></p>
-<p>其中 <span class="math inline">\(S=E(x_i,y_i)-E(x_i)E(y_i)=\text{Cov}(x_i,y_i)\)</span></p>
+<h3 id="PCA-主成分分析"><a href="#PCA-主成分分析" class="headerlink" title="PCA 主成分分析"></a>PCA 主成分分析</h3><h4 id="基本思想-作用"><a href="#基本思想-作用" class="headerlink" title="基本思想 作用"></a>基本思想 作用</h4><p>降维</p>
+<h4 id="优化目标函数的推导"><a href="#优化目标函数的推导" class="headerlink" title="优化目标函数的推导"></a>优化目标函数的推导</h4><p>投影方向 $\vec a_1$，有 $a_1^Ta_1&#x3D;1$</p>
+<p>$d$ 维空间中 $\vec x$<br>最大化 $\text{var}(z_1)&#x3D;\text{var}(\vec a_1\cdot \vec x)$</p>
+<p>求投影方向，即 $\arg\max _{a_1}\text{var}(z_1)$</p>
+<p>$\text{var}(z_1)&#x3D;a_1^TSa_1$</p>
+<p>其中 $S&#x3D;E(x_i,y_i)-E(x_i)E(y_i)&#x3D;\text{Cov}(x_i,y_i)$</p>
 <p>使用 Lagrange 乘子法</p>
-<p>记 Lagrange 乘子为 <span class="math inline">\(\lambda\)</span></p>
-<p>转化为最大化 <span class="math inline">\(a_1^TSa_1-\lambda(a_1^Ta_1-1)\)</span></p>
-<p>对 <span class="math inline">\(a_1^T\)</span> 求微分并且令结果为0，得</p>
-<p><span class="math inline">\(Sa_1-\lambda a_1=0\)</span></p>
+<p>记 Lagrange 乘子为 $\lambda$</p>
+<p>转化为最大化 $a_1^TSa_1-\lambda(a_1^Ta_1-1)$</p>
+<p>对 $a_1^T$ 求微分并且令结果为0，得</p>
+<p>$Sa_1-\lambda a_1&#x3D;0$</p>
 <p>此为最优化的必要条件。</p>
 <p>上式就是矩阵特征值的定义，所以必须用协方差矩阵最大特征值对应的特征向量，转化为求协方差矩阵。</p>
-<h3 id="eigenface">eigenface</h3>
-<blockquote>
-<p>是什么，基本步骤 将重构用于人脸检测的原理</p>
+<h3 id="eigenface"><a href="#eigenface" class="headerlink" title="eigenface"></a>eigenface</h3><blockquote>
+<p>是什么，基本步骤<br>将重构用于人脸检测的原理</p>
 </blockquote>
-<h4 id="步骤-1">步骤</h4>
-<ul>
+<h4 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h4><ul>
 <li>将所有人脸归一化</li>
 <li>通过 PCA 计算获得一组特征向量，一般 100 个就足够了</li>
 <li>将每个人脸投影到此空间中，得到坐标</li>
 <li>对于输入的图像，度量在此空间中的某种距离得到最近的结果</li>
 </ul>
-<h2 id="visual-recognition">visual recognition</h2>
-<blockquote>
-<p>基本任务 4类 都有哪些挑战因素</p>
+<h2 id="visual-recognition"><a href="#visual-recognition" class="headerlink" title="visual recognition"></a>visual recognition</h2><blockquote>
+<p>基本任务 4类<br>都有哪些挑战因素</p>
 </blockquote>
 <p>WTF ???!!!</p>
-<h2 id="基于-bag-of-words-词袋的物体分类">基于 Bag of Words （词袋）的物体分类</h2>
-<blockquote>
+<h2 id="基于-Bag-of-Words-（词袋）的物体分类"><a href="#基于-Bag-of-Words-（词袋）的物体分类" class="headerlink" title="基于 Bag of Words （词袋）的物体分类"></a>基于 Bag of Words （词袋）的物体分类</h2><blockquote>
 <p>是什么意思，几个基本步骤</p>
 </blockquote>
 <ul>
@@ -798,38 +550,31 @@ O=I(x+u,y+v)-H(x,y) \\
 <li>以字典的直方图描述图像</li>
 <li>以 BoW 来分类未知图像</li>
 </ul>
-<h2 id="物体识别-cnn">物体识别 CNN</h2>
-<p>计算参数个数与连接数</p>
+<h2 id="物体识别-CNN"><a href="#物体识别-CNN" class="headerlink" title="物体识别 CNN"></a>物体识别 CNN</h2><p>计算参数个数与连接数</p>
 <p>考虑么？ bias 项？</p>
 <ul>
-<li>参数个数
-<ul>
-<li>卷积核面积 <span class="math inline">\(\times\)</span> 卷积核个数</li>
-</ul></li>
-<li>连接数
-<ul>
-<li>参数个数 <span class="math inline">\(\times\)</span> feature map 面积</li>
-</ul></li>
-<li>权重 (weight) 数
-<ul>
-<li>同连接数</li>
-</ul></li>
+<li>参数个数<ul>
+<li>卷积核面积 $\times$ 卷积核个数</li>
 </ul>
-<h2 id="图像分割">图像分割</h2>
-<h3 id="图像分割的目标">图像分割的目标</h3>
-<p>将像素集合转换成有意义的或者感觉上相似的区域</p>
-<h3 id="基于聚类的语义分割">基于聚类的语义分割</h3>
-<p>基于 <code>K-means</code> 聚类</p>
+</li>
+<li>连接数<ul>
+<li>参数个数 $\times$ feature map 面积</li>
+</ul>
+</li>
+<li>权重 (weight) 数<ul>
+<li>同连接数</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h2><h3 id="图像分割的目标"><a href="#图像分割的目标" class="headerlink" title="图像分割的目标"></a>图像分割的目标</h3><p>将像素集合转换成有意义的或者感觉上相似的区域</p>
+<h3 id="基于聚类的语义分割"><a href="#基于聚类的语义分割" class="headerlink" title="基于聚类的语义分割"></a>基于聚类的语义分割</h3><p>基于 <code>K-means</code> 聚类</p>
 <p>聚类之前先 SIFT（或者其他特征检测方式）找到更优的聚类起始中心点</p>
 <p>聚类之后可以预测在同一类的像素具有相同的标签</p>
 <p>构建（？）</p>
-<h3 id="基于-mean-shift-的图像分割">基于 mean shift 的图像分割</h3>
-<p>要求掌握：基本原理与基本思路</p>
+<h3 id="基于-mean-shift-的图像分割"><a href="#基于-mean-shift-的图像分割" class="headerlink" title="基于 mean shift 的图像分割"></a>基于 mean shift 的图像分割</h3><p>要求掌握：基本原理与基本思路</p>
 <p>不需要具体步骤</p>
 <hr>
-<h1 id="additional-part">Additional Part</h1>
-<h2 id="计算机视觉的研究内容">计算机视觉的研究内容</h2>
-<ul>
+<h1 id="Additional-Part"><a href="#Additional-Part" class="headerlink" title="Additional Part"></a>Additional Part</h1><h2 id="计算机视觉的研究内容"><a href="#计算机视觉的研究内容" class="headerlink" title="计算机视觉的研究内容"></a>计算机视觉的研究内容</h2><ul>
 <li>输入设备</li>
 <li>低层视觉</li>
 <li>中层视觉</li>
@@ -837,395 +582,65 @@ O=I(x+u,y+v)-H(x,y) \\
 <li>体系结构</li>
 </ul>
 
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/课程/" rel="tag"># 课程</a>
-          
-            <a href="/tags/计算机视觉/" rel="tag"># 计算机视觉</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/baloo/" rel="next" title="KDE plasma 5 的 baloo 文件搜索">
-                <i class="fa fa-chevron-left"></i> KDE plasma 5 的 baloo 文件搜索
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E7%A8%8B/" rel="tag"># 课程</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" rel="tag"># 计算机视觉</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/katex/" rel="prev" title="Katex 大法好！">
-                Katex 大法好！ <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/baloo/" rel="prev" title="KDE plasma 5 的 baloo 文件搜索">
+                  <i class="fa fa-chevron-left"></i> KDE plasma 5 的 baloo 文件搜索
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/katex/" rel="next" title="Katex 大法好！">
+                  Katex 大法好！ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
+</div>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
-          </div>
-          
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
 
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <p class="site-author-name" itemprop="name">Zhenyun Yu</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">28</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">24</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yzyDavid" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>GitHub</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/exciting-gg/activities" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>知乎</a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-block">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://tigertang.cn/" title="tigertang" target="_blank">tigertang</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://zjuwyd.com/" title="wyd" target="_blank">wyd</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://blog.zhangcy.cn/" title="zhangcy" target="_blank">zhangcy</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://hahahaha123567.github.io/" title="hahahaha123567" target="_blank">hahahaha123567</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.zjuriko.ml/" title="Riko" target="_blank">Riko</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.th3charlie.com/" title="Th3Charlie" target="_blank">Th3Charlie</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://utashih.github.io/" title="Uta" target="_blank">Uta</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://blog.yzyzsun.me/" title="yzyzsun" target="_blank">yzyzsun</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.aozora.moe/" title="Sora Ao" target="_blank">Sora Ao</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://abracax.github.io/" title="Abracax" target="_blank">Abracax</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#todo-list"><span class="nav-number">1.</span> <span class="nav-text">TODO List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式塔法则-gestalt-theory"><span class="nav-number">2.</span> <span class="nav-text">格式塔法则 Gestalt Theory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#marr-视觉表示框架"><span class="nav-number">3.</span> <span class="nav-text">Marr 视觉表示框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#primal-sketch"><span class="nav-number">3.1.</span> <span class="nav-text">primal sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-sketch"><span class="nav-number">3.2.</span> <span class="nav-text">2.5D sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-model"><span class="nav-number">3.3.</span> <span class="nav-text">3D model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二值图像"><span class="nav-number">4.</span> <span class="nav-text">二值图像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何特性"><span class="nav-number">4.1.</span> <span class="nav-text">几何特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投影计算"><span class="nav-number">4.2.</span> <span class="nav-text">投影计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连通区域"><span class="nav-number">4.3.</span> <span class="nav-text">连通区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边缘"><span class="nav-number">5.</span> <span class="nav-text">边缘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四种主要的不连续"><span class="nav-number">5.1.</span> <span class="nav-text">四种主要的不连续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于一阶导数的边缘检测"><span class="nav-number">5.2.</span> <span class="nav-text">基于一阶导数的边缘检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度"><span class="nav-number">5.2.1.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#roberts-交叉算子"><span class="nav-number">5.2.2.</span> <span class="nav-text">Roberts 交叉算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sobel-算子"><span class="nav-number">5.2.3.</span> <span class="nav-text">Sobel 算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prewitt-算子"><span class="nav-number">5.2.4.</span> <span class="nav-text">Prewitt 算子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于二阶导数的边缘检测"><span class="nav-number">5.3.</span> <span class="nav-text">基于二阶导数的边缘检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#laplacian-算子"><span class="nav-number">5.3.1.</span> <span class="nav-text">Laplacian 算子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#log-算子"><span class="nav-number">5.3.2.</span> <span class="nav-text">LoG 算子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canny-边缘检测"><span class="nav-number">5.4.</span> <span class="nav-text">Canny 边缘检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#harris角点检测"><span class="nav-number">6.</span> <span class="nav-text">harris角点检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sift-描述子的计算"><span class="nav-number">7.</span> <span class="nav-text">SIFT 描述子的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转不变性"><span class="nav-number">7.1.</span> <span class="nav-text">旋转不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尺度不变性"><span class="nav-number">7.2.</span> <span class="nav-text">尺度不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sift-描述子"><span class="nav-number">7.3.</span> <span class="nav-text">SIFT 描述子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算步骤"><span class="nav-number">7.4.</span> <span class="nav-text">计算步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hough-变换-直线检测"><span class="nav-number">8.</span> <span class="nav-text">Hough 变换 直线检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的傅立叶变换"><span class="nav-number">9.</span> <span class="nav-text">图像的傅立叶变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机模型"><span class="nav-number">10.</span> <span class="nav-text">相机模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相机参数在成像各个阶段的作用"><span class="nav-number">10.1.</span> <span class="nav-text">相机参数在成像各个阶段的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理想针孔相机模型"><span class="nav-number">11.</span> <span class="nav-text">理想针孔相机模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#齐次坐标的透视投影公式"><span class="nav-number">11.1.</span> <span class="nav-text">齐次坐标的透视投影公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#径向畸变和切向畸变"><span class="nav-number">12.</span> <span class="nav-text">径向畸变和切向畸变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机标定"><span class="nav-number">13.</span> <span class="nav-text">相机标定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相机参数"><span class="nav-number">13.1.</span> <span class="nav-text">相机参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">13.2.</span> <span class="nav-text">过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立体视觉-三角测量基本原理"><span class="nav-number">14.</span> <span class="nav-text">立体视觉 三角测量基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本步骤"><span class="nav-number">14.1.</span> <span class="nav-text">基本步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维数据获取-结构光成像系统的构成"><span class="nav-number">15.</span> <span class="nav-text">三维数据获取 结构光成像系统的构成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构光成像系统"><span class="nav-number">15.1.</span> <span class="nav-text">结构光成像系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#icp-算法"><span class="nav-number">15.2.</span> <span class="nav-text">ICP 算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光流"><span class="nav-number">16.</span> <span class="nav-text">光流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个点的约束公式"><span class="nav-number">16.1.</span> <span class="nav-text">一个点的约束公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像拼接"><span class="nav-number">17.</span> <span class="nav-text">图像拼接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ransac-随机抽样一致性算法"><span class="nav-number">17.1.</span> <span class="nav-text">RANSAC 随机抽样一致性算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">17.1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤"><span class="nav-number">17.1.2.</span> <span class="nav-text">步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人脸识别-主成分分析"><span class="nav-number">18.</span> <span class="nav-text">人脸识别 主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pca-主成分分析"><span class="nav-number">18.1.</span> <span class="nav-text">PCA 主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本思想-作用"><span class="nav-number">18.1.1.</span> <span class="nav-text">基本思想 作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化目标函数的推导"><span class="nav-number">18.1.2.</span> <span class="nav-text">优化目标函数的推导</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eigenface"><span class="nav-number">18.2.</span> <span class="nav-text">eigenface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤-1"><span class="nav-number">18.2.1.</span> <span class="nav-text">步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-recognition"><span class="nav-number">19.</span> <span class="nav-text">visual recognition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于-bag-of-words-词袋的物体分类"><span class="nav-number">20.</span> <span class="nav-text">基于 Bag of Words （词袋）的物体分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物体识别-cnn"><span class="nav-number">21.</span> <span class="nav-text">物体识别 CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像分割"><span class="nav-number">22.</span> <span class="nav-text">图像分割</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像分割的目标"><span class="nav-number">22.1.</span> <span class="nav-text">图像分割的目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于聚类的语义分割"><span class="nav-number">22.2.</span> <span class="nav-text">基于聚类的语义分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于-mean-shift-的图像分割"><span class="nav-number">22.3.</span> <span class="nav-text">基于 mean shift 的图像分割</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#additional-part"><span class="nav-number"></span> <span class="nav-text">Additional Part</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机视觉的研究内容"><span class="nav-number">1.</span> <span class="nav-text">计算机视觉的研究内容</span></a></li></ol></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
-  
-  &copy;  2017 &mdash; 
-  <span itemprop="copyrightYear">2020</span>
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Zhenyun Yu</span>
-
-  
 </div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
-
-  <span class="post-meta-divider">|</span>
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
+  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
+    </div>
+  </footer>
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -1238,49 +653,6 @@ O=I(x+u,y+v)-H(x,y) \\
 
 
 
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-  
-
-  
 
 </body>
 </html>

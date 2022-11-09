@@ -1,390 +1,267 @@
 <!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.yuzhenyun.me","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"بحث...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-<html class="theme-next gemini use-motion" lang="zh_CN">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="课程,计算理论,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
-
-
-
-
-
-
-<meta name="description" content="天塌了（    章节列表     集合，关系和语言   有限自动机   上下文无关语言   图灵机   不可判定性       语言 自动机     正则语言 确定性/非确定性有限自动机   上下文无关语言 下推自动机   递归可枚举语言 图灵机    TODO list  primitive recursive function automata encoding simple TMs (ele">
-<meta name="keywords" content="课程,计算理论">
+    <meta name="description" content="天塌了（    章节列表    集合，关系和语言   有限自动机   上下文无关语言   图灵机   不可判定性      语言 自动机    正则语言 确定性&#x2F;非确定性有限自动机   上下文无关语言 下推自动机   递归可枚举语言 图灵机   TODO list primitive recursive function automata encoding simple TMs (ele">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浙江大学 计算理论 提纲">
 <meta property="og:url" content="http://blog.yuzhenyun.me/computing-theory/index.html">
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
-<meta property="og:description" content="天塌了（    章节列表     集合，关系和语言   有限自动机   上下文无关语言   图灵机   不可判定性       语言 自动机     正则语言 确定性/非确定性有限自动机   上下文无关语言 下推自动机   递归可枚举语言 图灵机    TODO list  primitive recursive function automata encoding simple TMs (ele">
+<meta property="og:description" content="天塌了（    章节列表    集合，关系和语言   有限自动机   上下文无关语言   图灵机   不可判定性      语言 自动机    正则语言 确定性&#x2F;非确定性有限自动机   上下文无关语言 下推自动机   递归可枚举语言 图灵机   TODO list primitive recursive function automata encoding simple TMs (ele">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-10T16:20:33.553Z">
+<meta property="article:published_time" content="2017-10-13T02:08:50.000Z">
+<meta property="article:modified_time" content="2019-10-10T16:20:33.553Z">
+<meta property="article:author" content="Zhenyun Yu">
+<meta property="article:tag" content="课程">
+<meta property="article:tag" content="计算理论">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浙江大学 计算理论 提纲">
-<meta name="twitter:description" content="天塌了（    章节列表     集合，关系和语言   有限自动机   上下文无关语言   图灵机   不可判定性       语言 自动机     正则语言 确定性/非确定性有限自动机   上下文无关语言 下推自动机   递归可枚举语言 图灵机    TODO list  primitive recursive function automata encoding simple TMs (ele">
+
+
+<link rel="canonical" href="http://blog.yuzhenyun.me/computing-theory/">
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_CN","comments":true,"permalink":"http://blog.yuzhenyun.me/computing-theory/","path":"computing-theory/","title":"浙江大学 计算理论 提纲"}</script>
 
-
-
-  <link rel="canonical" href="http://blog.yuzhenyun.me/computing-theory/">
-
-
-
-
-
-  <title>浙江大学 计算理论 提纲 | Blog of Zhenyun Yu</title>
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>浙江大学 计算理论 提纲 | Blog of Zhenyun Yu</title>
   
 
 
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?6febf75fce436b62a0390863fe760705";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-
-
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Blog of Zhenyun Yu</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح" role="button">
     </div>
-      
-        <h1 class="site-subtitle" itemprop="description">A place for technology and anything</h1>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Blog of Zhenyun Yu</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">A place for technology and anything</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
-  
-    <ul id="menu" class="menu">
-      
+
+
+
+
+
+</div>
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-  
-</nav>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          المحتويات
+        </li>
+        <li class="sidebar-nav-overview">
+          عام
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO-list"><span class="nav-number">1.</span> <span class="nav-text">TODO list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-15%E5%B9%B4%E8%80%83%E5%8D%B7"><span class="nav-number">2.</span> <span class="nav-text">14 - 15年考卷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">判断题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a"><span class="nav-number">2.1.1.</span> <span class="nav-text">(a)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b"><span class="nav-number">2.1.2.</span> <span class="nav-text">(b)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c"><span class="nav-number">2.1.3.</span> <span class="nav-text">(c)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d"><span class="nav-number">2.1.4.</span> <span class="nav-text">(d)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e"><span class="nav-number">2.1.5.</span> <span class="nav-text">(e)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f"><span class="nav-number">2.1.6.</span> <span class="nav-text">(f)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#g"><span class="nav-number">2.1.7.</span> <span class="nav-text">(g)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#h"><span class="nav-number">2.1.8.</span> <span class="nav-text">(h)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i"><span class="nav-number">2.1.9.</span> <span class="nav-text">(i)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#j"><span class="nav-number">2.1.10.</span> <span class="nav-text">(j)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k"><span class="nav-number">2.1.11.</span> <span class="nav-text">(k)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#l"><span class="nav-number">2.1.12.</span> <span class="nav-text">(l)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">简答题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">2.2.1.</span> <span class="nav-text">1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-1"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">(a)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E4%B9%A0PPT%E8%80%83%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">复习PPT考点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text">知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Chomsky-Hierarchy"><span class="nav-number">4.1.</span> <span class="nav-text">Chomsky Hierarchy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E6%8E%A8%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-number">4.2.</span> <span class="nav-text">下推自动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%81%B5%E6%9C%BA"><span class="nav-number">4.3.</span> <span class="nav-text">图灵机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Context-Free-Grammar-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E8%AF%AD%E6%B3%95"><span class="nav-number">4.4.</span> <span class="nav-text">Context Free Grammar 上下文无关语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Chomsky-Normal-Form"><span class="nav-number">4.4.1.</span> <span class="nav-text">Chomsky Normal Form</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CFL-to-CFG"><span class="nav-number">4.4.2.</span> <span class="nav-text">CFL to CFG</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CFL-to-PDA"><span class="nav-number">4.4.3.</span> <span class="nav-text">CFL to PDA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CFG-to-PDA"><span class="nav-number">4.4.4.</span> <span class="nav-text">CFG to PDA</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%B5%E5%AE%9A%E7%90%86"><span class="nav-number">4.5.</span> <span class="nav-text">对于正则语言的泵定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%B5%E5%AE%9A%E7%90%86"><span class="nav-number">4.6.</span> <span class="nav-text">对于上下文无关语言的泵定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%90%86"><span class="nav-number">4.6.1.</span> <span class="nav-text">引理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E7%90%86"><span class="nav-number">4.6.2.</span> <span class="nav-text">定理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NFA-to-DFA"><span class="nav-number">4.7.</span> <span class="nav-text">NFA to DFA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E8%A8%80%E6%98%AF%E5%90%A6%E4%B8%BA%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80"><span class="nav-number">4.8.</span> <span class="nav-text">判断语言是否为正则语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E8%A8%80%E6%98%AF%E5%90%A6%E4%B8%BA%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3"><span class="nav-number">4.9.</span> <span class="nav-text">判断语言是否为上下文无关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E8%A8%80%E6%98%AF%E5%90%A6%E4%B8%BA%E9%80%92%E5%BD%92%E8%AF%AD%E8%A8%80"><span class="nav-number">4.10.</span> <span class="nav-text">判断语言是否为递归语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E8%A8%80%E6%98%AF%E5%90%A6%E4%B8%BA%E9%80%92%E5%BD%92%E5%8F%AF%E6%9E%9A%E4%B8%BE"><span class="nav-number">4.11.</span> <span class="nav-text">判断语言是否为递归可枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-number">4.12.</span> <span class="nav-text">递归函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Functions"><span class="nav-number">4.13.</span> <span class="nav-text">Basic Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Primitive-Recursive-Functions"><span class="nav-number">4.14.</span> <span class="nav-text">Primitive Recursive Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E5%88%A4%E5%AE%9A%E6%80%A7"><span class="nav-number">4.15.</span> <span class="nav-text">不可判定性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%82%B1%E5%A5%87-%E5%9B%BE%E7%81%B5%E8%AE%BA%E9%A2%98"><span class="nav-number">4.15.1.</span> <span class="nav-text">邱奇-图灵论题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">4.15.2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E5%AE%9A"><span class="nav-number">4.15.3.</span> <span class="nav-text">判定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%8A%E5%88%A4%E5%AE%9A"><span class="nav-number">4.15.4.</span> <span class="nav-text">半判定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E5%88%A4%E5%AE%9A"><span class="nav-number">4.15.5.</span> <span class="nav-text">不可判定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">4.15.6.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E8%AF%AD%E8%A8%80"><span class="nav-number">4.15.7.</span> <span class="nav-text">递归语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%8F%AF%E6%9E%9A%E4%B8%BE%E8%AF%AD%E8%A8%80"><span class="nav-number">4.15.8.</span> <span class="nav-text">递归可枚举语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%9B%BE%E7%81%B5%E6%9C%BA"><span class="nav-number">4.15.9.</span> <span class="nav-text">通用图灵机</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rice-%E5%AE%9A%E7%90%86"><span class="nav-number">4.16.</span> <span class="nav-text">Rice 定理</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Zhenyun Yu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">المقالات</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">الوسوم</span></a>
+      </div>
+  </nav>
+</div>
 
 
 
- </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
 
   
 
-  
+
+<div class="post-block">
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh_CN">
     <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/computing-theory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zhenyun Yu">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Blog of Zhenyun Yu">
+      <meta itemprop="description" content="">
     </span>
 
-    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="浙江大学 计算理论 提纲 | Blog of Zhenyun Yu">
+      <meta itemprop="description" content="">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浙江大学 计算理论 提纲
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">浙江大学 计算理论 提纲</h2>
-        
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">نُشر في</span>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T10:08:50+08:00">
-                2017-10-13
-              </time>
-            
+      <time title="أُنشأ: 2017-10-13 10:08:50" itemprop="dateCreated datePublished" datetime="2017-10-13T10:08:50+08:00">2017-10-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">عُدل في</span>
+      <time title="عُدل: 2019-10-11 00:20:33" itemprop="dateModified" datetime="2019-10-11T00:20:33+08:00">2019-10-11</time>
+    </span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>天塌了（</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>章节列表</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>集合，关系和语言</td>
 </tr>
-<tr class="even">
+<tr>
 <td>有限自动机</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>上下文无关语言</td>
 </tr>
-<tr class="even">
+<tr>
 <td>图灵机</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>不可判定性</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>语言</th>
 <th>自动机</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>正则语言</td>
-<td>确定性/非确定性有限自动机</td>
+<td>确定性&#x2F;非确定性有限自动机</td>
 </tr>
-<tr class="even">
+<tr>
 <td>上下文无关语言</td>
 <td>下推自动机</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>递归可枚举语言</td>
 <td>图灵机</td>
 </tr>
-</tbody>
-</table>
-<h2 id="todo-list">TODO list</h2>
-<ul>
+</tbody></table>
+<h2 id="TODO-list"><a href="#TODO-list" class="headerlink" title="TODO list"></a>TODO list</h2><ul>
 <li>primitive recursive function</li>
 <li>automata encoding</li>
 <li>simple TMs (elementary Turing Machine)</li>
@@ -394,672 +271,285 @@
 <li>CFG 2 PDA</li>
 <li>chomsky hierachy</li>
 </ul>
-<a id="more"></a>
-<h2 id="年考卷">14 - 15年考卷</h2>
-<p>选择题答案已经修正</p>
-<h3 id="判断题">判断题</h3>
-<h4 id="a">(a)</h4>
-<p>False</p>
-<h4 id="b">(b)</h4>
-<p>False</p>
-<p><span class="math inline">\(\{a^ib^jc^k|i,j,k\in\mathbb{N}~\mathrm{and}~i+j\not\equiv k~(\mod3)\}\)</span></p>
-<h4 id="c">(c)</h4>
-<p>True</p>
+<span id="more"></span>
+
+<h2 id="14-15年考卷"><a href="#14-15年考卷" class="headerlink" title="14 - 15年考卷"></a>14 - 15年考卷</h2><p>选择题答案已经修正</p>
+<h3 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h3><h4 id="a"><a href="#a" class="headerlink" title="(a)"></a>(a)</h4><p>False</p>
+<h4 id="b"><a href="#b" class="headerlink" title="(b)"></a>(b)</h4><p>False</p>
+<p>${a^ib^jc^k|i,j,k\in\mathbb{N}<del>\mathrm{and}</del>i+j\not\equiv k~(\mod3)}$</p>
+<h4 id="c"><a href="#c" class="headerlink" title="(c)"></a>(c)</h4><p>True</p>
 <p>regular与non-regular并运算</p>
-<h4 id="d">(d)</h4>
-<p>False</p>
+<h4 id="d"><a href="#d" class="headerlink" title="(d)"></a>(d)</h4><p>False</p>
 <p>正则的子集不一定正则</p>
-<h4 id="e">(e)</h4>
-<p>True</p>
-<p><span class="math inline">\(\{xcy|x,y\in\{a,b\}^*~\mathbb{and}~|x|\le|y|\le2|x|\}\)</span> is context-free</p>
-<h4 id="f">(f)</h4>
-<p>False</p>
+<h4 id="e"><a href="#e" class="headerlink" title="(e)"></a>(e)</h4><p>True</p>
+<p>${xcy|x,y\in{a,b}^*<del>\mathbb{and}</del>|x|\le|y|\le2|x|}$ is context-free</p>
+<h4 id="f"><a href="#f" class="headerlink" title="(f)"></a>(f)</h4><p>False</p>
 <p>?</p>
-<h4 id="g">(g)</h4>
-<p>True</p>
-<h4 id="h">(h)</h4>
-<p>False</p>
+<h4 id="g"><a href="#g" class="headerlink" title="(g)"></a>(g)</h4><p>True</p>
+<h4 id="h"><a href="#h" class="headerlink" title="(h)"></a>(h)</h4><p>False</p>
 <p>半判定，因为没说对不接受的串能否停机</p>
-<h4 id="i">(i)</h4>
-<p>False</p>
+<h4 id="i"><a href="#i" class="headerlink" title="(i)"></a>(i)</h4><p>False</p>
 <p>?</p>
-<h4 id="j">(j)</h4>
-<p>True</p>
-<h4 id="k">(k)</h4>
-<p>True</p>
-<h4 id="l">(l)</h4>
-<p>True</p>
-<h3 id="简答题">简答题</h3>
-<h4 id="section">1</h4>
-<h5 id="a-1">(a)</h5>
-<p>No</p>
-<p>take <span class="math inline">\(a^{2n}ca^n\)</span>,</p>
-<h2 id="复习ppt考点">复习PPT考点</h2>
-<ul>
-<li>正则语言
-<ul>
-<li>DFA / NFA =&gt; regex</li>
-<li>regex =&gt; DFA / NFA</li>
-<li>判断一个语言是否正则
-<ul>
-<li>是：DFA / NFA / closure property</li>
-<li>否：closure property / pumping theorem</li>
-</ul></li>
-</ul></li>
-<li>上下文无关语言
-<ul>
-<li>context-free lang =&gt; grammar</li>
-<li>grammar =&gt; PDA</li>
-<li>lang =&gt; PDA</li>
+<h4 id="j"><a href="#j" class="headerlink" title="(j)"></a>(j)</h4><p>True</p>
+<h4 id="k"><a href="#k" class="headerlink" title="(k)"></a>(k)</h4><p>True</p>
+<h4 id="l"><a href="#l" class="headerlink" title="(l)"></a>(l)</h4><p>True</p>
+<h3 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h3><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><h5 id="a-1"><a href="#a-1" class="headerlink" title="(a)"></a>(a)</h5><p>No</p>
+<p>take $a^{2n}ca^n$,</p>
+<h2 id="复习PPT考点"><a href="#复习PPT考点" class="headerlink" title="复习PPT考点"></a>复习PPT考点</h2><ul>
+<li>正则语言<ul>
+<li>DFA &#x2F; NFA &#x3D;&gt; regex</li>
+<li>regex &#x3D;&gt; DFA &#x2F; NFA</li>
+<li>判断一个语言是否正则<ul>
+<li>是：DFA &#x2F; NFA &#x2F; closure property</li>
+<li>否：closure property &#x2F; pumping theorem</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上下文无关语言<ul>
+<li>context-free lang &#x3D;&gt; grammar</li>
+<li>grammar &#x3D;&gt; PDA</li>
+<li>lang &#x3D;&gt; PDA</li>
 <li>判断一个语言是否上下文无关</li>
-</ul></li>
-<li>递归可枚举语言
-<ul>
-<li>设计图灵机计算一个函数 / 判定 半判定语言</li>
-<li>TM =&gt; function</li>
+</ul>
+</li>
+<li>递归可枚举语言<ul>
+<li>设计图灵机计算一个函数 &#x2F; 判定 半判定语言</li>
+<li>TM &#x3D;&gt; function</li>
 <li>判断函数是否为 primitive recursive function</li>
-</ul></li>
-<li>不可判定性
-<ul>
-<li>判断语言递归可枚举 / 不递归</li>
+</ul>
+</li>
+<li>不可判定性<ul>
+<li>判断语言递归可枚举 &#x2F; 不递归</li>
 <li>乔姆斯基层次（此条与下述来自更以前的PPT）</li>
 <li>邱奇图灵论题</li>
 <li>通用图灵机</li>
 <li>停机问题</li>
 <li>一些不可判定的问题</li>
-</ul></li>
-<li>P与NP
-<ul>
-<li>判断语言属于P问题还是NP问题</li>
-</ul></li>
-<li>NP完全
-<ul>
-<li>show a given lang be NP-complete by reduction</li>
-</ul></li>
 </ul>
-<h2 id="知识点">知识点</h2>
-<h3 id="chomsky-hierarchy">Chomsky Hierarchy</h3>
-<ul>
+</li>
+<li>P与NP<ul>
+<li>判断语言属于P问题还是NP问题</li>
+</ul>
+</li>
+<li>NP完全<ul>
+<li>show a given lang be NP-complete by reduction</li>
+</ul>
+</li>
+</ul>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="Chomsky-Hierarchy"><a href="#Chomsky-Hierarchy" class="headerlink" title="Chomsky Hierarchy"></a>Chomsky Hierarchy</h3><ul>
 <li>0型</li>
 <li>1 - 上下文相关</li>
 <li>2 - 上下文无关</li>
 <li>3 - 正则</li>
 </ul>
-<h3 id="下推自动机">下推自动机</h3>
-<p>六元组 <span class="math inline">\(M=(K,\Sigma,\Gamma,\Delta,s,F)\)</span></p>
+<h3 id="下推自动机"><a href="#下推自动机" class="headerlink" title="下推自动机"></a>下推自动机</h3><p>六元组 $M&#x3D;(K,\Sigma,\Gamma,\Delta,s,F)$</p>
 <ul>
-<li><span class="math inline">\(K\)</span> 状态集合</li>
-<li><span class="math inline">\(\Sigma\)</span> 输入字母表</li>
-<li><span class="math inline">\(\Gamma\)</span> 栈字母表</li>
-<li><span class="math inline">\(s\in K\)</span> 初始状态</li>
-<li><span class="math inline">\(F\subseteq K\)</span> 终结状态集</li>
-<li><span class="math inline">\(\Delta\)</span> 转移函数</li>
+<li>$K$ 状态集合</li>
+<li>$\Sigma$ 输入字母表</li>
+<li>$\Gamma$ 栈字母表</li>
+<li>$s\in K$ 初始状态</li>
+<li>$F\subseteq K$ 终结状态集</li>
+<li>$\Delta$ 转移函数</li>
 </ul>
-<p><span class="math inline">\(\Delta=\{((p,\alpha,\beta),(q,\gamma))\}\)</span></p>
+<p>$\Delta&#x3D;{((p,\alpha,\beta),(q,\gamma))}$</p>
 <ul>
-<li><span class="math inline">\(p\)</span> PDA 当前的状态</li>
-<li><span class="math inline">\(\alpha\)</span> 读入的字母</li>
-<li><span class="math inline">\(\beta\)</span> 栈顶的元素</li>
-<li><span class="math inline">\(q\)</span> 要转移到的状态</li>
-<li><span class="math inline">\(\gamma\)</span> 将栈顶的元素修改到的元素</li>
+<li>$p$ PDA 当前的状态</li>
+<li>$\alpha$ 读入的字母</li>
+<li>$\beta$ 栈顶的元素</li>
+<li>$q$ 要转移到的状态</li>
+<li>$\gamma$ 将栈顶的元素修改到的元素</li>
 </ul>
 <p>接受条件：</p>
 <ul>
 <li>处理完输入，栈为空</li>
 <li>PDA 到达终结状态（之一）</li>
 </ul>
-<h3 id="图灵机">图灵机</h3>
-<p>五元组 <span class="math inline">\(M=(K,\Sigma,\delta,s,H)\)</span></p>
+<h3 id="图灵机"><a href="#图灵机" class="headerlink" title="图灵机"></a>图灵机</h3><p>五元组 $M&#x3D;(K,\Sigma,\delta,s,H)$</p>
 <ul>
-<li><span class="math inline">\(K\)</span> 状态集合</li>
-<li><span class="math inline">\(\Sigma\)</span> 输入字母表
-<ul>
-<li><span class="math inline">\(\sqcup\)</span> 为空符号</li>
-<li><span class="math inline">\(\rhd\)</span> 为纸带最左端</li>
-</ul></li>
-<li><span class="math inline">\(s\in K\)</span> 初始状态</li>
-<li><span class="math inline">\(H\subseteq K\)</span> 停机状态集</li>
-<li><span class="math inline">\(\delta\)</span> 转移函数</li>
+<li>$K$ 状态集合</li>
+<li>$\Sigma$ 输入字母表<ul>
+<li>$\sqcup$ 为空符号</li>
+<li>$\rhd$ 为纸带最左端</li>
 </ul>
-<p><span class="math inline">\(K=\{(q,w\underline au)\}\)</span></p>
-<p>这里与张海的复习笔记有出入，后者记这个集合是 <span class="math inline">\(\delta\)</span>。</p>
-<h3 id="context-free-grammar-上下文无关语法">Context Free Grammar 上下文无关语法</h3>
-<p><span class="math inline">\(G=(V,\Sigma,R,S),R=\{A\to u\}\)</span></p>
+</li>
+<li>$s\in K$ 初始状态</li>
+<li>$H\subseteq K$ 停机状态集</li>
+<li>$\delta$ 转移函数</li>
+</ul>
+<p>$K&#x3D;{(q,w\underline au)}$</p>
+<p>这里与张海的复习笔记有出入，后者记这个集合是 $\delta$。</p>
+<h3 id="Context-Free-Grammar-上下文无关语法"><a href="#Context-Free-Grammar-上下文无关语法" class="headerlink" title="Context Free Grammar 上下文无关语法"></a>Context Free Grammar 上下文无关语法</h3><p>$G&#x3D;(V,\Sigma,R,S),R&#x3D;{A\to u}$</p>
 <p>其中：</p>
 <ul>
-<li><span class="math inline">\(V\)</span> 为字母表</li>
-<li><span class="math inline">\(\Sigma\subseteq V\)</span> 为终结符号的集合</li>
-<li><span class="math inline">\(S\in V-\Sigma\)</span> 为起始符号</li>
-<li><span class="math inline">\(R\)</span> 为规则，是<span class="math inline">\((V-\Sigma)\times V^*\)</span> 的子集</li>
+<li>$V$ 为字母表</li>
+<li>$\Sigma\subseteq V$ 为终结符号的集合</li>
+<li>$S\in V-\Sigma$ 为起始符号</li>
+<li>$R$ 为规则，是$(V-\Sigma)\times V^*$ 的子集</li>
 </ul>
-<h4 id="chomsky-normal-form">Chomsky Normal Form</h4>
-<p><span class="math display">\[
-S\to\epsilon \\
-A\to a \\
-A\to BC
-\]</span></p>
-<h4 id="cfl-to-cfg">CFL to CFG</h4>
-<p>手动构造。</p>
+<h4 id="Chomsky-Normal-Form"><a href="#Chomsky-Normal-Form" class="headerlink" title="Chomsky Normal Form"></a>Chomsky Normal Form</h4><p>$$<br>S\to\epsilon \<br>A\to a \<br>A\to BC<br>$$</p>
+<h4 id="CFL-to-CFG"><a href="#CFL-to-CFG" class="headerlink" title="CFL to CFG"></a>CFL to CFG</h4><p>手动构造。</p>
 <p>常见例子就是回文，两种字母个数相等，字母个数有等式或者不等式限制等等。</p>
-<h4 id="cfl-to-pda">CFL to PDA</h4>
-<p>也只能手动构造，同上。</p>
-<h4 id="cfg-to-pda">CFG to PDA</h4>
-<p><span class="math inline">\(G=(V,\Sigma,R,S)\)</span></p>
-<p><span class="math inline">\(M=(K,\Sigma,\Gamma,\Delta,s,F)\)</span></p>
-<p>给出文法 <span class="math inline">\(G\)</span>，则 PDA 的参数可定义为：</p>
+<h4 id="CFL-to-PDA"><a href="#CFL-to-PDA" class="headerlink" title="CFL to PDA"></a>CFL to PDA</h4><p>也只能手动构造，同上。</p>
+<h4 id="CFG-to-PDA"><a href="#CFG-to-PDA" class="headerlink" title="CFG to PDA"></a>CFG to PDA</h4><p>$G&#x3D;(V,\Sigma,R,S)$</p>
+<p>$M&#x3D;(K,\Sigma,\Gamma,\Delta,s,F)$</p>
+<p>给出文法 $G$，则 PDA 的参数可定义为：</p>
 <ul>
-<li><span class="math inline">\(K=\{p,q\}\)</span></li>
-<li><span class="math inline">\(\Gamma=V\)</span></li>
-<li><span class="math inline">\(s=p\)</span></li>
-<li><span class="math inline">\(F=\{q\}\)</span></li>
-<li><span class="math inline">\(\Delta\)</span> 包括以下三种变换：
-<ul>
-<li><span class="math inline">\(((p,e,e),(q,S))\)</span> 接受</li>
-<li><span class="math inline">\((q,e,A),(q,x)\)</span> 生成, for each rule <span class="math inline">\(A\to x\in R\)</span></li>
-<li><span class="math inline">\(((q,a,a),(q,e)), \forall a\in\Sigma\)</span> 匹配</li>
-</ul></li>
+<li>$K&#x3D;{p,q}$</li>
+<li>$\Gamma&#x3D;V$</li>
+<li>$s&#x3D;p$</li>
+<li>$F&#x3D;{q}$</li>
+<li>$\Delta$ 包括以下三种变换：<ul>
+<li>$((p,e,e),(q,S))$ 接受</li>
+<li>$(q,e,A),(q,x)$ 生成, for each rule $A\to x\in R$</li>
+<li>$((q,a,a),(q,e)), \forall a\in\Sigma$ 匹配</li>
 </ul>
-<h3 id="对于正则语言的泵定理">对于正则语言的泵定理</h3>
-<p>Let <span class="math inline">\(L\)</span> be a regular language, then there exists an integer <span class="math inline">\(n\ge1\)</span> that any string <span class="math inline">\(w\in L\)</span> with <span class="math inline">\(|w|\ge n\)</span> can be written as <span class="math inline">\(w=xyz\)</span> such that:</p>
+</li>
+</ul>
+<h3 id="对于正则语言的泵定理"><a href="#对于正则语言的泵定理" class="headerlink" title="对于正则语言的泵定理"></a>对于正则语言的泵定理</h3><p>Let $L$ be a regular language, then there exists an integer $n\ge1$ that any string $w\in L$ with $|w|\ge n$ can be written as $w&#x3D;xyz$ such that:</p>
 <ul>
-<li><span class="math inline">\(y\ne e\)</span></li>
-<li><span class="math inline">\(|xy|\le n\)</span></li>
-<li><span class="math inline">\(\forall i&gt;0,xy^iz\in L\)</span></li>
+<li>$y\ne e$</li>
+<li>$|xy|\le n$</li>
+<li>$\forall i&gt;0,xy^iz\in L$</li>
 </ul>
 <p><del>想不明白了，先睡觉。</del></p>
 <p>先背下来再说。</p>
-<h3 id="对于上下文无关语言的泵定理">对于上下文无关语言的泵定理</h3>
-<h4 id="引理">引理</h4>
-<p>高度为 <span class="math inline">\(h\)</span> 的任何 <span class="math inline">\(G\)</span> 的parse tree 长度不超过 <span class="math inline">\(\phi(G)^h\)</span></p>
-<h4 id="定理">定理</h4>
-<p>Let <span class="math inline">\(G=(V,\Sigma,R,S)\)</span> be a CFG, then any string <span class="math inline">\(w\in L(G)\)</span> of length greater than <span class="math inline">\(n\ge \phi(G)^{|V-\Sigma|}\)</span> can be written as <span class="math inline">\(w=uvxyz\)</span> such that:</p>
+<h3 id="对于上下文无关语言的泵定理"><a href="#对于上下文无关语言的泵定理" class="headerlink" title="对于上下文无关语言的泵定理"></a>对于上下文无关语言的泵定理</h3><h4 id="引理"><a href="#引理" class="headerlink" title="引理"></a>引理</h4><p>高度为 $h$ 的任何 $G$ 的parse tree 长度不超过 $\phi(G)^h$</p>
+<h4 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h4><p>Let $G&#x3D;(V,\Sigma,R,S)$ be a CFG, then any string $w\in L(G)$ of length greater than $n\ge \phi(G)^{|V-\Sigma|}$ can be written as $w&#x3D;uvxyz$ such that:</p>
 <ul>
-<li><span class="math inline">\(vy\ne e\)</span></li>
-<li><span class="math inline">\(|vxy|\le n\)</span></li>
-<li><span class="math inline">\(\forall i \ge 0,uv^ixy^iz\in L(G)\)</span></li>
+<li>$vy\ne e$</li>
+<li>$|vxy|\le n$</li>
+<li>$\forall i \ge 0,uv^ixy^iz\in L(G)$</li>
 </ul>
-<h3 id="nfa-to-dfa">NFA to DFA</h3>
-<p>子集构造法</p>
+<h3 id="NFA-to-DFA"><a href="#NFA-to-DFA" class="headerlink" title="NFA to DFA"></a>NFA to DFA</h3><p>子集构造法</p>
 <p>DFA 的每个状态对应 NFA 的一个状态集合。</p>
-<p>输入：NFA <span class="math inline">\(N\)</span></p>
-<p>输出：DFA <span class="math inline">\(D\)</span></p>
-<p>构造转换表 <span class="math inline">\(Dtran\)</span></p>
-<p><span class="math inline">\(D\)</span> 的状态集合 <span class="math inline">\(Dstates\)</span></p>
-<p><span class="math inline">\(N\)</span> 的单个状态记为 <span class="math inline">\(s\)</span>，<span class="math inline">\(N\)</span> 的一个状态集记为 <span class="math inline">\(T\)</span>。</p>
-<p><span class="math inline">\(\epsilon-closure(s)\)</span></p>
-<p><span class="math inline">\(\epsilon-closure(T)=U_{s\in T}\epsilon-closure(s)\)</span></p>
-<p><span class="math inline">\(move(T,a)\)</span> 从 <span class="math inline">\(T\)</span> 的某个状态 <span class="math inline">\(s\)</span> 出发，通过标号为 <span class="math inline">\(a\)</span> 的转换能到达的 NFA 的状态集合。</p>
+<p>输入：NFA $N$</p>
+<p>输出：DFA $D$</p>
+<p>构造转换表 $Dtran$</p>
+<p>$D$ 的状态集合 $Dstates$</p>
+<p>$N$ 的单个状态记为 $s$，$N$ 的一个状态集记为 $T$。</p>
+<p>$\epsilon-closure(s)$</p>
+<p>$\epsilon-closure(T)&#x3D;U_{s\in T}\epsilon-closure(s)$</p>
+<p>$move(T,a)$ 从 $T$ 的某个状态 $s$ 出发，通过标号为 $a$ 的转换能到达的 NFA 的状态集合。</p>
 <blockquote>
-<p>开始时，<span class="math inline">\(\epsilon-closure(s_0)\)</span> 是 <span class="math inline">\(Dstates\)</span> 中的唯一状态且未加标记。</p>
-<p>while <span class="math inline">\(Dstates\)</span> 中有一个未标记状态 <span class="math inline">\(T\)</span></p>
-<p>​ 标记 <span class="math inline">\(T\)</span></p>
-<p>​ foreach 输入符号 <span class="math inline">\(a\)</span></p>
-<p>​ <span class="math inline">\(U=\epsilon-closure(move(T,a))\)</span></p>
-<p>​ if <span class="math inline">\(U\not\in Dstates\)</span></p>
-<p>​ 将 <span class="math inline">\(U\)</span> 加入 <span class="math inline">\(Dstates\)</span> 且不加标记</p>
-<p>​ <span class="math inline">\(Dtran[T,a]=U\)</span></p>
+<p>开始时，$\epsilon-closure(s_0)$ 是 $Dstates$ 中的唯一状态且未加标记。</p>
+<p>while $Dstates$ 中有一个未标记状态 $T$</p>
+<p>​	标记 $T$</p>
+<p>​	foreach 输入符号 $a$</p>
+<p>​		$U&#x3D;\epsilon-closure(move(T,a))$</p>
+<p>​		if $U\not\in Dstates$</p>
+<p>​			将 $U$ 加入 $Dstates$ 且不加标记</p>
+<p>​		$Dtran[T,a]&#x3D;U$</p>
 </blockquote>
-<h3 id="判断语言是否为正则语言">判断语言是否为正则语言</h3>
-<p>正则语言对于交、并、补、差，连接，克林闭包封闭。</p>
+<h3 id="判断语言是否为正则语言"><a href="#判断语言是否为正则语言" class="headerlink" title="判断语言是否为正则语言"></a>判断语言是否为正则语言</h3><p>正则语言对于交、并、补、差，连接，克林闭包封闭。</p>
 <ul>
 <li>F - 正则语言的子集都是正则语言</li>
 <li>F - 正则语言都有正则的真子集（空集没有）</li>
-<li>T - 正则语言 <span class="math inline">\(L~x,y\in L,\{xy|x\in L,y\not\in L\}\)</span> 是正则语言（补集与连接）</li>
-<li>F - <span class="math inline">\(\{w|w=w^R\}\)</span> 是正则语言</li>
-<li>T - <span class="math inline">\(\{w|w\in L ~\text{and}~ w^R\in L\}\)</span> （<span class="math inline">\(L\)</span> 是正则语言，<span class="math inline">\(L&#39;=L\cap L^R\)</span>）</li>
-<li>F - If <span class="math inline">\(C\)</span> is any set of regular languages, then <span class="math inline">\(\cup C\)</span> is a regular language. （无限集）</li>
-<li>T - <span class="math inline">\(\{xyx^R|x,y=\Sigma^*\}\)</span> 是正则语言（<span class="math inline">\(x\)</span> 可以为空，<span class="math inline">\(y=\Sigma^*\)</span> ）</li>
+<li>T - 正则语言 $L~x,y\in L,{xy|x\in L,y\not\in L}$ 是正则语言（补集与连接）</li>
+<li>F - ${w|w&#x3D;w^R}$ 是正则语言</li>
+<li>T - ${w|w\in L <del>\text{and}</del> w^R\in L}$ （$L$ 是正则语言，$L’&#x3D;L\cap L^R$）</li>
+<li>F - If $C$ is any set of regular languages, then $\cup C$ is a regular language. （无限集）</li>
+<li>T - ${xyx^R|x,y&#x3D;\Sigma^<em>}$ 是正则语言（$x$ 可以为空，$y&#x3D;\Sigma^</em>$ ）</li>
 </ul>
-<h3 id="判断语言是否为上下文无关">判断语言是否为上下文无关</h3>
-<p>上下文无关语言对于并，连接与克林闭包封闭，对交、补、差<strong>不</strong>封闭。</p>
+<h3 id="判断语言是否为上下文无关"><a href="#判断语言是否为上下文无关" class="headerlink" title="判断语言是否为上下文无关"></a>判断语言是否为上下文无关</h3><p>上下文无关语言对于并，连接与克林闭包封闭，对交、补、差<strong>不</strong>封闭。</p>
 <p>正则语言与上下文无关语言的交集还是上下文无关语言。</p>
 <ul>
-<li><span class="math inline">\(\{a^mb^nc^p\}\)</span> 其中 <span class="math inline">\(m,n,p\)</span> 三者有两个相等或者不等，是上下文无关语言。三者均相等<strong>不</strong>是上下文无关语言。均不等呢？</li>
-<li><span class="math inline">\(L=\{w\in \{a,b,c\}^*|\text{其中三个字母出现次数均不相等}\}\)</span> 是上下文无关的，由三者中两个不等并运算得到。</li>
-<li><span class="math inline">\(L\)</span>: CFL, <span class="math inline">\(R\)</span>: RL
-<ul>
-<li><span class="math inline">\(L-R\in\)</span> CFL, for <span class="math inline">\(L-R=L\cap\bar{R}\)</span></li>
-<li><span class="math inline">\(R-L\)</span> 不一定，具有反例：<span class="math inline">\(R=a^*b^*c^*,R-L=\{a^nb^nc^n\}\)</span></li>
-</ul></li>
+<li>${a^mb^nc^p}$ 其中 $m,n,p$ 三者有两个相等或者不等，是上下文无关语言。三者均相等<strong>不</strong>是上下文无关语言。均不等呢？</li>
+<li>$L&#x3D;{w\in {a,b,c}^*|\text{其中三个字母出现次数均不相等}}$ 是上下文无关的，由三者中两个不等并运算得到。</li>
+<li>$L$: CFL, $R$: RL<ul>
+<li>$L-R\in$ CFL, for $L-R&#x3D;L\cap\bar{R}$</li>
+<li>$R-L$ 不一定，具有反例：$R&#x3D;a^<em>b^</em>c^*,R-L&#x3D;{a^nb^nc^n}$</li>
 </ul>
-<h3 id="判断语言是否为递归语言">判断语言是否为递归语言</h3>
-<p>递归语言对于交、并、补、差，连接，克林闭包封闭。</p>
-<h3 id="判断语言是否为递归可枚举">判断语言是否为递归可枚举</h3>
-<p>递归可枚举语言对于<strong>交</strong>，并，连接和克林闭包运算封闭。对补与差运算不封闭。</p>
-<h3 id="递归函数">递归函数</h3>
-<p>可被一个图灵机计算的函数。</p>
-<h3 id="basic-functions">Basic Functions</h3>
-<p><span class="math display">\[
-zero_k(n_1,\dots,n_k)=0 \\
-id_{k,j}(n_1,\dots,n_k)=n_j \\
-succ(n)=n+1
-\]</span></p>
-<h3 id="primitive-recursive-functions">Primitive Recursive Functions</h3>
-<p>原始递归函数即上述三种基本函数的组合可得到的函数。</p>
-<ul>
-<li><span class="math inline">\(\mu-recursive\)</span></li>
+</li>
 </ul>
-<h3 id="不可判定性">不可判定性</h3>
-<p><span class="math inline">\(L(M)\)</span> : 图灵机 <span class="math inline">\(M\)</span> 半判定的语言。</p>
+<h3 id="判断语言是否为递归语言"><a href="#判断语言是否为递归语言" class="headerlink" title="判断语言是否为递归语言"></a>判断语言是否为递归语言</h3><p>递归语言对于交、并、补、差，连接，克林闭包封闭。</p>
+<h3 id="判断语言是否为递归可枚举"><a href="#判断语言是否为递归可枚举" class="headerlink" title="判断语言是否为递归可枚举"></a>判断语言是否为递归可枚举</h3><p>递归可枚举语言对于<strong>交</strong>，并，连接和克林闭包运算封闭。对补与差运算不封闭。</p>
+<h3 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h3><p>可被一个图灵机计算的函数。</p>
+<h3 id="Basic-Functions"><a href="#Basic-Functions" class="headerlink" title="Basic Functions"></a>Basic Functions</h3><p>$$<br>zero_k(n_1,\dots,n_k)&#x3D;0 \<br>id_{k,j}(n_1,\dots,n_k)&#x3D;n_j \<br>succ(n)&#x3D;n+1<br>$$</p>
+<h3 id="Primitive-Recursive-Functions"><a href="#Primitive-Recursive-Functions" class="headerlink" title="Primitive Recursive Functions"></a>Primitive Recursive Functions</h3><p>原始递归函数即上述三种基本函数的组合可得到的函数。</p>
+<ul>
+<li>$\mu-recursive$</li>
+</ul>
+<h3 id="不可判定性"><a href="#不可判定性" class="headerlink" title="不可判定性"></a>不可判定性</h3><p>$L(M)$ : 图灵机 $M$ 半判定的语言。 </p>
 <p>Tiling 问题是不可解的。</p>
 <p>图灵机有可数无限多个。</p>
-<h4 id="邱奇-图灵论题">邱奇-图灵论题</h4>
-<h4 id="算法">算法</h4>
-<h4 id="判定">判定</h4>
-<h4 id="半判定">半判定</h4>
-<h4 id="不可判定">不可判定</h4>
-<h4 id="函数">函数</h4>
-<h4 id="递归语言">递归语言</h4>
-<p>图灵机可以停机并给出判定的语言。</p>
-<p>若语言 <span class="math inline">\(L\)</span> 与 <span class="math inline">\(\bar{L}\)</span> 均为递归可枚举语言（即正反都能停机判定），则 <span class="math inline">\(L\)</span> 为递归语言。</p>
+<h4 id="邱奇-图灵论题"><a href="#邱奇-图灵论题" class="headerlink" title="邱奇-图灵论题"></a>邱奇-图灵论题</h4><h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><h4 id="判定"><a href="#判定" class="headerlink" title="判定"></a>判定</h4><h4 id="半判定"><a href="#半判定" class="headerlink" title="半判定"></a>半判定</h4><h4 id="不可判定"><a href="#不可判定" class="headerlink" title="不可判定"></a>不可判定</h4><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><h4 id="递归语言"><a href="#递归语言" class="headerlink" title="递归语言"></a>递归语言</h4><p>图灵机可以停机并给出判定的语言。</p>
+<p>若语言 $L$ 与 $\bar{L}$ 均为递归可枚举语言（即正反都能停机判定），则 $L$ 为递归语言。</p>
 <p>对于补运算封闭。</p>
-<h4 id="递归可枚举语言">递归可枚举语言</h4>
-<p>图灵机对于接受的字符串可以停机，对于不接受的字符串可能不停机的语言。</p>
+<h4 id="递归可枚举语言"><a href="#递归可枚举语言" class="headerlink" title="递归可枚举语言"></a>递归可枚举语言</h4><p>图灵机对于接受的字符串可以停机，对于不接受的字符串可能不停机的语言。</p>
 <p>递归可枚举语言即图灵可枚举语言。</p>
-<h4 id="通用图灵机">通用图灵机</h4>
-<p><span class="math inline">\(U(M,w)=M(w)\)</span></p>
-<h3 id="rice-定理">Rice 定理</h3>
-<p>设 P 是任何图灵机的语言的非平凡属性。确定某一图灵机的语言是否具有属性 P 这一问题是不可判定的。</p>
-<p>If <span class="math inline">\(C\)</span> is a proper and non-empty subset of recursively enumerable languages, then it is undecidable for a Turing Machine <span class="math inline">\(M\)</span>, whether <span class="math inline">\(L(M)\in C\)</span></p>
+<h4 id="通用图灵机"><a href="#通用图灵机" class="headerlink" title="通用图灵机"></a>通用图灵机</h4><p>$U(M,w)&#x3D;M(w)$</p>
+<h3 id="Rice-定理"><a href="#Rice-定理" class="headerlink" title="Rice 定理"></a>Rice 定理</h3><p>设 P 是任何图灵机的语言的非平凡属性。确定某一图灵机的语言是否具有属性 P 这一问题是不可判定的。</p>
+<p>If $C$ is a proper and non-empty subset of recursively enumerable languages, then it is undecidable for a Turing Machine $M$, whether $L(M)\in C$</p>
 <blockquote>
 <p>所以几乎所有关于“图灵机是否在此种输入上停机”的问题都是不可判定的。</p>
 </blockquote>
 <p>e.g:</p>
 <ul>
-<li><span class="math inline">\(L(M)=\emptyset\)</span></li>
-<li><span class="math inline">\(L(M)\)</span> is finite</li>
-<li><span class="math inline">\(L(M)=\Sigma^*,e\in L(M)\)</span></li>
+<li>$L(M)&#x3D;\emptyset$</li>
+<li>$L(M)$ is finite</li>
+<li>$L(M)&#x3D;\Sigma^*,e\in L(M)$</li>
 </ul>
 
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/课程/" rel="tag"># 课程</a>
-          
-            <a href="/tags/计算理论/" rel="tag"># 计算理论</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/pytorch-data-loader/" rel="next" title="PyTorch 中 DataLoader 类的实现">
-                <i class="fa fa-chevron-left"></i> PyTorch 中 DataLoader 类的实现
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E7%A8%8B/" rel="tag"># 课程</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" rel="tag"># 计算理论</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/docker-demo/" rel="prev" title="Docker Hello World">
-                Docker Hello World <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/pytorch-data-loader/" rel="prev" title="PyTorch 中 DataLoader 类的实现">
+                  <i class="fa fa-chevron-left"></i> PyTorch 中 DataLoader 类的实现
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/docker-demo/" rel="next" title="Docker Hello World">
+                  Docker Hello World <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
+</div>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
-          </div>
-          
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
 
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <p class="site-author-name" itemprop="name">Zhenyun Yu</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">28</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">24</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yzyDavid" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>GitHub</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/exciting-gg/activities" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>知乎</a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-block">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://tigertang.cn/" title="tigertang" target="_blank">tigertang</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://zjuwyd.com/" title="wyd" target="_blank">wyd</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://blog.zhangcy.cn/" title="zhangcy" target="_blank">zhangcy</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://hahahaha123567.github.io/" title="hahahaha123567" target="_blank">hahahaha123567</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.zjuriko.ml/" title="Riko" target="_blank">Riko</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.th3charlie.com/" title="Th3Charlie" target="_blank">Th3Charlie</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://utashih.github.io/" title="Uta" target="_blank">Uta</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://blog.yzyzsun.me/" title="yzyzsun" target="_blank">yzyzsun</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.aozora.moe/" title="Sora Ao" target="_blank">Sora Ao</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://abracax.github.io/" title="Abracax" target="_blank">Abracax</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#todo-list"><span class="nav-number">1.</span> <span class="nav-text">TODO list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#年考卷"><span class="nav-number">2.</span> <span class="nav-text">14 - 15年考卷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断题"><span class="nav-number">2.1.</span> <span class="nav-text">判断题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a"><span class="nav-number">2.1.1.</span> <span class="nav-text">(a)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b"><span class="nav-number">2.1.2.</span> <span class="nav-text">(b)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c"><span class="nav-number">2.1.3.</span> <span class="nav-text">(c)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d"><span class="nav-number">2.1.4.</span> <span class="nav-text">(d)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e"><span class="nav-number">2.1.5.</span> <span class="nav-text">(e)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f"><span class="nav-number">2.1.6.</span> <span class="nav-text">(f)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#g"><span class="nav-number">2.1.7.</span> <span class="nav-text">(g)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#h"><span class="nav-number">2.1.8.</span> <span class="nav-text">(h)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i"><span class="nav-number">2.1.9.</span> <span class="nav-text">(i)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#j"><span class="nav-number">2.1.10.</span> <span class="nav-text">(j)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k"><span class="nav-number">2.1.11.</span> <span class="nav-text">(k)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#l"><span class="nav-number">2.1.12.</span> <span class="nav-text">(l)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简答题"><span class="nav-number">2.2.</span> <span class="nav-text">简答题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#section"><span class="nav-number">2.2.1.</span> <span class="nav-text">1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-1"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">(a)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复习ppt考点"><span class="nav-number">3.</span> <span class="nav-text">复习PPT考点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">4.</span> <span class="nav-text">知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chomsky-hierarchy"><span class="nav-number">4.1.</span> <span class="nav-text">Chomsky Hierarchy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下推自动机"><span class="nav-number">4.2.</span> <span class="nav-text">下推自动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图灵机"><span class="nav-number">4.3.</span> <span class="nav-text">图灵机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#context-free-grammar-上下文无关语法"><span class="nav-number">4.4.</span> <span class="nav-text">Context Free Grammar 上下文无关语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chomsky-normal-form"><span class="nav-number">4.4.1.</span> <span class="nav-text">Chomsky Normal Form</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cfl-to-cfg"><span class="nav-number">4.4.2.</span> <span class="nav-text">CFL to CFG</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cfl-to-pda"><span class="nav-number">4.4.3.</span> <span class="nav-text">CFL to PDA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cfg-to-pda"><span class="nav-number">4.4.4.</span> <span class="nav-text">CFG to PDA</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于正则语言的泵定理"><span class="nav-number">4.5.</span> <span class="nav-text">对于正则语言的泵定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于上下文无关语言的泵定理"><span class="nav-number">4.6.</span> <span class="nav-text">对于上下文无关语言的泵定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引理"><span class="nav-number">4.6.1.</span> <span class="nav-text">引理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定理"><span class="nav-number">4.6.2.</span> <span class="nav-text">定理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nfa-to-dfa"><span class="nav-number">4.7.</span> <span class="nav-text">NFA to DFA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断语言是否为正则语言"><span class="nav-number">4.8.</span> <span class="nav-text">判断语言是否为正则语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断语言是否为上下文无关"><span class="nav-number">4.9.</span> <span class="nav-text">判断语言是否为上下文无关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断语言是否为递归语言"><span class="nav-number">4.10.</span> <span class="nav-text">判断语言是否为递归语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断语言是否为递归可枚举"><span class="nav-number">4.11.</span> <span class="nav-text">判断语言是否为递归可枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归函数"><span class="nav-number">4.12.</span> <span class="nav-text">递归函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-functions"><span class="nav-number">4.13.</span> <span class="nav-text">Basic Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#primitive-recursive-functions"><span class="nav-number">4.14.</span> <span class="nav-text">Primitive Recursive Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可判定性"><span class="nav-number">4.15.</span> <span class="nav-text">不可判定性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#邱奇-图灵论题"><span class="nav-number">4.15.1.</span> <span class="nav-text">邱奇-图灵论题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法"><span class="nav-number">4.15.2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判定"><span class="nav-number">4.15.3.</span> <span class="nav-text">判定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#半判定"><span class="nav-number">4.15.4.</span> <span class="nav-text">半判定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不可判定"><span class="nav-number">4.15.5.</span> <span class="nav-text">不可判定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">4.15.6.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#递归语言"><span class="nav-number">4.15.7.</span> <span class="nav-text">递归语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#递归可枚举语言"><span class="nav-number">4.15.8.</span> <span class="nav-text">递归可枚举语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用图灵机"><span class="nav-number">4.15.9.</span> <span class="nav-text">通用图灵机</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rice-定理"><span class="nav-number">4.16.</span> <span class="nav-text">Rice 定理</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
-  
-  &copy;  2017 &mdash; 
-  <span itemprop="copyrightYear">2020</span>
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Zhenyun Yu</span>
-
-  
 </div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
-
-  <span class="post-meta-divider">|</span>
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
+  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
+    </div>
+  </footer>
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -1072,49 +562,6 @@ succ(n)=n+1
 
 
 
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-  
-
-  
 
 </body>
 </html>

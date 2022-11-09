@@ -1,557 +1,418 @@
 <!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.yuzhenyun.me","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"بحث...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-<html class="theme-next gemini use-motion" lang="zh_CN">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="课程,计算机图形学,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
-
-
-
-
-
-
-<meta name="description" content="童若锋老师的计算机图形学课程  e-mail: trf at zju ftp://csyq2017:csyq2017@give.zju.edu.cn http://give.zju.edu.cn/cgcourse TA-email: Evaluation  Assignment 30% Final-Exam Big-Project 40% In-class performance 30%  in-">
-<meta name="keywords" content="课程,计算机图形学">
+    <meta name="description" content="童若锋老师的计算机图形学课程  e-mail: trf at zju ftp:&#x2F;&#x2F;csyq2017:csyq2017@give.zju.edu.cn http:&#x2F;&#x2F;give.zju.edu.cn&#x2F;cgcourse TA-email:  Evaluation Assignment 30% Final-Exam Big-Project 40% In-class performance 30% in-c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浙江大学 计算机图形学 课堂笔记">
 <meta property="og:url" content="http://blog.yuzhenyun.me/cg/index.html">
 <meta property="og:site_name" content="Blog of Zhenyun Yu">
-<meta property="og:description" content="童若锋老师的计算机图形学课程  e-mail: trf at zju ftp://csyq2017:csyq2017@give.zju.edu.cn http://give.zju.edu.cn/cgcourse TA-email: Evaluation  Assignment 30% Final-Exam Big-Project 40% In-class performance 30%  in-">
+<meta property="og:description" content="童若锋老师的计算机图形学课程  e-mail: trf at zju ftp:&#x2F;&#x2F;csyq2017:csyq2017@give.zju.edu.cn http:&#x2F;&#x2F;give.zju.edu.cn&#x2F;cgcourse TA-email:  Evaluation Assignment 30% Final-Exam Big-Project 40% In-class performance 30% in-c">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.yuzhenyun.me/cg/gl-wiki.svg">
-<meta property="og:updated_time" content="2019-10-10T16:20:33.553Z">
+<meta property="article:published_time" content="2017-09-18T01:48:52.000Z">
+<meta property="article:modified_time" content="2019-10-10T16:20:33.553Z">
+<meta property="article:author" content="Zhenyun Yu">
+<meta property="article:tag" content="课程">
+<meta property="article:tag" content="计算机图形学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浙江大学 计算机图形学 课堂笔记">
-<meta name="twitter:description" content="童若锋老师的计算机图形学课程  e-mail: trf at zju ftp://csyq2017:csyq2017@give.zju.edu.cn http://give.zju.edu.cn/cgcourse TA-email: Evaluation  Assignment 30% Final-Exam Big-Project 40% In-class performance 30%  in-">
 <meta name="twitter:image" content="http://blog.yuzhenyun.me/cg/gl-wiki.svg">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+<link rel="canonical" href="http://blog.yuzhenyun.me/cg/">
 
 
 
-  <link rel="canonical" href="http://blog.yuzhenyun.me/cg/">
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_CN","comments":true,"permalink":"http://blog.yuzhenyun.me/cg/","path":"cg/","title":"浙江大学 计算机图形学 课堂笔记"}</script>
 
-
-
-
-
-  <title>浙江大学 计算机图形学 课堂笔记 | Blog of Zhenyun Yu</title>
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>浙江大学 计算机图形学 课堂笔记 | Blog of Zhenyun Yu</title>
   
 
 
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?6febf75fce436b62a0390863fe760705";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-
-
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Blog of Zhenyun Yu</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح" role="button">
     </div>
-      
-        <h1 class="site-subtitle" itemprop="description">A place for technology and anything</h1>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Blog of Zhenyun Yu</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">A place for technology and anything</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
-  
-    <ul id="menu" class="menu">
-      
+
+
+
+
+
+</div>
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-  
-</nav>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          المحتويات
+        </li>
+        <li class="sidebar-nav-overview">
+          عام
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E8%AF%BE"><span class="nav-number">1.</span> <span class="nav-text">第一课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%A6%81"><span class="nav-number">1.1.</span> <span class="nav-text">概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87"><span class="nav-number">1.2.</span> <span class="nav-text">课程目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.3.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A1%A8%E7%A4%BA%E4%B8%80%E4%B8%AA%E5%9B%BE%E5%83%8F-%E7%89%A9%E4%BD%93"><span class="nav-number">1.4.</span> <span class="nav-text">如何表示一个图像(物体)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E8%AF%BE"><span class="nav-number">2.</span> <span class="nav-text">第二课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E8%A7%89%E8%AE%A1%E7%AE%97%E9%A2%86%E5%9F%9F"><span class="nav-number">2.1.</span> <span class="nav-text">视觉计算领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%89%E6%A0%85%E5%8C%96-%E6%89%AB%E6%8F%8F%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.2.</span> <span class="nav-text">光栅化(扫描转换)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E8%AF%BE"><span class="nav-number">3.</span> <span class="nav-text">第三课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%AB%E6%8F%8F%E8%BD%AC%E6%8D%A2-%E7%94%BB%E5%9C%86"><span class="nav-number">3.1.</span> <span class="nav-text">扫描转换 - 画圆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E8%A1%A8%E7%A4%BA%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">不同表示曲线的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenGL-x2F-GLUT"><span class="nav-number">3.3.</span> <span class="nav-text">OpenGL &#x2F; GLUT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%A1%AB%E5%85%85"><span class="nav-number">3.4.</span> <span class="nav-text">多边形填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E8%AF%BE"><span class="nav-number">4.</span> <span class="nav-text">第四课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E5%85%85%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="nav-number">4.1.</span> <span class="nav-text">填充多边形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aliasing-%E8%B5%B0%E6%A0%B7-%E9%94%AF%E9%BD%BF"><span class="nav-number">4.2.</span> <span class="nav-text">Aliasing 走样(锯齿)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">4.2.1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">4.2.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clipping-%E8%A3%81%E5%89%AA"><span class="nav-number">4.3.</span> <span class="nav-text">Clipping 裁剪</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E8%AF%BE"><span class="nav-number">5.</span> <span class="nav-text">第五课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="nav-number">5.1.</span> <span class="nav-text">几何变换与坐标变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E8%AF%BE"><span class="nav-number">6.</span> <span class="nav-text">第六课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenGL-API"><span class="nav-number">6.1.</span> <span class="nav-text">OpenGL API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Viewing"><span class="nav-number">6.2.</span> <span class="nav-text">Viewing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E8%AF%BE"><span class="nav-number">7.</span> <span class="nav-text">第七课</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%AC%E5%AD%A6%E6%9C%9F"><span class="nav-number">8.</span> <span class="nav-text">冬学期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E8%AF%BE-1"><span class="nav-number">9.</span> <span class="nav-text">第一课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E9%99%A4%E8%A2%AB%E9%81%AE%E6%8C%A1%E7%9A%84%E7%89%A9%E4%BD%93-%E6%B6%88%E9%9A%90"><span class="nav-number">9.1.</span> <span class="nav-text">消除被遮挡的物体 - 消隐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Back-face-Culling"><span class="nav-number">9.2.</span> <span class="nav-text">Back-face Culling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%BB%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="nav-number">9.3.</span> <span class="nav-text">画家算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Warnock%E2%80%99s-Algorithm"><span class="nav-number">9.3.1.</span> <span class="nav-text">Warnock’s Algorithm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Z-buffer-Algorithm"><span class="nav-number">9.3.2.</span> <span class="nav-text">Z-buffer Algorithm</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Zhenyun Yu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">المقالات</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">الوسوم</span></a>
+      </div>
+  </nav>
+</div>
 
 
 
- </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
 
   
 
-  
+
+<div class="post-block">
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh_CN">
     <link itemprop="mainEntityOfPage" href="http://blog.yuzhenyun.me/cg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhenyun Yu">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zhenyun Yu">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Blog of Zhenyun Yu">
+      <meta itemprop="description" content="">
     </span>
 
-    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="浙江大学 计算机图形学 课堂笔记 | Blog of Zhenyun Yu">
+      <meta itemprop="description" content="">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浙江大学 计算机图形学 课堂笔记
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">浙江大学 计算机图形学 课堂笔记</h2>
-        
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">نُشر في</span>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T09:48:52+08:00">
-                2017-09-18
-              </time>
-            
+      <time title="أُنشأ: 2017-09-18 09:48:52" itemprop="dateCreated datePublished" datetime="2017-09-18T09:48:52+08:00">2017-09-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">عُدل في</span>
+      <time title="عُدل: 2019-10-11 00:20:33" itemprop="dateModified" datetime="2019-10-11T00:20:33+08:00">2019-10-11</time>
+    </span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>童若锋老师的计算机图形学课程</p>
 <ul>
 <li>e-mail: trf at zju</li>
-<li>ftp://csyq2017:csyq2017@give.zju.edu.cn</li>
-<li><a href="http://give.zju.edu.cn/cgcourse" target="_blank" rel="noopener">http://give.zju.edu.cn/cgcourse</a></li>
-<li>TA-email:</li>
-<li>Evaluation
-<ul>
+<li><a href="ftp://csyq2017:csyq2017@give.zju.edu.cn/">ftp://csyq2017:csyq2017@give.zju.edu.cn</a></li>
+<li><a target="_blank" rel="noopener" href="http://give.zju.edu.cn/cgcourse">http://give.zju.edu.cn/cgcourse</a></li>
+<li>TA-email: </li>
+<li>Evaluation<ul>
 <li>Assignment 30%</li>
 <li>Final-Exam Big-Project 40%</li>
-<li>In-class performance 30%
-<ul>
+<li>In-class performance 30%<ul>
 <li>in-class test</li>
 <li>attendance</li>
 <li>question-answer</li>
-</ul></li>
-</ul></li>
 </ul>
-<a id="more"></a>
-<h2 id="第一课">第一课</h2>
-<h3 id="概要">概要</h3>
-<ul>
-<li>计算机生成的图像 - 特点
-<ul>
+</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="第一课"><a href="#第一课" class="headerlink" title="第一课"></a>第一课</h2><h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><ul>
+<li>计算机生成的图像 - 特点<ul>
 <li>可以变换视角</li>
 <li>计算机生成的是三维模型，经过渲染成为像素化的标量图片（先尽量根据现实建模，再“拍照”）</li>
 <li>对时效有要求，需要做到实时渲染</li>
-</ul></li>
 </ul>
-<h3 id="课程目标">课程目标</h3>
-<ul>
+</li>
+</ul>
+<h3 id="课程目标"><a href="#课程目标" class="headerlink" title="课程目标"></a>课程目标</h3><ul>
 <li>计算机图形学要解决的基本问题</li>
 <li>解决这些问题主要的原理与方法</li>
 <li>基本编程技能</li>
 <li>获取自己学习，解决问题的能力</li>
 <li>课程假定具有基本的使用 <code>OpenGL</code> 的能力，或者说，不以此为重点</li>
 </ul>
-<h3 id="介绍">介绍</h3>
-<ul>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><ul>
 <li>使用像素(pixel - 最小的显示单元)图片给人真实的体验(looks real)</li>
-<li>recommended - 将世界中的物体使用计算机建模，处理并且显示的科学
-<ul>
-<li>3D object ===&gt; image</li>
+<li>recommended - 将世界中的物体使用计算机建模，处理并且显示的科学<ul>
+<li>3D object &#x3D;&#x3D;&#x3D;&gt; image</li>
 <li>display rendering</li>
 <li>image: aray of pixels (RGB)</li>
-<li>graphics: object (shape, material, ...)</li>
-</ul></li>
-<li>三个基本任务
-<ul>
+<li>graphics: object (shape, material, …)</li>
+</ul>
+</li>
+<li>三个基本任务<ul>
 <li>建模</li>
 <li>模拟物体的行为</li>
 <li>显示</li>
-</ul></li>
 </ul>
-<h3 id="如何表示一个图像物体">如何表示一个图像(物体)</h3>
-<p>使用怎样的数据结构比较合适？</p>
+</li>
+</ul>
+<h3 id="如何表示一个图像-物体"><a href="#如何表示一个图像-物体" class="headerlink" title="如何表示一个图像(物体)"></a>如何表示一个图像(物体)</h3><p>使用怎样的数据结构比较合适？</p>
 <ul>
-<li>点 <code>Point3D { double, double, double }</code></li>
-<li>矩形呢？
-<ul>
-<li><code>cuboid { LCS3D local; double x; double y; double z; }</code> 与四个点等价。本地坐标系需要9个参数。</li>
-</ul></li>
-<li>任意物体呢？哪种抽象最佳？
-<ul>
+<li>点 <code>Point3D &#123; double, double, double &#125;</code></li>
+<li>矩形呢？<ul>
+<li><code>cuboid &#123; LCS3D local; double x; double y; double z; &#125;</code> 与四个点等价。本地坐标系需要9个参数。</li>
+</ul>
+</li>
+<li>任意物体呢？哪种抽象最佳？<ul>
 <li>顶点集合</li>
 <li>边线段集合</li>
 <li>点云</li>
 <li>表面平面图形集合</li>
-</ul></li>
-<li>要解决的问题
-<ul>
+</ul>
+</li>
+<li>要解决的问题<ul>
 <li>水如何流动起来？</li>
 <li>弹性，相对运动？</li>
 <li>光照效果？</li>
-</ul></li>
 </ul>
-<h2 id="第二课">第二课</h2>
-<h3 id="视觉计算领域">视觉计算领域</h3>
-<ul>
-<li>图像处理
-<ul>
+</li>
+</ul>
+<h2 id="第二课"><a href="#第二课" class="headerlink" title="第二课"></a>第二课</h2><h3 id="视觉计算领域"><a href="#视觉计算领域" class="headerlink" title="视觉计算领域"></a>视觉计算领域</h3><ul>
+<li>图像处理<ul>
 <li>图像 -&gt; 图像</li>
 <li>图像 -&gt; 区域</li>
-</ul></li>
-<li>模式识别
-<ul>
+</ul>
+</li>
+<li>模式识别<ul>
 <li>图像 -&gt; 符号化描述</li>
-</ul></li>
-<li>计算机视觉
-<ul>
+</ul>
+</li>
+<li>计算机视觉<ul>
 <li>图像 -&gt; 图形</li>
-</ul></li>
-<li>计算机图形学
-<ul>
+</ul>
+</li>
+<li>计算机图形学<ul>
 <li>图形 -&gt; 图形</li>
 <li>图形 -&gt; 图像</li>
-</ul></li>
 </ul>
-<h3 id="光栅化扫描转换">光栅化(扫描转换)</h3>
-<p>在二维空间当中如何画线段？</p>
+</li>
+</ul>
+<h3 id="光栅化-扫描转换"><a href="#光栅化-扫描转换" class="headerlink" title="光栅化(扫描转换)"></a>光栅化(扫描转换)</h3><p>在二维空间当中如何画线段？</p>
 <p>空间是像素点的。将抽象的数学直线画进去。要越快，越均匀，越接近越好。给出线段两个端点的坐标。</p>
 <p>判断更接近于哪个坐标轴，然后以一个像素为步长增加，计算另一侧坐标(浮点加法！)然后四舍五入到整数像素点。这个方法为 DDA (Digital Differential Analyzer) 算法。</p>
 <p>这个思路并非最优，cutting-edge 的做法是 Bresenham 算法。</p>
 <blockquote>
 <p><strong>Bresenham算法的思想是将像素中心构造成虚拟网格线，按照直线起点到终点的顺序，计算直线与各垂直网格线的交点，然后根据误差项的符号确定该列像素中与此交点最近的像素。</strong></p>
 </blockquote>
-<p>进行优化的思路：浮点运算 -&gt; 整型运算 乘法运算 -&gt; 加法运算</p>
-<p>参考文章： <a href="https://zhuanlan.zhihu.com/p/20213658" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/20213658</a></p>
-<h2 id="第三课">第三课</h2>
-<h3 id="扫描转换---画圆">扫描转换 - 画圆</h3>
-<p>圆周上取点，再用线段连起来？</p>
-<p>如何取点，直角坐标系等距取点不均匀 =&gt; 使用极坐标系</p>
+<p>进行优化的思路：浮点运算 -&gt; 整型运算    乘法运算 -&gt; 加法运算</p>
+<p>参考文章： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20213658">https://zhuanlan.zhihu.com/p/20213658</a></p>
+<h2 id="第三课"><a href="#第三课" class="headerlink" title="第三课"></a>第三课</h2><h3 id="扫描转换-画圆"><a href="#扫描转换-画圆" class="headerlink" title="扫描转换 - 画圆"></a>扫描转换 - 画圆</h3><p>圆周上取点，再用线段连起来？</p>
+<p>如何取点，直角坐标系等距取点不均匀 &#x3D;&gt; 使用极坐标系</p>
 <p>利用对称性，计算八分之一个圆弧即可。</p>
-<p><span class="math display">\[x_i=x_c+r\cdot\cos(i\cdot\Delta\theta)\]</span></p>
-<p><span class="math display">\[y_i=y_c+r\cdot\sin(i\cdot\Delta\theta)\]</span></p>
+<p>$$x_i&#x3D;x_c+r\cdot\cos(i\cdot\Delta\theta)$$</p>
+<p>$$y_i&#x3D;y_c+r\cdot\sin(i\cdot\Delta\theta)$$</p>
 <p>三角函数开销极大，如何加速运算？</p>
 <p>同样的思想：增量算法</p>
-<p><span class="math display">\[x_{i+1}=r\cdot\cos(\theta_i+\Delta\theta)\]</span></p>
+<p>$$x_{i+1}&#x3D;r\cdot\cos(\theta_i+\Delta\theta)$$</p>
 <p>和角公式展开：</p>
-<p><span class="math display">\[x_{i+1}=x_i\cos\Delta\theta-y_i\sin\Delta\theta\]</span></p>
+<p>$$x_{i+1}&#x3D;x_i\cos\Delta\theta-y_i\sin\Delta\theta$$</p>
 <p>实际使用画圆的 Bresenham 算法</p>
 <p>其实也可以 look up table</p>
-<h3 id="不同表示曲线的方式">不同表示曲线的方式</h3>
-<ul>
-<li>explicit curve <span class="math inline">\(y=f(x)\)</span></li>
-<li>parametric curve <span class="math inline">\(x=x(t),y=y(t)\)</span></li>
-<li>implicit curve <span class="math inline">\(g(x,y)=0\)</span></li>
+<h3 id="不同表示曲线的方式"><a href="#不同表示曲线的方式" class="headerlink" title="不同表示曲线的方式"></a>不同表示曲线的方式</h3><ul>
+<li>explicit curve               $y&#x3D;f(x)$</li>
+<li>parametric curve        $x&#x3D;x(t),y&#x3D;y(t)$</li>
+<li>implicit curve               $g(x,y)&#x3D;0$</li>
 </ul>
-<p>参数曲线可以表达函数之外的任意曲线，而且遍历参数<span class="math inline">\(t\)</span>即可描出整条曲线。故在计算机图形学之中应用最多。</p>
-<p>隐式曲线不一定能转换为显式表达式，例如：<span class="math inline">\(x^y\sin x+y^x\cos\ln x=0\)</span></p>
+<p>参数曲线可以表达函数之外的任意曲线，而且遍历参数$t$即可描出整条曲线。故在计算机图形学之中应用最多。</p>
+<p>隐式曲线不一定能转换为显式表达式，例如：$x^y\sin x+y^x\cos\ln x&#x3D;0$</p>
 <p>解决思路：找出一个解，假设它连续，delta 法描出。</p>
-<h3 id="opengl-glut">OpenGL / GLUT</h3>
-<ul>
+<h3 id="OpenGL-x2F-GLUT"><a href="#OpenGL-x2F-GLUT" class="headerlink" title="OpenGL &#x2F; GLUT"></a>OpenGL &#x2F; GLUT</h3><ul>
 <li>实验内容全部使用 <code>OpenGL</code> 完成，版本不详。</li>
 </ul>
 <p>如何填充颜色为渐变效果？trick：不同顶点设置为不同颜色。</p>
-<h3 id="多边形填充">多边形填充</h3>
-<p>如何判断像素在多边形内？</p>
-<p>顶点表示 =&gt; 像素格点表示</p>
+<h3 id="多边形填充"><a href="#多边形填充" class="headerlink" title="多边形填充"></a>多边形填充</h3><p>如何判断像素在多边形内？</p>
+<p>顶点表示 &#x3D;&gt; 像素格点表示</p>
 <p>有多种方法，较合理而常用的有：</p>
 <ul>
 <li>到所有顶点转角之和：内部为360度，外部为0。</li>
-<li>奇偶校验：射线向外，穿过边次数奇数次在内部，偶数次在外部。
-<ul>
+<li>奇偶校验：射线向外，穿过边次数奇数次在内部，偶数次在外部。<ul>
 <li>水平，竖直的射线计算量更小。</li>
 <li>一条线上面的点可以复用之前的计算结果。</li>
-</ul></li>
 </ul>
-<h2 id="第四课">第四课</h2>
-<h3 id="填充多边形">填充多边形</h3>
-<ul>
-<li>如何按照线填充多边形时求出横/竖线与边缘的交点？</li>
+</li>
+</ul>
+<h2 id="第四课"><a href="#第四课" class="headerlink" title="第四课"></a>第四课</h2><h3 id="填充多边形"><a href="#填充多边形" class="headerlink" title="填充多边形"></a>填充多边形</h3><ul>
+<li>如何按照线填充多边形时求出横&#x2F;竖线与边缘的交点？</li>
 </ul>
 <blockquote>
 <p>计算交点是计算机图形学之中最不喜欢做的事情。</p>
 </blockquote>
 <p>使用 DDA 算法求交点 - 扫描线算法</p>
-<p><em>图像处理：chain coding / contour following</em></p>
+<p><em>图像处理：chain coding &#x2F; contour following</em></p>
 <p>判断每个点是否在多边形内计算量过大。</p>
 <p>填充的计算量和画边界的计算量基本没有区别。</p>
 <p>还有一个问题：计算需要绘制的点的颜色。(shading)</p>
 <ul>
 <li>给出图像像素边框以后求填充 - 种子填充算法</li>
 </ul>
-<h3 id="aliasing-走样锯齿">Aliasing 走样(锯齿)</h3>
-<h4 id="问题">问题</h4>
-<ul>
+<h3 id="Aliasing-走样-锯齿"><a href="#Aliasing-走样-锯齿" class="headerlink" title="Aliasing 走样(锯齿)"></a>Aliasing 走样(锯齿)</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
 <li>从曲线映射到离散的最小单位：像素点</li>
 <li>纹理相关</li>
 <li>线过细，落不在像素点中心导致整个消失</li>
 </ul>
-<h4 id="解决方案">解决方案</h4>
-<ul>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
 <li>超采样</li>
 <li>区域采样（算百分比）</li>
 </ul>
-<h3 id="clipping-裁剪">Clipping 裁剪</h3>
-<ul>
-<li>Cohen-Sutherland Line Clipping
-<ul>
-<li>区域编码算法
-<ul>
+<h3 id="Clipping-裁剪"><a href="#Clipping-裁剪" class="headerlink" title="Clipping 裁剪"></a>Clipping 裁剪</h3><ul>
+<li>Cohen-Sutherland Line Clipping<ul>
+<li>区域编码算法<ul>
 <li>两个端点均编上四位区域编码，然后求按位与。若结果为0则需要计算交点。</li>
 <li>还有其他情况。</li>
-</ul></li>
-</ul></li>
-<li>多边形裁剪
-<ul>
-<li>使用窗口与多边形的每一条边进行裁剪。</li>
-</ul></li>
 </ul>
-<h2 id="第五课">第五课</h2>
-<h3 id="几何变换与坐标变换">几何变换与坐标变换</h3>
-<ul>
+</li>
+</ul>
+</li>
+<li>多边形裁剪<ul>
+<li>使用窗口与多边形的每一条边进行裁剪。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第五课"><a href="#第五课" class="headerlink" title="第五课"></a>第五课</h2><h3 id="几何变换与坐标变换"><a href="#几何变换与坐标变换" class="headerlink" title="几何变换与坐标变换"></a>几何变换与坐标变换</h3><ul>
 <li>平移</li>
-<li>scaling 变比变换 缩放
-<ul>
+<li>scaling 变比变换 缩放<ul>
 <li>可以完成镜像等操作</li>
 <li>一般假设缩放中心在原点</li>
-</ul></li>
+</ul>
+</li>
 <li>旋转</li>
 <li>shearing 不知道中文叫什么的变换</li>
 </ul>
 <p>均可以用左乘一个矩阵来实现</p>
-<p>对于二维的坐标，如何完成平移变换？ =&gt; 乘三阶方阵，就可以相当于加上一个常数项。</p>
+<p>对于二维的坐标，如何完成平移变换？ &#x3D;&gt; 乘三阶方阵，就可以相当于加上一个常数项。</p>
 <ul>
 <li>Homogeneous Co-ordinates 齐次坐标</li>
 </ul>
 <p>三维情况同理</p>
 <p>矩阵表示变换方便连乘</p>
-<h2 id="第六课">第六课</h2>
-<h3 id="opengl-api">OpenGL API</h3>
-<p>版本不详，固定管线时代的 API</p>
-<img src="/cg/gl-wiki.svg">
+<h2 id="第六课"><a href="#第六课" class="headerlink" title="第六课"></a>第六课</h2><h3 id="OpenGL-API"><a href="#OpenGL-API" class="headerlink" title="OpenGL API"></a>OpenGL API</h3><p>版本不详，固定管线时代的 API</p>
+<img src="/cg/gl-wiki.svg" class="">
+
 <p>共有三个矩阵堆栈，使用 <code>glMatrixMode</code> 指定。</p>
 <ul>
 <li>GL_MODELVIEW</li>
@@ -561,9 +422,9 @@
 <p>相关的 API，关于 CTM (当前变换矩阵)</p>
 <p>m 为16维向量，表示 4*4 矩阵。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">glMatrixMode();</span><br><span class="line"></span><br><span class="line">glLoadIdentity();</span><br><span class="line">glLoadMatrix&#123;fd&#125;(*m);</span><br><span class="line"></span><br><span class="line">glMultMatrix&#123;fd&#125;(*m);</span><br><span class="line"></span><br><span class="line">glTranslate&#123;fd&#125;(x, y, z);</span><br><span class="line">glScale&#123;fd&#125;(x, y, z);</span><br><span class="line">glRotate&#123;fd&#125;(angle, x, y, z);</span><br></pre></td></tr></table></figure>
+
 <p>注意，OpenGL 当中调用变换 API 的顺序和乘法进行的顺序是反的。</p>
-<h3 id="viewing">Viewing</h3>
-<p>世界坐标系与观察坐标系</p>
+<h3 id="Viewing"><a href="#Viewing" class="headerlink" title="Viewing"></a>Viewing</h3><p>世界坐标系与观察坐标系</p>
 <p>2D 视口变换</p>
 <p>3D 变换</p>
 <p>Projection</p>
@@ -571,420 +432,82 @@
 <li>平行投影</li>
 <li>透视投影</li>
 </ul>
-<h2 id="第七课">第七课</h2>
-<hr>
-<h2 id="冬学期">冬学期</h2>
-<h2 id="第一课-1">第一课</h2>
-<h3 id="消除被遮挡的物体---消隐">消除被遮挡的物体 - 消隐</h3>
-<ul>
-<li>图像空间 - 遍历图像中的每一个像素，决定如何绘制这个像素 =&gt; Z-buffer，最实际的算法</li>
+<h2 id="第七课"><a href="#第七课" class="headerlink" title="第七课"></a>第七课</h2><hr>
+<h2 id="冬学期"><a href="#冬学期" class="headerlink" title="冬学期"></a>冬学期</h2><h2 id="第一课-1"><a href="#第一课-1" class="headerlink" title="第一课"></a>第一课</h2><h3 id="消除被遮挡的物体-消隐"><a href="#消除被遮挡的物体-消隐" class="headerlink" title="消除被遮挡的物体 - 消隐"></a>消除被遮挡的物体 - 消隐</h3><ul>
+<li>图像空间 - 遍历图像中的每一个像素，决定如何绘制这个像素 &#x3D;&gt; Z-buffer，最实际的算法</li>
 <li>物体空间 - 删掉被遮挡的物体</li>
 </ul>
-<h3 id="back-face-culling">Back-face Culling</h3>
-<p>判断法线</p>
+<h3 id="Back-face-Culling"><a href="#Back-face-Culling" class="headerlink" title="Back-face Culling"></a>Back-face Culling</h3><p>判断法线</p>
 <p>约定 - 右手大拇指指向外法线方向</p>
-<h3 id="画家算法">画家算法</h3>
-<p>从后往前画，前面的自然会覆盖后面的。</p>
-<p>互相遮挡？ =&gt; 分割区域。</p>
-<h4 id="warnocks-algorithm">Warnock's Algorithm</h4>
-<ul>
+<h3 id="画家算法"><a href="#画家算法" class="headerlink" title="画家算法"></a>画家算法</h3><p>从后往前画，前面的自然会覆盖后面的。</p>
+<p>互相遮挡？ &#x3D;&gt; 分割区域。</p>
+<h4 id="Warnock’s-Algorithm"><a href="#Warnock’s-Algorithm" class="headerlink" title="Warnock’s Algorithm"></a>Warnock’s Algorithm</h4><ul>
 <li>对区域分割，如果可以排序就停止，否则递归地分割下去。</li>
 </ul>
-<h4 id="z-buffer-algorithm">Z-buffer Algorithm</h4>
-<ul>
-<li>F-buffer =&gt; color value</li>
-<li>Z-buffer =&gt; Z value</li>
+<h4 id="Z-buffer-Algorithm"><a href="#Z-buffer-Algorithm" class="headerlink" title="Z-buffer Algorithm"></a>Z-buffer Algorithm</h4><ul>
+<li>F-buffer &#x3D;&gt; color value</li>
+<li>Z-buffer &#x3D;&gt; Z value</li>
 </ul>
 
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/课程/" rel="tag"># 课程</a>
-          
-            <a href="/tags/计算机图形学/" rel="tag"># 计算机图形学</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/scrapy/" rel="next" title="Scrapy 爬虫框架源码架构初探">
-                <i class="fa fa-chevron-left"></i> Scrapy 爬虫框架源码架构初探
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E7%A8%8B/" rel="tag"># 课程</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag"># 计算机图形学</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/git-blame/" rel="prev" title="git-blame">
-                git-blame <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/scrapy/" rel="prev" title="Scrapy 爬虫框架源码架构初探">
+                  <i class="fa fa-chevron-left"></i> Scrapy 爬虫框架源码架构初探
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/git-blame/" rel="next" title="git-blame">
+                  git-blame <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
+</div>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
-          </div>
-          
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
 
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <p class="site-author-name" itemprop="name">Zhenyun Yu</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">28</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">24</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/yzyDavid" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>GitHub</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/exciting-gg/activities" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>知乎</a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-block">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://tigertang.cn/" title="tigertang" target="_blank">tigertang</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://zjuwyd.com/" title="wyd" target="_blank">wyd</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://blog.zhangcy.cn/" title="zhangcy" target="_blank">zhangcy</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://hahahaha123567.github.io/" title="hahahaha123567" target="_blank">hahahaha123567</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.zjuriko.ml/" title="Riko" target="_blank">Riko</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.th3charlie.com/" title="Th3Charlie" target="_blank">Th3Charlie</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://utashih.github.io/" title="Uta" target="_blank">Uta</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://blog.yzyzsun.me/" title="yzyzsun" target="_blank">yzyzsun</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.aozora.moe/" title="Sora Ao" target="_blank">Sora Ao</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://abracax.github.io/" title="Abracax" target="_blank">Abracax</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一课"><span class="nav-number">1.</span> <span class="nav-text">第一课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概要"><span class="nav-number">1.1.</span> <span class="nav-text">概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课程目标"><span class="nav-number">1.2.</span> <span class="nav-text">课程目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.3.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何表示一个图像物体"><span class="nav-number">1.4.</span> <span class="nav-text">如何表示一个图像(物体)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二课"><span class="nav-number">2.</span> <span class="nav-text">第二课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视觉计算领域"><span class="nav-number">2.1.</span> <span class="nav-text">视觉计算领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光栅化扫描转换"><span class="nav-number">2.2.</span> <span class="nav-text">光栅化(扫描转换)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三课"><span class="nav-number">3.</span> <span class="nav-text">第三课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扫描转换---画圆"><span class="nav-number">3.1.</span> <span class="nav-text">扫描转换 - 画圆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同表示曲线的方式"><span class="nav-number">3.2.</span> <span class="nav-text">不同表示曲线的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#opengl-glut"><span class="nav-number">3.3.</span> <span class="nav-text">OpenGL / GLUT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多边形填充"><span class="nav-number">3.4.</span> <span class="nav-text">多边形填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四课"><span class="nav-number">4.</span> <span class="nav-text">第四课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#填充多边形"><span class="nav-number">4.1.</span> <span class="nav-text">填充多边形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aliasing-走样锯齿"><span class="nav-number">4.2.</span> <span class="nav-text">Aliasing 走样(锯齿)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">4.2.1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-number">4.2.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clipping-裁剪"><span class="nav-number">4.3.</span> <span class="nav-text">Clipping 裁剪</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五课"><span class="nav-number">5.</span> <span class="nav-text">第五课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何变换与坐标变换"><span class="nav-number">5.1.</span> <span class="nav-text">几何变换与坐标变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六课"><span class="nav-number">6.</span> <span class="nav-text">第六课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#opengl-api"><span class="nav-number">6.1.</span> <span class="nav-text">OpenGL API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#viewing"><span class="nav-number">6.2.</span> <span class="nav-text">Viewing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七课"><span class="nav-number">7.</span> <span class="nav-text">第七课</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冬学期"><span class="nav-number">8.</span> <span class="nav-text">冬学期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一课-1"><span class="nav-number">9.</span> <span class="nav-text">第一课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消除被遮挡的物体---消隐"><span class="nav-number">9.1.</span> <span class="nav-text">消除被遮挡的物体 - 消隐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#back-face-culling"><span class="nav-number">9.2.</span> <span class="nav-text">Back-face Culling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#画家算法"><span class="nav-number">9.3.</span> <span class="nav-text">画家算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#warnocks-algorithm"><span class="nav-number">9.3.1.</span> <span class="nav-text">Warnock&#39;s Algorithm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#z-buffer-algorithm"><span class="nav-number">9.3.2.</span> <span class="nav-text">Z-buffer Algorithm</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
-  
-  &copy;  2017 &mdash; 
-  <span itemprop="copyrightYear">2020</span>
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Zhenyun Yu</span>
-
-  
 </div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
-
-  <span class="post-meta-divider">|</span>
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
+  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
+    </div>
+  </footer>
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -997,49 +520,6 @@
 
 
 
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-  
-
-  
 
 </body>
 </html>
